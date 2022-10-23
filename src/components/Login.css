@@ -1,0 +1,79 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(40, 42, 155);
+}
+#log{
+    text-align:center;
+    margin-top:15vh;
+}
+#auth{
+    background-color: white;
+    box-shadow: 2px 3px 10px black;
+    border-radius:1%;
+   margin:auto;
+   margin-top:5vh;
+    width:30vw;
+    height:45vh;
+}
+ #form1{
+   display:flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+}
+#form1 input{
+    border-radius:1vh;
+    padding:1.5vh;
+    margin-top:3vh; 
+    width:28vw; 
+}
+#form1 button{
+    background-color: rgb(10, 121, 239);
+    width:28vw;
+    border-radius:1vh;
+    padding:1.5vh;
+    margin-top:3vh;
+}
+#form1 button a{
+    text-decoration: none;
+    color:black;
+}
+#form1 p {
+    margin-top:2vh;
+    font-weight: bold;
+    font-size: 2vh;
+}
+#forgot{
+    text-decoration: none;
+    color:black;
+}
+#form1 #newTo{
+    background-color: rgb(16, 164, 237);
+    border-radius:1vh;
+    padding:1.5vh;
+    margin-top:3vh; 
+    width:23vw;
+}
+@media (max-width:700px){
+#auth{
+    width:60vw;  
+} 
+ #form1 input{
+    width:56vw;
+}
+#form1 button{
+    width:56vw;   
+}
+#form1 #newTo{
+    width:46vw;
+}
+}
+@media (max-width:320px){
+    #auth{
+        height:48vh;
+    }
+}

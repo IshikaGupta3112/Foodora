@@ -1,0 +1,39 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(247, 222, 218);
+}
+#auths{
+    background-color: white;
+    box-shadow: 2px 3px 10px black;
+    border-radius:1%;
+   margin:auto;
+   margin-top:5vh;
+    width:30vw;
+    height:60vh;
+}
+
+#form1 #newToo{
+    background-color: rgb(16, 164, 237);
+    border-radius:1vh;
+    padding:1.5vh;
+    margin-top:3vh; 
+    width:23vw;
+}
+@media (max-width:700px){
+#auths{
+    width:60vw;  
+} 
+
+#form1 #newToo{
+    width:46vw;
+}
+}
+@media (max-width:320px){
+    #auths{
+        height:63vh;
+    }
+}

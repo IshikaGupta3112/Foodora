@@ -1,0 +1,14 @@
+#auth4{
+    background-color: white;
+    box-shadow: 2px 3px 10px black;
+    border-radius:1%;
+   margin:auto;
+   margin-top:5vh;
+    width:30vw;
+    height:35vh;
+}
+@media (max-width:700px){
+    #auth4{
+        width:60vw;  
+    } 
+}
