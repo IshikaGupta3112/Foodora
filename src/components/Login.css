@@ -8,7 +8,7 @@ body{
 }
 #log{
     text-align:center;
-    margin-top:15vh;
+    margin-top:10vh;
 }
 #auth{
     background-color: white;
@@ -17,7 +17,7 @@ body{
    margin:auto;
    margin-top:5vh;
     width:30vw;
-    height:45vh;
+    height:55vh;
 }
  #form1{
    display:flex;
@@ -58,6 +58,11 @@ body{
     margin-top:3vh; 
     width:23vw;
 }
+#error{
+    color:rgb(233, 89, 89);
+    text-align: left;
+    font-weight: bold; 
+}
 @media (max-width:700px){
 #auth{
     width:60vw;  
@@ -74,6 +79,6 @@ body{
 }
 @media (max-width:320px){
     #auth{
-        height:48vh;
+        height:60vh;
     }
 }

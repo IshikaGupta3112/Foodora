@@ -17,9 +17,6 @@ else{
      return a=1;
     }
 }
-function login(){
-    
-}
 function Navbar(){
 return(
     <>

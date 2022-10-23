@@ -13,7 +13,7 @@ body{
    margin:auto;
    margin-top:5vh;
     width:30vw;
-    height:60vh;
+    height:74vh;
 }
 
 #form1 #newToo{
@@ -34,6 +34,6 @@ body{
 }
 @media (max-width:320px){
     #auths{
-        height:63vh;
+        height:76vh;
     }
 }
