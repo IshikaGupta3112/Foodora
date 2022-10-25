@@ -2,6 +2,7 @@
     margin:0;
     padding:0;
     box-sizing: border-box;
+    overflow: hidden;
 }
 body{
     background-color:#FFFFFF;
@@ -19,7 +20,7 @@ body{
     border-radius:1%;
     left:820px;
     width:320px;
-    height:350px;
+    height:390px;
     top:220px;
 }
  #form1{
