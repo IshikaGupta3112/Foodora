@@ -1,7 +1,7 @@
 import react from 'react';
 import './Otp.css';
 import Otps from './Otps.jsx'
-import LoginImg from './LoginImg.jpg';
+import SignupImg from './SignupImg.jpg';
 import Navs from './navs.jsx';
 import {
     BrowserRouter as Router,
@@ -9,13 +9,13 @@ import {
     Route,
     Link
   } from "react-router-dom";
-function Otp(){
+function Otp2(){
 return(
     <>
     <Navs />
     <Otps />
-    <img src={LoginImg} alt='' id='logs'/>
+    <img src={SignupImg} alt='' id='logs'/>
     </>
 );
   }
-export default Otp;
+export default Otp2;

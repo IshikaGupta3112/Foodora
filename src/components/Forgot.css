@@ -1,11 +1,18 @@
 #auth3{
+    position:absolute;
     background-color: white;
-    box-shadow: 2px 3px 10px black;
+    border:2px solid black;
     border-radius:1%;
-   margin:auto;
-   margin-top:30vh;
-    width:30vw;
-    height:25vh;
+    left:820px;
+    width:320px;
+    height:180px;
+    top:280px;
+}
+#log2{
+position:absolute;
+top:-90px;
+left:935px;
+color:black;
 }
 #error{
     color:rgb(233, 89, 89);

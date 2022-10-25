@@ -1,14 +1,28 @@
 #auth4{
+    position:absolute;
     background-color: white;
-    box-shadow: 2px 3px 10px black;
+    border:2px solid black;
     border-radius:1%;
-   margin:auto;
-   margin-top:5vh;
-    width:30vw;
-    height:35vh;
+    left:820px;
+    width:320px;
+    height:300px;
+    top:250px;
 }
-@media (max-width:700px){
+#log3{
+    position:absolute;
+    top:-100px;
+    left:865px;
+    color:black;
+}
+/* @media (max-width:700px){
     #auth4{
         width:60vw;  
     } 
+} */
+
+p{
+    padding:5px;
+    margin-top:1vh;
+    font-weight: bold;
+    font-size: 15px;
 }

@@ -1,5 +1,8 @@
 import react from 'react';
+import LoginImg from './LoginImg.jpg';
+import Navs from './navs.jsx';
 import './Login.css';
+
 import {
     BrowserRouter as Router,
     Routes,
@@ -47,6 +50,10 @@ function Login(){
         }
     return(
         <>
+       <Navs />
+        <div>
+            <img src={LoginImg} alt='hello' id='logs'/>
+        </div>
         <h1 id='log'>LOGIN</h1>
     <div id='auth'>
     <form id='form1' onSubmit={handleSubmit}>

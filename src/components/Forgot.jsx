@@ -1,4 +1,6 @@
 import react from 'react';
+import Navs from './navs';
+import LoginImg from './LoginImg.jpg';
 import './Forgot.css';
 import {
     BrowserRouter as Router,
@@ -29,7 +31,10 @@ function Forgot(){
          return error;
         }
 return(
-<div id='auth3'>
+  <>
+  <Navs />
+  <h1 id='log2'>LOGIN</h1>
+  <div id='auth3'>
 <form id='form1' onSubmit={handleSubmit}>
         <input type='email' placeholder="Enter your email for verification"
         id='email' name='email'
@@ -37,12 +42,14 @@ return(
         onChange={handleInput}>
         </input>
         <p id='error'>{errors.email}</p>
-    {/* <Link to='/otp'> */}
+    <Link to='/otp'>
       <button type='submit'>Send OTP</button>
-      {/* </Link> */}
+      </Link>
     {/* on sub,it if coreect link to otp */}
     </form>
 </div>
+<img src={LoginImg} alt='' id='logs'/>
+</>
 );
 }
 export default Forgot;

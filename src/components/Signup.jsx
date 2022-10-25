@@ -1,5 +1,7 @@
 import react from 'react';
 import './Signup.css';
+import Navs from './navs.jsx';
+import SignupImg from './SignupImg.jpg'
 import Otp from './Otp.jsx';
 import {
     BrowserRouter as Router,
@@ -57,7 +59,8 @@ function Signup(){
                }
     return(
         <>
-        <h1 id='log'>SIGNUP</h1>
+        <Navs />
+        <h1 id='log1'>SIGNUP</h1>
         <div id='auths'>
         <div className='form'>
     <form id='form1' 
@@ -87,13 +90,16 @@ function Signup(){
          onChange={handleInputs}
          ></input>
          <p id='error'>{error2.repasswords}</p>
+         <Link to='/otp2'>
         <button type='submit'>Signup</button>
+        </Link>
         {/* if signup successfull link to otp */}
         <p>Already a customer?</p>
         <Link to='/login'><button id='newToo'>Login</button></Link>
     </form>
     </div>
     </div>
+    <img src={SignupImg} alt='' id='logs'/>
     </>
     );
 }

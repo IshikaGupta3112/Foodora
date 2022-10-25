@@ -4,6 +4,7 @@ import Login from './components/Login.jsx';
 import Signup from './components/Signup.jsx';
 import Forgot from './components/Forgot.jsx';
 import Otp from './components/Otp.jsx'
+import Otp2 from './components/Otp2.jsx'
 import Main from './components/Main.jsx';
 import {
     BrowserRouter as Router,
@@ -13,11 +14,10 @@ import {
   } from "react-router-dom";
 function App(){
     return(
-        <div> 
-          
+        <div>   
              <Router>
                 <Routes>
-                   <Route path='/' exact element={   <Navbar /> }>  
+                   <Route path='/' exact element={<Navbar /> }>  
                      </Route>
                      <Route path='/signup' exact element={<Signup />}>
                      </Route>
@@ -28,7 +28,10 @@ function App(){
                      <Route path='/otp' exact element={<Otp />}>
                      </Route>
                      <Route path='/main' exact element={<Main />}>
-                     </Route>
+                     </Route>    
+                     <Route path='/otp2' exact element={<Otp2 />}>
+                     </Route>                    
+
              </Routes>
         </Router>
         </div>
