@@ -1,8 +1,10 @@
-import react from 'react';
+import react ,{useState} from 'react';
 import './Signup.css';
 import Navs from './navs.jsx';
 import SignupImg from './SignupImg.jpg'
 import Otp from './Otp.jsx';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEye , faEyeSlash } from '@fortawesome/fontawesome-free-solid'
 import {
     BrowserRouter as Router,
     Routes,
@@ -11,6 +13,14 @@ import {
   } from "react-router-dom";
 
 function Signup(){
+    const [show1,setShow1]=useState(false);
+    const [show2,setShow2]=useState(false);
+    function showHide1(){
+    setShow1(!show1);
+    }
+    function showHide2(){
+        setShow2(!show2);
+        }
     const [userSign,setUserSign] =react.useState({
         fullname:"",
         emails:"",
@@ -43,18 +53,30 @@ function Signup(){
                if(!values.emails){
                    errors.emails ='Email is required!';   
                   }
-               if(!values.passwords){
-                   errors.passwords ='Password is required!';   
-                  }
-                  else if(values.passwords.length<4){
-                   errors.passwords ='Password must be more than 4 characters!';   
-                  }
-                  else if(values.passwords.length>8){
-                   errors.passwords='Password cannot exceed 8 characters!';   
-                  }
+                  else if(values.emails.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)==null){
+                    errors.emails ='Invalid mail';   
+                   }
+                  if(!values.passwords){
+                    errors.passwords ='Password is required!';   
+                   }
+                   else if(values.passwords.length<8){
+                    errors.passwords ='At least 8 chars needed!';   
+                   }
+                   else if(values.passwords.match(/[A-Z]/)==null){
+                    errors.passwords ='Password must have one uppercase';   
+                   }
+                   else if(values.passwords.match(/[0-9]/)==null){
+                    errors.passwords ='Password must have one number';   
+                   }
+                   else if(values.passwords.match(/[!@#$%^&*]/)==null){
+                    errors.passwords ='Password must have 1 special symbol';   
+                   }
                if(!values.repasswords){
                    errors.repasswords ='Re-enter password!';   
                   }
+                  if(values.repasswords!=values.passwords){
+                    errors.repasswords ='Passwords did not match';   
+                   }
                   return errors;
                }
     return(
@@ -66,33 +88,39 @@ function Signup(){
     <form id='form1' 
     onSubmit={handleSubmits}
     >
-        <input type ='text' placeholder='Full Name' name='fullname' id='fullname'
+        <input type ='text' placeholder='Full Name' name='fullname' id='fullname' className='inp'
          value={userSign.fullname}
          onChange={handleInputs}
         >
          </input>
-         <p id='error'>{error2.fullname}</p>
-        <input type='email' placeholder="Enter your email"
-        name='emails' id='emails'
+         <p id='errors1'>{error2.fullname}</p>
+        <input type='text' placeholder="Enter your email"
+        name='emails' id='emails' className='inp'
          value={userSign.emails}
          onChange={handleInputs}
          ></input>
-         <p id='error'>{error2.emails}</p>
-        <input type='password' placeholder='Password'
-        name='passwords' id='passwords'
+         <p id='errors2'>{error2.emails}</p>
+        <input type={show1?'text':'password'} placeholder='Password'
+        name='passwords' id='passwords' className='inp'
          value={userSign.passwords}
          onChange={handleInputs}
          ></input>
-         <p id='error'>{error2.passwords}</p>
-        <input type='password' placeholder='Re-enter password'
-        name='repasswords' id='repasswords'
+          {
+            show1?( <FontAwesomeIcon icon={faEye} id='eye1'onClick={showHide1}/>):( <FontAwesomeIcon icon={faEyeSlash} id='eye1'onClick={showHide1}/>)
+         }
+         <p id='errors3'>{error2.passwords}</p>
+        <input type={show2?'text':'password'} placeholder='Re-enter password'
+        name='repasswords' id='repasswords' className='inp'
          value={userSign.repasswords}
          onChange={handleInputs}
          ></input>
-         <p id='error'>{error2.repasswords}</p>
-         <Link to='/otp2'>
+          {
+            show2?( <FontAwesomeIcon icon={faEye} id='eye2'onClick={showHide2}/>):( <FontAwesomeIcon icon={faEyeSlash} id='eye2'onClick={showHide2}/>)
+         }
+         <p id='errors4'>{error2.repasswords}</p>
+         {/* <Link to='/otp2'> */}
         <button type='submit'>Signup</button>
-        </Link>
+        {/* </Link> */}
         {/* if signup successfull link to otp */}
         <p>Already a customer?</p>
         <Link to='/login'><button id='newToo'>Login</button></Link>

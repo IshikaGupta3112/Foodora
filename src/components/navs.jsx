@@ -23,7 +23,7 @@ return(
     <nav>
     <div id='check' onClick={show}><i class="material-icons" id='icon'>menu</i></div>
         <ul id='ul'>
-            <div><li>Home</li></div>    
+            <div><li><Link to='/'>Home</Link></li></div>    
             <div><li><Link to='/login'>Login</Link></li></div>
             <div><li><Link to='/signup'>Signup</Link></li></div>    
         </ul>

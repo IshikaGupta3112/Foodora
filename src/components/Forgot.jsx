@@ -28,6 +28,9 @@ function Forgot(){
         if(!values.email){
           error.email ='Email is required!';   
          }
+          else if(values.email.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)==null){
+            error.email ='Invalid mail';   
+           }
          return error;
         }
 return(
@@ -36,12 +39,12 @@ return(
   <h1 id='log2'>LOGIN</h1>
   <div id='auth3'>
 <form id='form1' onSubmit={handleSubmit}>
-        <input type='email' placeholder="Enter your email for verification"
+        <input type='text' placeholder="Enter your email for verification"
         id='email' name='email'
         value={userForgot.email}
         onChange={handleInput}>
         </input>
-        <p id='error'>{errors.email}</p>
+        <p id='errors5'>{errors.email}</p>
     <Link to='/otp'>
       <button type='submit'>Send OTP</button>
       </Link>

@@ -14,9 +14,11 @@ top:-90px;
 left:935px;
 color:black;
 }
-#error{
+#errors5{
+    position:absolute;
     color:rgb(233, 89, 89);
-    text-align: left;
+    left:15px;
+    top:60px;
     font-weight: bold; 
 }
 @media (max-width:700px){

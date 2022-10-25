@@ -24,7 +24,10 @@ function Otps(){
           function validate(values){
             const error={};
             if(!values.otp){
-              error.otp ='Otp is required!';   
+              error.otp ='OTP is required!';   
+             }
+            else if(values.otp.match(/^\d+$/)==null){
+              error.otp ='Numbers only';   
              }
              return error;
             }
@@ -35,10 +38,10 @@ return(
       <p>Enter OTP send at .......</p>
     <form id='form1' onSubmit={handleSubmit}>
         <input type='text' placeholder="Enter OTP"
-          id='email' name='email'
+          id='otp' name='otp'
           value={userOtp.otp}
           onChange={handleInput}></input>
-             <p id='error'>{errors.otp}</p>
+             <p id='errors6'>{errors.otp}</p>
         {/* <Link to='/main'> */}
             <button type='submit'>Verify</button>
             {/* </Link> */}
