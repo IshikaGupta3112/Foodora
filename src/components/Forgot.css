@@ -1,28 +1,74 @@
-#auth3{
-    position:absolute;
-    background-color: white;
-    border:2px solid black;
-    border-radius:1%;
-    left:820px;
-    width:320px;
-    height:180px;
-    top:280px;
+#auth3 {
+  position: absolute;
+  left: 60vw;
+  width:25vw;
+  height:24vh;
+  top: 40vh;
+  background: rgba(255, 204, 204, 0.4);
+border: 2px solid rgba(18, 18, 18, 0.53);
+box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
+border-radius: 40px;
 }
-#log2{
-position:absolute;
-top:-90px;
-left:935px;
-color:black;
+#log2 {
+  position: absolute;
+  top: -5vh;
+  left: 61vw;
+  font-size: 2.8vw;
+  color:#DB0007;
 }
-#errors5{
-    position:absolute;
-    color:rgb(233, 89, 89);
-    left:15px;
-    top:60px;
-    font-weight: bold; 
+#errors5 {
+  position: absolute;
+  color: #DB0007;
+  left: 1.5vw;
+  top: 9vh;
+  font-weight: bold;
 }
-@media (max-width:700px){
-    #auth3{
-        width:60vw;  
-    } 
-    }
+#otpsend{
+    position: absolute;
+  width: 13.88vw;
+  top: 13vh;
+  left: 5.5vw;
+  height: 5vh;
+  background: rgba(219, 0, 7, 0.2);
+  border: 1px solid #db0007;
+  border-radius: 45px;
+  color: #db0007;
+}
+@media (max-width:440px){
+    #logs {
+        position: absolute;
+        width: 100vw;
+        top: 45vh;
+        left: 0px;
+      } 
+      #hungry {
+      display:none;
+      }
+      #order{
+     display:none;
+      }
+      #auth3 {
+        left: 10vw;
+        width: 79vw;
+        height: 24vh;
+        top: 25vh;
+      }
+      #log2 {
+        top: -20vh;
+        left: 14vw;
+        font-size: 9vw;
+      }
+      #email {
+        width: 70vw;
+        left:4vw;
+      }
+      #otpsend{
+        width:40vw;
+        left:20vw;
+      }
+      #errors5 {
+        top:9vh;
+        font-size: 3.5vw;
+        left: 5.5vw;
+      }
+}

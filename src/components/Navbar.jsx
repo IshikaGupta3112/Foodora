@@ -1,13 +1,13 @@
-import react from 'react';
-import '/Users/ishikagupta/Desktop/Foodora/foodora/foodora/src/index.css';
-import Foodora from 'Foodora.png';
-import Navs from './navs.jsx';
-function Navbar(){
-return(
+import react from "react";
+import "/Users/ishikagupta/Desktop/Foodora/foodora/foodora/src/index.css";
+import background from '../assets/background.svg';
+import Navs from "./navs.jsx";
+function Navbar() {
+  return (
     <>
-    <Navs />
-        <img src={Foodora} alt='' id='back'/>
-        </>
-)
+      <Navs />
+      <img src={background} alt="" id="back" />
+    </>
+  );
 }
 export default Navbar;

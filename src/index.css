@@ -10,25 +10,19 @@ body{
 }
 #back{
 position: absolute;
-height: 680px;
-width:1440px;
-top: 107px;
-left: 1px;
-right: -1px;
+height: 85vh;
+width:100vw;
+right: 0.347vw;
+top: 14vh;
 }
 nav{
     position: absolute;
-width: 1400px;
-height: 81px;
-left: 20px;
-top: 13px;
-
-background: #A289D1;
-    /* position: absolute;
-    width: 1440px;
-    height: 81px;
-    background: #A289D1;
-} */
+    height:6.52vw;
+    width:100vw;
+    left: 0vw;
+    right: 0vw;
+    top: 0vh; 
+    background: #FFBC0D;
 }
 nav ul{
     display:flex;
@@ -36,53 +30,47 @@ nav ul{
     float:right;
 }
 nav ul li{
-    padding:3vh; 
-    font-size: 3vh;
+    padding:2.5vw 2vw; 
+    font-size: 1vw;
 }
 nav ul li a{
     text-decoration: none;
-    color:black;
+    color: #DB0007;
+  
 }
-nav p{
-    padding:2vh;
-    float:left;
-    color:brown;
-    font-weight: bold;
-    font-size: 5vh;
+nav ul li a:active,:visited{
+    padding:1vh;
+    background-color: white;
+    border-radius: 10px;
 }
-nav i{
-    float:right;
-   padding:3vh;
-    color:white;   
+#logos{
+    position: absolute;
+    width: 13.194vw;
+    height: 2.77vw;
+    left: 1.38vw;
+    top:2vw;
+    bottom:1.3vw;
+    z-index:7;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 900;
+    font-size:2.22vw;
+    color: #DB0007; 
 }
-#check{
- display:none;
-}
-
-@media (max-width:700px){
-    #check{
-        display:block;
-       }  
-       nav ul{
-        width:100%;
-        background-color: rgb(247, 180, 129);
-        position:fixed;
-        text-align: center;
-        transition: all .5s;
-        top:10vh;
-        left:-100vh;
-        height:100vh;
-        flex-direction: column;
-       }
-       nav ul li{
-        padding:6vh;
-        font-size:4vh;
-       }
-}
-@media (max-width:230px){
-    nav i{
-        float:right;
-       padding:0.1vh;
-        color:white;
+@media (max-width:440px){
+    nav{
+        height:6vh;
+    } 
+    #logos{
+        width: 20vh;
+        height: 7vh;
+        left: 3vw;
+        top:1vh;
+        font-weight: 900;
+        font-size:3vh;
+    }
+    nav ul li{
+        padding:2vh 1vh; 
+        font-size: 1.5vh;
     }
 }

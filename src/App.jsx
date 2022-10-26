@@ -12,7 +12,15 @@ import {
     Route,
     Link
   } from "react-router-dom";
+  // const cors = require('cors');
+  // const corsOptions ={
+  //     origin:'http://localhost:3000', 
+  //     credentials:true,           
+  //     optionSuccessStatus:200
+  // }
+  // App.use(cors(corsOptions));
 function App(){
+  
     return(
         <div>   
              <Router>

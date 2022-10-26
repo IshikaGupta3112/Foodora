@@ -1,112 +1,182 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
-    overflow: hidden;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
 }
-body{
-    background-color:#FFFFFF;
+body {
+  background-color: #ffffff;
 }
-#eye{
-    position:absolute;
-    top:115px;
-    left:270px;
+#hungry {
+  position: absolute;
+  color: #db0007;
+  top: -18vh;
+  left: 2vw;
+  font-weight: bold;
 }
-#log{
-    position:absolute;
-    top:-130px;
-    left:935px;
-    color:black;
+#order {
+  position: absolute;
+  top: 22vh;
+  left: 1.8vw;
+  font-weight: bold;
 }
-#auth{
-    position:absolute;
-    background-color: white;
-    border:2px solid black;
-    border-radius:1%;
-    left:820px;
-    width:320px;
-    height:390px;
-    top:220px;
+#mssg a {
+  text-decoration: none;
+  color: #db0007;
+  font-weight: bold;
 }
- #form1{
-   display:flex;
-   justify-content: center;
-   align-items: center;
-   flex-direction: column;
+#eye {
+  position: absolute;
+  z-index: 2;
+  top: 13.7vh;
+  right: 2vw;
 }
-#form1 input{
-    border-radius:12px;
-    padding:10px;
-    margin-top:30px; 
-    width:290px; 
-    background-color:  #D9D9D9;
+#log {
+  position: absolute;
+  top: -15vh;
+  left: 68vw;
+  color: #db0007;
+  font-size: 2.8vw;
 }
-#form1 button{
-    background-color:  #4C4EF9;
-    width:290px;
-    border-radius:12px;
-    padding:8px;
-    margin-top:40px;
+#auth {
+  position: absolute;
+  left: 60vw;
+  width: 25vw;
+  height: 46vh;
+  top: 32vh;
+  background: rgba(255, 204, 204, 0.4);
+  border: 2px solid rgba(18, 18, 18, 0.53);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
+  border-radius: 40px;
 }
-#form1 button a{
-    text-decoration: none;
-    color:white;
+#email {
+  position: absolute;
+  border-radius: 5vh;
+  top: 3.5vh;
+  height: 5vh;
+  width: 22.6vw;
+  background-color: white;
+  left: 1vw;
 }
-#form1 p {
-    margin-top:1vh;
-    font-weight: bold;
-    font-size: 15px;
+#password {
+  position: absolute;
+  border-radius: 5vh;
+  top: 12vh;
+  height: 5vh;
+  width: 22.6vw;
+  background-color: white;
+  left: 1vw;
 }
-#forgot{
-    text-decoration: none;
-    color:black;
+#buttonlog {
+  position: absolute;
+  width: 13.88vw;
+  top: 22vh;
+  left: 5.5vw;
+  height: 5vh;
+  background: rgba(219, 0, 7, 0.2);
+  border: 1px solid #db0007;
+  border-radius: 45px;
+  color: #db0007;
 }
-#form1 #newTo{
-    background-color:  #4C4EF9;
-    border-radius:12px;
-    padding:8px;
-    margin-top:20px; 
-    width:200px;
+#frg {
+  position: absolute;
+  text-align: center;
+  top: 29vh;
+  left: 5.1vw;
+  font-weight: 900;
+  font-size: 1.3vw;
 }
-#logs{
-position: absolute;
-width: 600px;
-height: 600px;
-left: 50px;
-top: 100px;
-/* border: 2px solid #121212; */
-/* filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.4)); */
+#forgot {
+  text-decoration: none;
+  color:  #db0007;
 }
-#error1{
-    position: absolute;
-    top:60px;
-    color:rgb(233, 89, 89);
-    left:15px;
-    font-weight: bold; 
+#logs {
+  position: absolute;
+  width: 50vw;
+  height: 70vh;
+  left: 0px;
+  top: 14vw;
 }
-#error2{
-    position: absolute;
-    top:132px;
-    color:rgb(233, 89, 89);
-    left:15px;
-    font-weight: bold; 
+#error1 {
+  position: absolute;
+  top: 8.5vh;
+  font-size: 1vw;
+  color: #db0007;
+  left: 1.5vw;
+  font-weight: bold;
 }
-/* @media (max-width:700px){
-#auth{
-    width:60vw;  
-} 
- #form1 input{
-    width:56vw;
+#error2 {
+  position: absolute;
+  font-size: 1vw;
+  top: 17vh;
+  color: #db0007;
+  left: 1.5vw;
+  font-weight: bold;
 }
-#form1 button{
-    width:56vw;   
+#mssg {
+  position: absolute;
+  top: 36vh;
+  font-weight: 900;
+  font-size: 1.3vw;
+  left: 3.5vw;
 }
-#form1 #newTo{
-    width:46vw;
+@media (max-width:440px){
+    #logs {
+        position: absolute;
+        width: 100vw;
+        top: 45vh;
+        left: 0px;
+      } 
+      #hungry {
+      display:none;
+      }
+      #order{
+     display:none;
+      }
+      #auth {
+        left: 10vw;
+        width: 79vw;
+        height: 40vh;
+        top: 20vh;
+      }
+      #log {
+        top: -25vh;
+        left: 35vw;
+        font-size: 9vw;
+      }
+      #email {
+        width: 70vw;
+        left:4vw;
+      }
+      #password{
+        width: 70vw;
+        left:4vw;
+      }
+      #buttonlog{
+        width:40vw;
+        left:20vw;
+      }
+      #frg {
+        left:17vw;
+        font-size: 4.5vw;
+      }
+      #mssg {
+        top:34vh;
+        font-size: 4.5vw;
+        left: 12vw;
+      }
+      #eye {
+        top: 13.7vh;
+        right: 7vw;
+      }
+      #error1 {
+        font-size: 3.5vw;
+        left: 6vw;
+
+      }
+      #error2 {
+        font-size: 3.5vw;
+        left: 6vw;
+    
+      }
 }
-}
-@media (max-width:320px){
-    #auth{
-        height:60vh;
-    }
-} */
