@@ -42,7 +42,7 @@ function Otps() {
           ></input>
           <p id="errors6">{errors.otp}</p>
           {/* <Link to='/main'> */}
-          <button type="submit" id='verify'>Verify</button>
+          <button type="submit" id='verify'>VERIFY</button>
           {/* </Link> */}
           {/* if otp enter correct then main page linking */}
           <p id='otpp'>Didn't get? <Link to="/otp">

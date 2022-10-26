@@ -11,13 +11,13 @@ body {
   position: absolute;
   color: #db0007;
   top: -18vh;
-  left: 2vw;
+  left: 2.5vw;
   font-weight: bold;
 }
 #order {
   position: absolute;
-  top: 22vh;
-  left: 1.8vw;
+  top: 23.5vh;
+  left: 2.5vw;
   font-weight: bold;
 }
 #mssg a {
@@ -81,8 +81,8 @@ body {
 #frg {
   position: absolute;
   text-align: center;
-  top: 29vh;
-  left: 5.1vw;
+  top: 30vh;
+  left: 5.7vw;
   font-weight: 900;
   font-size: 1.3vw;
 }

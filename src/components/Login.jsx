@@ -109,7 +109,7 @@ function Login() {
             onChange={handleInput}
           ></input>
           <p id="error2">{errors.password}</p>
-          <button type="submit" onClick={handleApi} id='buttonlog'>Login</button>
+          <button type="submit" onClick={handleApi} id='buttonlog'>LOGIN</button>
           <Link to="/forgot" id="forgot">
             <p id='frg'>Forgotten Password?</p>
           </Link>

@@ -166,7 +166,7 @@ function Signup() {
             )}
             <p id="errors4">{error2.repasswords}</p>
             <Link to='/otp2'>
-            <button type="submit" onClick={handleApi2}>Signup</button>
+            <button type="submit" onClick={handleApi2}>SIGNUP</button>
             </Link>
             {/* if signup successfull link to otp */}
             <p id='customer'>Already a customer?  <Link to="/login">

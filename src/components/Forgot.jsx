@@ -52,7 +52,7 @@ function Forgot() {
           ></input>
           <p id="errors5">{errors.email}</p>
           <Link to="/otp">
-            <button type="submit" id='otpsend'>Send OTP</button>
+            <button type="submit" id='otpsend'>SEND OTP</button>
           </Link>
           {/* on sub,it if coreect link to otp */}
         </form>
