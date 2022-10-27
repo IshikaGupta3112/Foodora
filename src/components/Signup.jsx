@@ -21,11 +21,16 @@ function Signup() {
       var password = userSign.passwords;
       var data1={username , email , password}
       const handleApi2=()=>{
+        // axios.all([axios.post('https://foodorabackend-production.up.railway.app/user/register',data1),
+        // axios.post('https://foodorabackend-production.up.railway.app/user/verify/send',{email:userSign.emails})])
         axios
        .post('https://foodorabackend-production.up.railway.app/user/register',data1)
        .then(res=>
        console.log(res)
        )
+      // .then(axios.spread((data1, data2) => {
+      //   console.log('data1', data1, 'data2', data2)
+      // }))
        .catch(err2=>{
         console.log(err2);
        });

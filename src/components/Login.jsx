@@ -1,4 +1,4 @@
-import react ,{useEffect} from "react";
+import react ,{useEffect , useState} from "react";
 import loginimg from '../assets/loginimg.svg';
 import Navs from "./navs.jsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -12,6 +12,7 @@ function Login() {
         email: "",
         password: "",
       });
+    const [mssg , setMssg] =useState('');
     var email = userReg.email;
     var password = userReg.password;
     var data ={email , password}
@@ -19,7 +20,7 @@ function Login() {
         axios
         .post('https://foodorabackend-production.up.railway.app/user/signin',data)
         .then((response)=>{
-            console.log(response)
+            setMssg(response.data.msg)
         })
         .catch((err)=>{
             console.log(err);
@@ -77,6 +78,7 @@ function Login() {
     <>
       <Navs />
       <div>
+        <p id='backend'>{mssg}</p>
         <h1 id='hungry'>HUNGRY??</h1>
         <p id='order'>Order Now From Your Favourite Restraunt..</p>
         <img src={loginimg} alt="hello" id="logs" />

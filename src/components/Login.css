@@ -53,8 +53,8 @@ body {
   position: absolute;
   border-radius: 5vh;
   top: 3.5vh;
-  height: 5vh;
   width: 22.6vw;
+  padding:0.5vw;
   background-color: white;
   left: 1vw;
 }
@@ -62,7 +62,7 @@ body {
   position: absolute;
   border-radius: 5vh;
   top: 12vh;
-  height: 5vh;
+  padding:0.5vw;
   width: 22.6vw;
   background-color: white;
   left: 1vw;
@@ -119,6 +119,15 @@ body {
   font-weight: 900;
   font-size: 1.3vw;
   left: 3.5vw;
+}
+#backend{
+  position:absolute;
+  /* z-index:2; */
+  top:27vh;
+  left:67.5vw;
+  background-color: rgb(244, 199, 18);
+  padding:0.1vw 0.5vw;
+  border-radius:0.5vw;
 }
 @media (max-width:440px){
     #logs {
