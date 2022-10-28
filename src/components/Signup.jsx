@@ -9,11 +9,8 @@ import { faEye, faEyeSlash } from "@fortawesome/fontawesome-free-solid";
 import { Link } from "react-router-dom";
 function Signup() {
   var x;
+    const [status , setStatus] = useState(false);
     const [check , isCheck]=useState(false);
-    // useEffect(()=>{
-    //   if(x==0) {isCheck(true)}
-    //   else {isCheck(false)}
-    // } , []);
     const[mssg, setmssg]=useState('');
     const [userSign, setUserSign] = useState({
         fullname: "",
@@ -26,34 +23,24 @@ function Signup() {
       var password = userSign.passwords;
       var data1={username , email , password}
       const handleApi2=()=>{
-        // axios.all([axios.post('https://foodorabackend-production.up.railway.app/user/register',data1),
-        // axios.post('https://foodorabackend-production.up.railway.app/user/verify/send',{email:userSign.emails})])
+        if(check){
         axios
        .post('https://foodorabackend-production.up.railway.app/user/register',data1)
        .then(res=>{
-      // length=4;
-      // length = res.data.msg.length;
-      // status = res.data.success;
-      // if(status=="true"){
-      //   isCheck(false);
-      // }
-        // length?isCheck(false):isCheck(true);
-        // console.log(check);
-        // console.log(length);
         setmssg(res.data.msg);
-        console.log(mssg);
-       console.log(res);
+       console.log(res.data.msg);
+        setStatus(res.data.success);
+        console.log(res.data.success);
+        // console.log(mssg);
+      //  console.log(res);
        }
        )
-      // .then(axios.spread((data1, data2) => {
-      //   console.log('data1', data1, 'data2', data2)
-      // }))
        .catch(err2=>{
         console.log(err2);
         setmssg(err2.response.data.msg)
        });
-     }; 
-    
+     }
+      }
   const [show1, setShow1] = useState(false);
   const [show2, setShow2] = useState(false);
 
@@ -64,9 +51,6 @@ function Signup() {
   function showHide2() {
     setShow2(!show2);
   }
-
-  
-
   const [records, setRecords] = react.useState([]);
 
   const [error2, setError2] = react.useState({});
@@ -76,6 +60,7 @@ function Signup() {
   function handleInputs(event) {
     const name = event.target.name;
     const value = event.target.value;
+    setError2(validates(userSign));
     setUserSign({ ...userSign, [name]: value });
     localStorage.setItem("myMail" , userSign.emails);
   }
@@ -105,15 +90,15 @@ function Signup() {
     if (!values.passwords) {
       errors.passwords = "Password is required!";
     } 
-    // else if (values.passwords.length < 8) {
-    //   errors.passwords = "At least 8 chars needed!";
-    // } else if (values.passwords.match(/[A-Z]/) == null) {
-    //   errors.passwords = "Password must have one uppercase";
-    // } else if (values.passwords.match(/[0-9]/) == null) {
-    //   errors.passwords = "Password must have one number";
-    // } else if (values.passwords.match(/[!@#$%^&*]/) == null) {
-    //   errors.passwords = "Password must have 1 special symbol";
-    // }
+    else if (values.passwords.length < 8) {
+      errors.passwords = "At least 8 chars needed!";
+    } else if (values.passwords.match(/[A-Z]/) == null) {
+      errors.passwords = "Password must have one uppercase";
+    } else if (values.passwords.match(/[0-9]/) == null) {
+      errors.passwords = "Password must have one number";
+    } else if (values.passwords.match(/[!@#$%^&*]/) == null) {
+      errors.passwords = "Password must have 1 special symbol";
+    }
     if (!values.repasswords) {
       errors.repasswords = "Re-enter password!";
     }
@@ -198,7 +183,7 @@ function Signup() {
             )}
             <p id="errors4">{error2.repasswords}</p>
 
-            {(check)?((<Link to='/otp2'>
+            {(status)?((<Link to='/otp2'>
             <button type="submit" onClick={handleApi2}>SIGNUP</button>
             </Link>)):
             <button type="submit" onClick={handleApi2}>SIGNUP</button>

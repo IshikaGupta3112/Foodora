@@ -6,21 +6,19 @@ import { faEye, faEyeSlash } from "@fortawesome/fontawesome-free-solid";
 import axios from 'axios';
 import "./Login.css";
 import { Link } from "react-router-dom";
-
 function Login() {
-   var x;
+   const[check , isCheck]=useState(false);
     const [userReg, setuserReg] = react.useState({
         email: "",
         password: "",
       });
-    const [mssg , setMssg] =useState('');
+    const [mssg , setMssg] =useState(null);
     var email = userReg.email;
     var password = userReg.password;
     var data ={email , password}
     const handleApi =()=>{
-      console.log(x);
-      if(x==0){
-   (axios
+      if(check){
+       axios
         .post('https://foodorabackend-production.up.railway.app/user/signin',data)
         .then((response)=>{
             setMssg(response.data.msg);
@@ -30,9 +28,10 @@ function Login() {
             console.log(err);
             console.log(err.response.data.msg);
             setMssg(err.response.data.msg);
-        }))
+        });
       }
     }
+    
   const [show, setShow] = react.useState(false);
   function showHide() {
     setShow(!show);
@@ -46,6 +45,7 @@ function Login() {
   function handleInput(event) {
     const name = event.target.name;
     const value = event.target.value;
+    setErrors(validate(userReg));
     setuserReg({ ...userReg, [name]: value });
   }
   function handleSubmit(event) {
@@ -53,7 +53,6 @@ function Login() {
     event.preventDefault();
     const newRecord = { userReg };
     setRecord([...record, newRecord]);
-    console.log(record);
     setErrors(validate(userReg));
     setIsSubmit(true);
   }
@@ -71,24 +70,19 @@ function Login() {
     if (!values.password) {
       error.password = "Password is required!";
     } 
-    else if (values.password.length < 8) {
-      error.password = "At least 8 chars needed!";
-    } else if (values.password.match(/[A-Z]/) == null) {
-      error.password = "Password must have one uppercase";
-    } else if (values.password.match(/[0-9]/) == null) {
-      error.password = "Password must have one number";
-    } else if (values.password.match(/[!@#$%^&*]/) == null) {
-      error.password = "Password must have 1 special symbol";
-    }
-    // setInterval()
+
+    var x;
     x=Object.keys(errors).length;
+    console.log(x);
+    x?isCheck(false):isCheck(true);
+    console.log(check);
     return error;
   }
   return (
     <>
       <Navs />
       <div>
-        <p id='backend'>{mssg}</p>
+        <p id='backend'>{mssg?mssg:'loading'}</p>
         <h1 id='hungry'>HUNGRY??</h1>
         <p id='order'>Order Now From Your Favourite Restraunt..</p>
         <img src={loginimg} alt="hello" id="logs" />
@@ -128,7 +122,6 @@ function Login() {
           <p id='mssg'>New To Foodora? <Link to="/signup">
            SIGN UP
           </Link></p>
-         
         </form>
       </div>
       </div>
