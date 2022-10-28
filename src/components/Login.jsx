@@ -8,6 +8,7 @@ import "./Login.css";
 import { Link } from "react-router-dom";
 
 function Login() {
+   var x;
     const [userReg, setuserReg] = react.useState({
         email: "",
         password: "",
@@ -17,14 +18,20 @@ function Login() {
     var password = userReg.password;
     var data ={email , password}
     const handleApi =()=>{
-        axios
+      console.log(x);
+      if(x==0){
+   (axios
         .post('https://foodorabackend-production.up.railway.app/user/signin',data)
         .then((response)=>{
-            setMssg(response.data.msg)
+            setMssg(response.data.msg);
+            console.log(response);
         })
         .catch((err)=>{
             console.log(err);
-        });
+            console.log(err.response.data.msg);
+            setMssg(err.response.data.msg);
+        }))
+      }
     }
   const [show, setShow] = react.useState(false);
   function showHide() {
@@ -63,7 +70,8 @@ function Login() {
     }
     if (!values.password) {
       error.password = "Password is required!";
-    } else if (values.password.length < 8) {
+    } 
+    else if (values.password.length < 8) {
       error.password = "At least 8 chars needed!";
     } else if (values.password.match(/[A-Z]/) == null) {
       error.password = "Password must have one uppercase";
@@ -72,6 +80,8 @@ function Login() {
     } else if (values.password.match(/[!@#$%^&*]/) == null) {
       error.password = "Password must have 1 special symbol";
     }
+    // setInterval()
+    x=Object.keys(errors).length;
     return error;
   }
   return (

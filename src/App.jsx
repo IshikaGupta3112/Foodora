@@ -6,12 +6,15 @@ import Forgot from './components/Forgot.jsx';
 import Otp from './components/Otp.jsx'
 import Otp2 from './components/Otp2.jsx'
 import Main from './components/Main.jsx';
+import Password from './components/Password.jsx';
 import {
     BrowserRouter as Router,
     Routes,
     Route,
     Link
   } from "react-router-dom";
+    
+    var y = localStorage.getItem("check");
   // const cors = require('cors');
   // const corsOptions ={
   //     origin:'http://localhost:3000', 
@@ -38,7 +41,9 @@ function App(){
                      <Route path='/main' exact element={<Main />}>
                      </Route>    
                      <Route path='/otp2' exact element={<Otp2 />}>
-                     </Route>                    
+                     </Route>   
+                     <Route path='/password' exact element={<Password />}>
+                     </Route>                 
 
              </Routes>
         </Router>

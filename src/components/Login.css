@@ -54,7 +54,7 @@ body {
   border-radius: 5vh;
   top: 3.5vh;
   width: 22.6vw;
-  padding:0.5vw;
+  padding:0.7vw;
   background-color: white;
   left: 1vw;
 }
@@ -62,13 +62,14 @@ body {
   position: absolute;
   border-radius: 5vh;
   top: 12vh;
-  padding:0.5vw;
+  padding:0.7vw;
   width: 22.6vw;
   background-color: white;
   left: 1vw;
 }
 #buttonlog {
   position: absolute;
+  cursor: pointer;
   width: 13.88vw;
   top: 22vh;
   left: 5.5vw;
