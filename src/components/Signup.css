@@ -108,6 +108,7 @@ border-radius: 2.77vw;
   left: 1.5vw;
   font-weight: bold;
   z-index: 2;
+  display:none;
 }
 #errors2 {
   position: absolute;
@@ -116,6 +117,7 @@ border-radius: 2.77vw;
   color: #DB0007;
   left: 1.5vw;
   font-weight: bold;
+  display:none;
 }
 #errors3 {
   position: absolute;
@@ -124,6 +126,7 @@ border-radius: 2.77vw;
   color:#DB0007;
   left: 1.5vw;
   font-weight: bold;
+  display:none;
 }
 #errors4 {
   position: absolute;
@@ -132,6 +135,7 @@ border-radius: 2.77vw;
   color: #DB0007;
   left: 1.5vw;
   font-weight: bold;
+  display:none;
 }
 #backendmssg{
   position:absolute;
@@ -165,19 +169,19 @@ border-radius: 2.77vw;
      left:33vw;
      font-size:9vw;
      }
-     #fullname{
+     .fullname{
         width: 70vw;
         left:4vw;
      }
-      #emails {
+      .emails {
         width: 70vw;
         left:4vw;
       }
-      #passwords{
+      .passwords{
         width: 70vw;
         left:4vw;
       }
-      #repasswords{
+      .repasswords{
         width: 70vw;
         left:4vw;
       }

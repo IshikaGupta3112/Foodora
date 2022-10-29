@@ -11,18 +11,9 @@ function Forgot() {
   });
   const [mssg,setMssg]=useState('');
   var email=userForgot.email;
-  const handleApi3=()=>{
-    axios
-    .post("https://foodorabackend-production.up.railway.app/user/verify/send",{email})
-    .then(res=>{
-      setMssg(res.data.msg);
-      console.log(res.data.msg);
-    })
-    .catch(err=>{
-      console.log(err);
-    })
-  }
-  const [errors, setErrors] = react.useState({});
+
+  
+  // const [errors, setErrors] = react.useState({});
   const [isSubmit, setIsSubmit] = react.useState(false);
 
   function handleInput(event) {
@@ -33,24 +24,33 @@ function Forgot() {
   }
 
   function handleSubmit(event) {
+    axios
+    .post("https://foodorabackend-production.up.railway.app/user/verify/send",{email})
+    .then(res=>{
+      setMssg(res.data.msg);
+      console.log(res.data.msg);
+    })
+    .catch(err=>{
+      console.log(err);
+    })
     event.preventDefault();
-    setErrors(validate(userForgot));
+    // setErrors(validate(userForgot));
     setIsSubmit(true);
    
   }
-  function validate(values) {
-    const error = {};
-    if (!values.email) {
-      error.email = "Email is required!";
-    } else if (
-      values.email.match(
-        /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
-      ) == null
-    ) {
-      error.email = "Invalid mail";
-    }
-    return error;
-  }
+  // function validate(values) {
+  //   const error = {};
+  //   if (!values.email) {
+  //     error.email = "Email is required!";
+  //   } else if (
+  //     values.email.match(
+  //       /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+  //     ) == null
+  //   ) {
+  //     error.email = "Invalid mail";
+  //   }
+  //   return error;
+  // }
   return (
     <>
       <Navs />
@@ -61,16 +61,19 @@ function Forgot() {
       <div id="auth3">
         <form id="form1" onSubmit={handleSubmit}>
           <input
-            type="text"
+            type="email"
             placeholder="Enter your email for verification"
-            id="email"
+            className="email"
             name="email"
             value={userForgot.email}
             onChange={handleInput}
+            required
           ></input>
-          <p id="errors5">{errors.email}</p>
+          {/* <p id="errors5">{errors.email}</p> */}
           <Link to="/otp">
-            <button type="submit" id='otpsend' onClick={handleApi3}>SEND OTP</button>
+            <button type="submit" id='otpsend'
+            //  onClick={handleApi3}
+             >SEND OTP</button>
           </Link>
           {/* on sub,it if coreect link to otp */}
         </form>

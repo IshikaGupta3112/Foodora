@@ -67,7 +67,7 @@ body {
   background-color: white;
   left: 1vw;
 }
-#buttonlog {
+.loginbtn {
   position: absolute;
   cursor: pointer;
   width: 13.88vw;
@@ -105,6 +105,7 @@ body {
   color: #db0007;
   left: 1.5vw;
   font-weight: bold;
+  display:none;
 }
 #error2 {
   position: absolute;
@@ -113,6 +114,7 @@ body {
   color: #db0007;
   left: 1.5vw;
   font-weight: bold;
+  display:none;
 }
 #mssg {
   position: absolute;
@@ -126,7 +128,7 @@ body {
   /* z-index:2; */
   top:27vh;
   left:67.5vw;
-  background-color: rgb(244, 199, 18);
+  color:red;
   padding:0.1vw 0.5vw;
   border-radius:0.5vw;
 }

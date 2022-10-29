@@ -57,10 +57,12 @@ border-radius: 40px;
     font-size: 1.3vw;
     left:5vw;
 }
-#otpp a{
+#resend{
     text-decoration: none;
-    color: #db0007;
+    font-size: 1.3vw;
     font-weight: bold;
+    background-color:rgba(247, 107, 107, 0.1);
+    border:0
 }
 #enters{
     position:absolute;

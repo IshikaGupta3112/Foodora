@@ -1,11 +1,10 @@
-
 import react ,{useEffect , useState} from "react";
 import loginimg from '../assets/loginimg.svg';
 import Navs from "./navs.jsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/fontawesome-free-solid";
 import axios from 'axios';
-import "./Login.css";
+import "./password.css";
 import { Link } from "react-router-dom";
 
 function Password() {
@@ -13,22 +12,6 @@ function Password() {
         password: "",
         repassword: "",
       });
-    // const [mssg , setMssg] =useState('');
-    var password = userReg.password;
-    var repassword = userReg.repassword;
-    var data ={password , repassword}
-    // const handleApi =()=>{
-    //     axios
-    //     .post('https://foodorabackend-production.up.railway.app/user/signin',data)
-    //     .then((response)=>{
-    //         setMssg(response.data.msg);
-    //         console.log(response);
-    //     })
-    //     .catch((err)=>{
-    //         console.log(err);
-    //     });
-    // }
-
     const [show1, setShow1] = useState(false);
     const [show2, setShow2] = useState(false);
   
@@ -80,24 +63,24 @@ function Password() {
         <img src={loginimg} alt="hello" id="logs" />
       </div>
       <div class='headerss'>
-      <h1 id="log">LOGIN</h1>
-      <div id="auth">
+      <h1 id="log5">Reset Password</h1>
+      <div id="authed">
         <form id="form1" onSubmit={handleSubmit}>
         <input
               type={show1 ? "text" : "password"}
               placeholder="Password"
               name="password"
-              id="password"
+              id="pwd"
               className="inp"
               value={userReg.password}
               onChange={handleInput}
             ></input>
             {show1 ? (
-              <FontAwesomeIcon icon={faEye} id="eye1" onClick={showHide1} />
+              <FontAwesomeIcon icon={faEye} id="eyes1" onClick={showHide1} />
             ) : (
               <FontAwesomeIcon
                 icon={faEyeSlash}
-                id="eye1"
+                id="eyes1"
                 onClick={showHide1}
               />
             )}
@@ -106,30 +89,24 @@ function Password() {
               type={show2 ? "text" : "password"}
               placeholder="Re-enter password"
               name="repassword"
-              id="repassword"
+              id="repwd"
               className="inp"
               value={userReg.repassword}
               onChange={handleInput}
             ></input>
             {show2 ? (
-              <FontAwesomeIcon icon={faEye} id="eye2" onClick={showHide2} />
+              <FontAwesomeIcon icon={faEye} id="eyes2" onClick={showHide2} />
             ) : (
               <FontAwesomeIcon
                 icon={faEyeSlash}
-                id="eye2"
+                id="eyes2"
                 onClick={showHide2}
               />
             )}
             <p id="errors4">{errors.repassword}</p>
           <button type="submit" 
-        //   onClick={handleApi} 
-          id='buttonlog'>LOGIN</button>
-          <Link to="/forgot" id="forgot">
-            <p id='frg'>Forgotten Password?</p>
-          </Link>
-          <p id='mssg'>New To Foodora? <Link to="/signup">
-           SIGN UP
-          </Link></p>
+          id='pwdbtn'>Submit</button>
+          
          
         </form>
       </div>
