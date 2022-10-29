@@ -22,25 +22,25 @@ function Signup() {
       var email=userSign.emails;
       var password = userSign.passwords;
       var data1={username , email , password}
-      const handleApi2=()=>{
-        if(check){
-        axios
-       .post('https://foodorabackend-production.up.railway.app/user/register',data1)
-       .then(res=>{
-        setmssg(res.data.msg);
-       console.log(res.data.msg);
-        setStatus(res.data.success);
-        console.log(res.data.success);
-        // console.log(mssg);
-      //  console.log(res);
-       }
-       )
-       .catch(err2=>{
-        console.log(err2);
-        setmssg(err2.response.data.msg)
-       });
-     }
-      }
+      // const handleApi2=()=>{
+    //     if(check){
+    //     axios
+    //    .post('https://foodorabackend-production.up.railway.app/user/register',data1)
+    //    .then(res=>{
+    //     setmssg(res.data.msg);
+    //    console.log(res.data.msg);
+    //     setStatus(res.data.success);
+    //     console.log(res.data.success);
+    //     // console.log(mssg);
+    //   //  console.log(res);
+    //    }
+    //    )
+    //    .catch(err2=>{
+    //     console.log(err2);
+    //     setmssg(err2.response.data.msg)
+    //    });
+    //  }
+      // }
   const [show1, setShow1] = useState(false);
   const [show2, setShow2] = useState(false);
 
@@ -64,17 +64,9 @@ function Signup() {
     setUserSign({ ...userSign, [name]: value });
     localStorage.setItem("myMail" , userSign.emails);
   }
-  function handleSubmits(event) {
-    event.preventDefault();
-    const newRecords = { userSign };
-    setRecords([...records, newRecords]);
-    console.log(records);
-    setError2(validates(userSign));
-    setIsSubmitted(true);
-  }
 
   function validates(values) {
-    const errors = {};
+    let errors = {};
     if (!values.fullname) {
       errors.fullname = "Username is required!";
     }
@@ -105,15 +97,41 @@ function Signup() {
     if (values.repasswords != values.passwords) {
       errors.repasswords = "Passwords did not match";
     }
-
-    var x;
     x=Object.keys(errors).length;
     console.log(x);
-    x?isCheck(false):isCheck(true);
+    (x!==0)?isCheck(false):isCheck(true);
     console.log(check);
     return errors;
   }
- 
+
+  function handleSubmits(event){
+    console.log(userSign);
+    setError2(validates(userSign));
+    console.log(error2 , check);
+    if(check){
+      axios
+     .post('https://foodorabackend-production.up.railway.app/user/register',data1)
+     .then(res=>{
+      setmssg(res.data.msg);
+     console.log(res.data.msg);
+      setStatus(res.data.success);
+      console.log(res.data.success);
+     }
+     )
+     .catch(err2=>{
+      console.log(err2);
+      setmssg(err2.response.data.msg)
+     });
+   }
+    event.preventDefault();
+    const newRecords = { userSign };
+    setRecords([...records, newRecords]);
+    setIsSubmitted(true);
+  }
+
+
+  
+
   return (
     <>
       <Navs />
@@ -184,9 +202,13 @@ function Signup() {
             <p id="errors4">{error2.repasswords}</p>
 
             {(status)?((<Link to='/otp2'>
-            <button type="submit" onClick={handleApi2}>SIGNUP</button>
+            <button type="submit" 
+            // onClick={handleApi2}
+            >SIGNUP</button>
             </Link>)):
-            <button type="submit" onClick={handleApi2}>SIGNUP</button>
+            <button type="submit" 
+            // onClick={handleApi2}
+            >SIGNUP</button>
             }
 
             {/* <Link to='/otp2'> */}

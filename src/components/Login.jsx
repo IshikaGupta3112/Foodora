@@ -1,25 +1,51 @@
-import react ,{useEffect , useState} from "react";
+import React ,{useState}from 'react' ;
 import loginimg from '../assets/loginimg.svg';
 import Navs from "./navs.jsx";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEye, faEyeSlash } from "@fortawesome/fontawesome-free-solid";
-import axios from 'axios';
 import "./Login.css";
 import { Link } from "react-router-dom";
-function Login() {
-   const[check , isCheck]=useState(false);
-    const [userReg, setuserReg] = react.useState({
-        email: "",
-        password: "",
-      });
-    const [mssg , setMssg] =useState(null);
-    var email = userReg.email;
-    var password = userReg.password;
-    var data ={email , password}
+import { useFormik} from 'formik';
+import axios from 'axios';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye, faEyeSlash } from "@fortawesome/fontawesome-free-solid";
+var x;
+function App () {
+  const initialValues ={
+    email: '',
+    password: ''
+    }
+  const onSubmit=values => {
+    console.log ('Form data', values)
+    }
+  const validate=values=>{
+    let errors={}
+    if(!values.email){
+      errors.email = 'required!';
+    }
+    if(!values.password){
+      errors.password='required';
+    }
+    x=Object.keys(errors).length;
+    console.log(x);
+    console.log(errors);
+    (x!==0)?isCheck(false):isCheck(true);
+    console.log(check);
+    return errors;
+    }
+    const [show, setShow] =useState(false);
+      function showHide() {
+        setShow(!show);
+      }
+  const[check , isCheck]=useState(false);
+  const [mssg , setMssg] =useState(null);
+  
     const handleApi =()=>{
+      console.log(check);
       if(check){
        axios
-        .post('https://foodorabackend-production.up.railway.app/user/signin',data)
+        .post('https://foodorabackend-production.up.railway.app/user/signin',{
+          email:formik.values.email,
+          password:formik.values.password
+        })
         .then((response)=>{
             setMssg(response.data.msg);
             console.log(response);
@@ -31,101 +57,52 @@ function Login() {
         });
       }
     }
-    
-  const [show, setShow] = react.useState(false);
-  function showHide() {
-    setShow(!show);
-  }
-  
-  const [record, setRecord] = react.useState([]);
 
-  const [errors, setErrors] = react.useState({});
-
-  const [isSubmit, setIsSubmit] = react.useState(false);
-  function handleInput(event) {
-    const name = event.target.name;
-    const value = event.target.value;
-    setErrors(validate(userReg));
-    setuserReg({ ...userReg, [name]: value });
-  }
-  function handleSubmit(event) {
-   
-    event.preventDefault();
-    const newRecord = { userReg };
-    setRecord([...record, newRecord]);
-    setErrors(validate(userReg));
-    setIsSubmit(true);
-  }
-  function validate(values) {
-    const error = {};
-    if (!values.email) {
-      error.email = "Email is required!";
-    } else if (
-      values.email.match(
-        /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
-      ) == null
-    ) {
-      error.email = "Invalid mail";
-    }
-    if (!values.password) {
-      error.password = "Password is required!";
-    } 
-
-    var x;
-    x=Object.keys(errors).length;
-    console.log(x);
-    x?isCheck(false):isCheck(true);
-    console.log(check);
-    return error;
-  }
-  return (
-    <>
-      <Navs />
-      <div>
-        <p id='backend'>{mssg?mssg:'loading'}</p>
-        <h1 id='hungry'>HUNGRY??</h1>
-        <p id='order'>Order Now From Your Favourite Restraunt..</p>
-        <img src={loginimg} alt="hello" id="logs" />
-      </div>
-      <div class='headerss'>
-      <h1 id="log">LOGIN</h1>
-      <div id="auth">
-        <form id="form1" onSubmit={handleSubmit}>
-          <input
-            type="text"
-            placeholder="Enter your email"
-            name="email"
-            id="email"
-            value={userReg.email}
-            onChange={handleInput}
-          ></input>
-          {show ? (
-            <FontAwesomeIcon icon={faEye} id="eye" onClick={showHide} />
-          ) : (
-            <FontAwesomeIcon icon={faEyeSlash} id="eye" onClick={showHide} />
-          )}
-
-          <p id="error1">{errors.email}</p>
-          <input
-            type={show ? "text" : "password"}
-            placeholder="Password"
-            name="password"
-            id="password"
-            value={userReg.password}
-            onChange={handleInput}
-          ></input>
-          <p id="error2">{errors.password}</p>
-          <button type="submit" onClick={handleApi} id='buttonlog'>LOGIN</button>
-          <Link to="/forgot" id="forgot">
-            <p id='frg'>Forgotten Password?</p>
-          </Link>
-          <p id='mssg'>New To Foodora? <Link to="/signup">
-           SIGN UP
-          </Link></p>
-        </form>
-      </div>
-      </div>
-    </>
-  );
+  const formik =useFormik({
+    initialValues,
+onSubmit ,
+validate 
+})
+console.log('Form Errors' , formik.errors);
+return(
+  <div>
+     <Navs />
+     <p id='backend'>{mssg}</p>
+     <h1 id='hungry'>HUNGRY??</h1>
+     <p id='order'>Order Now From Your Favourite Restraunt..</p>
+     <img src={loginimg} alt="hello" id="logs" />
+     <h1 id="log">LOGIN</h1>
+     <div id="auth">
+    <form id='form1' onSubmit ={formik.handleSubmit}>
+   <input 
+   type='text' 
+   name='email' id='email'
+   placeholder="Enter your email"
+   onChange={formik.handleChange}
+   value={formik.values.email}/>
+{formik.errors.email ? <div id='error1'>{formik.errors.email}</div>:null}
+{show ? (
+           <FontAwesomeIcon icon={faEye} id="eye" onClick={showHide} />
+      ) : (
+        <FontAwesomeIcon icon={faEyeSlash} id="eye" onClick={showHide} />
+       )}
+<input 
+   type={show ? "text" : "password"}
+   name='password' id='password'
+   placeholder="Enter your password"
+   onChange={formik.handleChange}
+   value={formik.values.password}/>
+   {formik.errors.password ? <div id='error2'>{formik.errors.password}</div>:null}
+   <button type='submit' id='buttonlog' onClick={handleApi}>LOGIN</button>
+   <Link to="/forgot" id="forgot">
+          <p id='frg'>Forgotten Password?</p>
+         </Link>
+        <p id='mssg'>New To Foodora? <Link to="/signup">
+          SIGN UP
+       </Link></p>
+    </form>
+   </div>
+  </div>
+)
 }
-export default Login;
+export default App;
