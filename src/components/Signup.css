@@ -29,13 +29,15 @@ border-radius: 2.77vw;
   position: absolute;
   top: 22vh;
   right:2vw;
+  z-index: 2;
 }
 #eye2 {
   position: absolute;
   top: 30.8vh;
   right: 2vw;
+  z-index: 2;
 }
-#fullname{
+.fullname{
     position: absolute;
     padding-left: 1vw;
     border-radius: 5vh;
@@ -45,7 +47,7 @@ border-radius: 2.77vw;
     background-color: white;
     left: 1vw;
 }
-#emails{
+.emails{
     position: absolute;
     padding-left: 1vw;
     border-radius: 5vh;
@@ -55,7 +57,7 @@ border-radius: 2.77vw;
     background-color: white;
     left: 1vw;
 }
-#passwords{
+.passwords{
     position: absolute;
     padding-left: 1vw;
     border-radius: 5vh;
@@ -65,7 +67,7 @@ border-radius: 2.77vw;
     background-color: white;
     left: 1vw; 
 }
-#repasswords{
+.repasswords{
     position: absolute;
     padding-left: 1vw;
     border-radius: 5vh;
@@ -105,6 +107,7 @@ border-radius: 2.77vw;
   font-size: 1vw;
   left: 1.5vw;
   font-weight: bold;
+  z-index: 2;
 }
 #errors2 {
   position: absolute;

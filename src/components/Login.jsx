@@ -8,7 +8,7 @@ import axios from 'axios';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/fontawesome-free-solid";
 var x;
-function App () {
+function Login () {
   const initialValues ={
     email: '',
     password: ''
@@ -21,14 +21,15 @@ function App () {
     if(!values.email){
       errors.email = 'required!';
     }
+    else if(values.email.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)==null){
+      errors.email='invalid!';
+    }
     if(!values.password){
       errors.password='required';
     }
     x=Object.keys(errors).length;
-    console.log(x);
     console.log(errors);
     (x!==0)?isCheck(false):isCheck(true);
-    console.log(check);
     return errors;
     }
     const [show, setShow] =useState(false);
@@ -77,6 +78,7 @@ return(
    <input 
    type='text' 
    name='email' id='email'
+   className='email'
    placeholder="Enter your email"
    onChange={formik.handleChange}
    value={formik.values.email}/>
@@ -89,6 +91,7 @@ return(
 <input 
    type={show ? "text" : "password"}
    name='password' id='password'
+   className='password'
    placeholder="Enter your password"
    onChange={formik.handleChange}
    value={formik.values.password}/>
@@ -105,4 +108,4 @@ return(
   </div>
 )
 }
-export default App;
+export default Login;

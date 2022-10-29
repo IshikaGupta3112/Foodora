@@ -49,7 +49,7 @@ body {
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
   border-radius: 40px;
 }
-#email {
+.email {
   position: absolute;
   border-radius: 5vh;
   top: 3.5vh;
@@ -58,7 +58,7 @@ body {
   background-color: white;
   left: 1vw;
 }
-#password {
+.password {
   position: absolute;
   border-radius: 5vh;
   top: 12vh;
