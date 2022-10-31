@@ -11,7 +11,7 @@ border-radius: 40px;
 }
 #log3 {
   position: absolute;
-  top: -8vh;
+  bottom: 68vh;
   left: 62vw;
   font-size: 2.8vw;
   color: #DB0007;
@@ -71,7 +71,7 @@ border-radius: 40px;
     left:1vw;
     top:1.5vh;
 }
-@media (max-width:440px){
+@media (max-width:600px){
     #logs {
         position: absolute;
         width: 100vw;
@@ -91,9 +91,11 @@ border-radius: 40px;
         top: 25vh;
       }
       #log3 {
-        top: -20vh;
+        position: absolute;
+        top: -21vh;
         left: 15vw;
         font-size: 9vw;
+        z-index: 2;
       }
       #otp {
         width:70vw;
@@ -117,5 +119,12 @@ border-radius: 40px;
         font-size: 4.5vw;
         left: 14vw;
     }
+    #resend{
+      text-decoration: none;
+      font-size: 4.5vw;
+      font-weight: bold;
+      background-color:rgba(247, 107, 107, 0.1);
+      border:0
+  }
       
 }

@@ -62,8 +62,9 @@ function Forgot() {
         <form id="form1" onSubmit={handleSubmit}>
           <input
             type="email"
-            placeholder="Enter your email for verification"
+            placeholder="Enter your email"
             className="email"
+            id="emailname"
             name="email"
             value={userForgot.email}
             onChange={handleInput}
@@ -78,7 +79,7 @@ function Forgot() {
           {/* on sub,it if coreect link to otp */}
         </form>
       </div>
-      <img src={loginimg} alt="" id="logs" />
+      <img src={loginimg} alt="" id="logs1" />
     </>
   );
 }

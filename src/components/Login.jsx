@@ -72,7 +72,7 @@ const Login = () => {
         <p id='backend'>{mssge}</p>
      <h1 id='hungry'>HUNGRY??</h1>
     <p id='order'>Order Now From Your Favourite Restraunt..</p>
-    <img src={loginimg} alt="hello" id="logs" />
+    <img src={loginimg} alt="hello" id="logs1" />
     <h1 id="log">LOGIN</h1>
    <div id="auth">
     <form id="form1" onSubmit={handlesubmit}>

@@ -13,21 +13,28 @@ body {
 border: 2px solid rgba(18,18,18,0.53);
 box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
 border-radius: 2.77vw;
-  left: 56.94vw;
-  width: 26vw;
-  height: 61.71vh;
+  left: 60vw;
+  width: 30vw;
+  height: 55vh;
   top: 27.7vh;
 }
 #log1 {
   position: absolute;
-  top: -20vh;
-  left: 64vw;
+  bottom: 75vh;
+  left: 70vw;
   color:#DB0007;
   font-size: 2.8vw;
 }
+#logs {
+  position: absolute;
+  width: 50vw;
+  height: 70vh;
+  left: 0px;
+  top: 14vw;
+}
 #eye1 {
   position: absolute;
-  top: 22vh;
+  top: 22.1vh;
   right:2vw;
   z-index: 2;
 }
@@ -43,7 +50,7 @@ border-radius: 2.77vw;
     border-radius: 5vh;
     top: 3.5vh;
     height: 5vh;
-    width: 23.5vw;
+    width: 27.5vw;
     background-color: white;
     left: 1vw;
 }
@@ -53,7 +60,7 @@ border-radius: 2.77vw;
     border-radius: 5vh;
     top: 12vh;
     height: 5vh;
-    width: 23.5vw;
+    width: 27.5vw;
     background-color: white;
     left: 1vw;
 }
@@ -63,7 +70,7 @@ border-radius: 2.77vw;
     border-radius: 5vh;
     top: 20.5vh;
     height: 5vh;
-    width: 23.5vw;
+    width: 27.5vw;
     background-color: white;
     left: 1vw; 
 }
@@ -73,7 +80,7 @@ border-radius: 2.77vw;
     border-radius: 5vh;
     top: 29vh;
     height: 5vh;
-    width: 23.5vw;
+    width: 27.5vw;
     background-color: white;
     left: 1vw;   
 }
@@ -82,7 +89,7 @@ border-radius: 2.77vw;
     cursor: pointer;
   width: 13.88vw;
   top: 39vh;
-  left:6vw;
+  left:8vw;
   height: 5vh;
   background: rgba(219, 0, 7, 0.2);
   border: 1px solid #db0007;
@@ -94,7 +101,7 @@ border-radius: 2.77vw;
     top: 48vh;
     font-weight: 900;
     font-size: 1.3vw;
-    left: 4.5vw;
+    left: 6vw;
 }
 #customer a{
     color:#DB0007;
@@ -146,7 +153,7 @@ border-radius: 2.77vw;
   padding:0.1vw 0.5vw;
   border-radius:0.5vw;
 }
-@media (max-width:440px){
+@media (max-width:600px){
     #logs {
         width: 100vw;
         top: 48vh;
@@ -161,11 +168,11 @@ border-radius: 2.77vw;
       #auths {
         left: 10vw;
         width: 79vw;
-        height: 50vh;
-        top: 15vh;
+        height: 49vh;
+        top: 13vh;
       }
      #log1{
-     top:-28vh;
+     bottom:87vh;
      left:33vw;
      font-size:9vw;
      }
@@ -196,11 +203,11 @@ border-radius: 2.77vw;
         left: 19vw;
     }
       #eye1 {
-        top: 22vh;
+        top: 22.5vh;
         right: 7vw;
       }
       #eye2 {
-        top: 30.4vh;
+        top: 31vh;
         right: 7vw;
       }
       #errors1 {

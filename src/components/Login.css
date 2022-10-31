@@ -33,15 +33,15 @@ body {
 }
 #log {
   position: absolute;
-  top: -15vh;
-  left: 68vw;
+  bottom: 75vh;
+  left: 70.1vw;
   color: #db0007;
   font-size: 2.8vw;
 }
 #auth {
   position: absolute;
   left: 60vw;
-  width: 25vw;
+  width: 29vw;
   height: 46vh;
   top: 32vh;
   background: rgba(255, 204, 204, 0.4);
@@ -53,8 +53,9 @@ body {
   position: absolute;
   border-radius: 5vh;
   top: 3.5vh;
-  width: 22.6vw;
-  padding:0.7vw;
+  height: 5vh;
+  width: 26.6vw;
+  padding-left:1vw;
   background-color: white;
   left: 1vw;
 }
@@ -62,8 +63,9 @@ body {
   position: absolute;
   border-radius: 5vh;
   top: 12vh;
-  padding:0.7vw;
-  width: 22.6vw;
+  height: 5vh;
+  padding-left:1vw;
+  width: 26.6vw;
   background-color: white;
   left: 1vw;
 }
@@ -72,7 +74,7 @@ body {
   cursor: pointer;
   width: 13.88vw;
   top: 22vh;
-  left: 5.5vw;
+  left: 7.5vw;
   height: 5vh;
   background: rgba(219, 0, 7, 0.2);
   border: 1px solid #db0007;
@@ -83,7 +85,7 @@ body {
   position: absolute;
   text-align: center;
   top: 30vh;
-  left: 5.7vw;
+  left: 7.7vw;
   font-weight: 900;
   font-size: 1.3vw;
 }
@@ -91,7 +93,7 @@ body {
   text-decoration: none;
   color:  #db0007;
 }
-#logs {
+#logs1 {
   position: absolute;
   width: 50vw;
   height: 70vh;
@@ -121,7 +123,7 @@ body {
   top: 36vh;
   font-weight: 900;
   font-size: 1.3vw;
-  left: 3.5vw;
+  left: 5.7vw;
 }
 #backend{
   position:absolute;
@@ -132,12 +134,12 @@ body {
   padding:0.1vw 0.5vw;
   border-radius:0.5vw;
 }
-@media (max-width:440px){
-    #logs {
+@media (max-width:600px){
+    #logs1 {
         position: absolute;
-        width: 100vw;
-        top: 45vh;
-        left: 0px;
+        width: 80vw;
+        top: 47vh;
+        left: 5vw;
       } 
       #hungry {
       display:none;
@@ -152,7 +154,7 @@ body {
         top: 20vh;
       }
       #log {
-        top: -25vh;
+        bottom:82.5vh;
         left: 35vw;
         font-size: 9vw;
       }
@@ -164,18 +166,19 @@ body {
         width: 70vw;
         left:4vw;
       }
-      #buttonlog{
+      .loginbtn{
         width:40vw;
         left:20vw;
       }
       #frg {
-        left:17vw;
-        font-size: 4.5vw;
+        top:28.5vh;
+        left:18.3vw;
+        font-size: 4.2vw;
       }
       #mssg {
         top:34vh;
-        font-size: 4.5vw;
-        left: 12vw;
+        font-size: 4.2vw;
+        left: 13.5vw;
       }
       #eye {
         top: 13.7vh;

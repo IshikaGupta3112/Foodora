@@ -1,7 +1,7 @@
 #auth3 {
   position: absolute;
   left: 60vw;
-  width:25vw;
+  width:29vw;
   height:24vh;
   top: 40vh;
   background: rgba(255, 204, 204, 0.4);
@@ -11,8 +11,8 @@ border-radius: 40px;
 }
 #log2 {
   position: absolute;
-  top: -5vh;
-  left: 61vw;
+  bottom: 66vh;
+  left: 63vw;
   font-size: 2.8vw;
   color:#DB0007;
 }
@@ -28,14 +28,14 @@ border-radius: 40px;
     cursor: pointer;
   width: 13.88vw;
   top: 13vh;
-  left: 5.5vw;
+  left: 7.5vw;
   height: 5vh;
   background: rgba(219, 0, 7, 0.2);
   border: 1px solid #db0007;
   border-radius: 45px;
   color: #db0007;
 }
-@media (max-width:440px){
+@media (max-width:600px){
     #logs {
         position: absolute;
         width: 100vw;
@@ -55,11 +55,11 @@ border-radius: 40px;
         top: 25vh;
       }
       #log2 {
-        top: -20vh;
-        left: 14vw;
-        font-size: 9vw;
+        bottom: 79vh;
+        left: 20vw;
+        font-size: 7vw;
       }
-      #email {
+      #emailname {
         width: 70vw;
         left:4vw;
       }

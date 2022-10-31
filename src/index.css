@@ -17,7 +17,7 @@ top: 14vh;
 }
 nav{
     position: absolute;
-    height:6.52vw;
+    height:10vh;
     width:100vw;
     left: 0vw;
     right: 0vw;
@@ -30,8 +30,8 @@ nav ul{
     float:right;
 }
 nav ul li{
-    padding:2.5vw 2vw; 
-    font-size: 1vw;
+    padding:4vh 2vw; 
+    font-size: 2vh;
 }
 nav ul li a{
     text-decoration: none;
@@ -45,19 +45,19 @@ nav ul li a:active,:visited{
 }
 #logos{
     position: absolute;
-    width: 13.194vw;
-    height: 2.77vw;
+    /* width: 13.194vw;
+    height: 5.02vh; */
     left: 2vw;
-    top:2vw;
+    top:3.2vh;
     bottom:1.3vw;
     z-index:7;
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 900;
-    font-size:2.22vw;
+    font-size:3.9vh;
     color: #DB0007; 
 }
-@media (max-width:440px){
+@media (max-width:600px){
     nav{
         height:6vh;
     } 
