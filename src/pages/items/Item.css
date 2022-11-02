@@ -1,0 +1,24 @@
+#lid{
+    position: absolute;
+    left: 12vh;
+    /* top: 91vh; */
+    }
+    #items1{
+        position: absolute;
+        left: 14vh;
+        top:5vh;
+        /* top: 96vh; */
+        color:white;
+    }
+    #cake{
+        position: absolute;
+        left: 160vh;
+        /* top: 91vh; */
+        }
+    #items2{
+        position: absolute;
+        left: 162vh;
+        top:5vh;
+        /* top: 96vh;    */
+        color:white;
+    }    

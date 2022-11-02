@@ -3,15 +3,15 @@ margin: 0;
 padding:0;
 box-sizing: border-box;
 }
-nav{
+/* nav{
 position: absolute;
-width: 100vw;
+width: 210vh;
 height: 7.17vh;
 left: 0vw;
 top: 0vh;
 background: #DB0007;
 z-index:2;
-}
+} */
 #homelogo{
 position: absolute;
 width: 5.54vh;
@@ -24,7 +24,7 @@ top: 0vh;
    border-radius: 50%;
    width:3.77vh;
    height:3.77vh;
-    right: 6vh;
+    left: 170vh;
     top: 13px;
     background:
     #C4C4C4;
@@ -82,7 +82,7 @@ color: #FFFFFF;
 #cart{
     position: absolute;
     top: 1.5vh;
-    right: 15vh;
+    left: 160vh;
 }
 #search{
     position: absolute;

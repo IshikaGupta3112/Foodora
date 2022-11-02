@@ -52,6 +52,7 @@ function Password() {
     }
 
   function handleSubmit(e) {
+console.log(email);
     e.preventDefault();
     if(correctRepass&&correctpass){
       axios
@@ -73,7 +74,7 @@ function Password() {
     <>
       <Navs />
       <div>
-        <p id='backend'>{mssg}</p>
+        <p id='backend1'>{mssg}</p>
         <h1 id='hungry'>HUNGRY??</h1>
         <p id='order'>Order Now From Your Favourite Restraunt..</p>
         <img src={loginimg} alt="hello" id="logs1" />
