@@ -127,12 +127,10 @@ body {
 }
 #backend{
   position:absolute;
-  /* z-index:2; */
-  top:27vh;
-  left:67.5vw;
+  bottom:70vh;
+  left:67vw;
   color:red;
-  padding:0.1vw 0.5vw;
-  border-radius:0.5vw;
+  font-size: 1.9vw;
 }
 @media (max-width:600px){
     #logs1 {
@@ -193,5 +191,12 @@ body {
         font-size: 3.5vw;
         left: 6vw;
     
+      }
+      #backend{
+        position:absolute;
+        bottom:80.5vh;
+        left:35vw;
+        color:red;
+        font-size: 3.5vw;
       }
 }

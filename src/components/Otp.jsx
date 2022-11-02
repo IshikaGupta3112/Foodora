@@ -11,7 +11,7 @@ function Otp() {
         <p id='order'>Order Now From Your Favourite Restraunt..</p>
       <Navs />
       <Otps2 />
-      <img src={loginimg} alt="" id="logs" />
+      <img src={loginimg} alt="" id="logs1" />
     </>
   );
 }

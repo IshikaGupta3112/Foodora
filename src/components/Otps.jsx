@@ -8,7 +8,7 @@ function Otps() {
     otp: "",
   });
   var email =localStorage.getItem("myMail");
-  console.log(email);
+  // console.log(email);
   var otp = userOtp.otp;
   const handleApi5=()=>{
     axios
@@ -54,7 +54,7 @@ function Otps() {
   },[counter]);
   return (
     <>
-    <p id='backendmssg'>{mssg}</p>
+    <p id='backendmssg2'>{mssg}</p>
       <h1 id="log3">OTP verification</h1>
       <div id="auth4">
         <p id='enters'>Enter OTP send at abc.......@gmail.com</p>

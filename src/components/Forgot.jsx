@@ -1,56 +1,51 @@
-import react, { useState } from "react";
+import react, { useState , useEffect } from "react";
 import Navs from "./navs";
 import loginimg from '../assets/loginimg.svg';
 import "./Forgot.css";
-import { Link } from "react-router-dom";
+import { Link , useNavigate} from "react-router-dom";
 import axios from 'axios';
-// const mail = document.getElementById('email');
 function Forgot() {
-  const [userForgot, setuserForgot] = useState({
-    email: "",
-  });
+  const [forgotMail, setForgotMail] = useState("");
   const [mssg,setMssg]=useState('');
-  var email=userForgot.email;
-
   
-  // const [errors, setErrors] = react.useState({});
-  const [isSubmit, setIsSubmit] = react.useState(false);
-
-  function handleInput(event) {
-    const name = event.target.name;
-    const value = event.target.value;
-    setuserForgot({ ...userForgot, [name]: value });
-   localStorage.setItem("mail" , value);
+  function handleForgotMial(e) {
+   setForgotMail(e.target.value);
   }
 
-  function handleSubmit(event) {
-    axios
-    .post("https://foodorabackend-production.up.railway.app/user/verify/send",{email})
-    .then(res=>{
-      setMssg(res.data.msg);
-      console.log(res.data.msg);
-    })
-    .catch(err=>{
-      console.log(err);
-    })
-    event.preventDefault();
-    // setErrors(validate(userForgot));
-    setIsSubmit(true);
-   
+  const [correctMail , setCorrectMail] = useState(false);
+  const rightmail= /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (rightmail.test(forgotMail)) {
+      document.getElementById("err1").style.display = "none";
+      console.log("true");
+      setCorrectMail(true);
+    } else if (forgotMail) {
+      document.getElementById("err1").style.display = "block";
+      setCorrectMail(false);
+    }
+  }, [forgotMail]);
+  function handleSubmit(e) {
+    e.preventDefault();   
+    localStorage.setItem("forgotMail" , forgotMail);
+    console.log(forgotMail);
+    if (correctMail) {
+      axios
+        .post("https://foodorabackend-production.up.railway.app/user/forgot/send", {
+          email:forgotMail
+        })
+        .then((res) => {
+          setMssg(res.data.msg);
+          console.log(res);    
+          navigate("/otp");
+        })
+        .catch((err) => {
+          console.log(err);
+        setMssg(err.response.data.msg);
+        });
+    }
   }
-  // function validate(values) {
-  //   const error = {};
-  //   if (!values.email) {
-  //     error.email = "Email is required!";
-  //   } else if (
-  //     values.email.match(
-  //       /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
-  //     ) == null
-  //   ) {
-  //     error.email = "Invalid mail";
-  //   }
-  //   return error;
-  // }
   return (
     <>
       <Navs />
@@ -66,17 +61,13 @@ function Forgot() {
             className="email"
             id="emailname"
             name="email"
-            value={userForgot.email}
-            onChange={handleInput}
+            value={forgotMail}
+            onChange={handleForgotMial}
             required
           ></input>
-          {/* <p id="errors5">{errors.email}</p> */}
-          <Link to="/otp">
-            <button type="submit" id='otpsend'
-            //  onClick={handleApi3}
-             >SEND OTP</button>
-          </Link>
-          {/* on sub,it if coreect link to otp */}
+          <p id="err1">Invalid mail</p>
+            <button type="submit" id='otpsend'>SEND OTP</button>
+
         </form>
       </div>
       <img src={loginimg} alt="" id="logs1" />

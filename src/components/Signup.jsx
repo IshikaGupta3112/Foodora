@@ -44,7 +44,6 @@ function Signup(){
       const [iscorrectRepass, setIsCorrectRepass] = useState(false);
      function handleSubmits(e){
       e.preventDefault();
-      // console.log(userEmail);
       localStorage.setItem("myMail" , userEmail);
      }
         const rightpass =
@@ -194,7 +193,7 @@ function Signup(){
                 </form>
               </div>
             </div>
-            <img src={signinimg} alt="" id="logs" />
+            <img src={signinimg} alt="" id="logs3" />
                 
           </>
         );

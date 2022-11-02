@@ -16,14 +16,6 @@ border-radius: 40px;
   font-size: 2.8vw;
   color: #DB0007;
 }
-#errors6 {
-  position: absolute;
-  top: 13vh;
-  color:#DB0007;
-  font-size: 1vw;
-  left: 1.5vw;
-  font-weight: bold;
-}
 #enters{
     position:absolute;
     font-size: 1vw;
@@ -71,6 +63,20 @@ border-radius: 40px;
     left:1vw;
     top:1.5vh;
 }
+#backendmssg2{
+  position:absolute;
+  bottom:64vh;
+  left:65.5vw;
+  color:red;
+  font-size: 1.9vw;
+}
+#logso{
+  position: absolute;
+  width: 50vw;
+  height: 70vh;
+  left: 0px;
+  top: 14vw;
+}
 @media (max-width:600px){
     #logs {
         position: absolute;
@@ -92,7 +98,7 @@ border-radius: 40px;
       }
       #log3 {
         position: absolute;
-        top: -21vh;
+        top: -25vh;
         left: 15vw;
         font-size: 9vw;
         z-index: 2;
@@ -125,6 +131,13 @@ border-radius: 40px;
       font-weight: bold;
       background-color:rgba(247, 107, 107, 0.1);
       border:0
+  }
+  #backendmssg2{
+    bottom:77vh;
+    /* top:22vh; */
+    left:35vw;
+    color:red;
+    font-size: 4vw;
   }
       
 }

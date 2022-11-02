@@ -7,21 +7,15 @@ import Otp from './components/Otp.jsx'
 import Otp2 from './components/Otp2.jsx'
 import Main from './components/Main.jsx';
 import Password from './components/Password.jsx';
+import Home from './pages/homee/home.jsx';
 import {
     BrowserRouter as Router,
     Routes,
     Route,
     Link
   } from "react-router-dom";
-    
+  
     var y = localStorage.getItem("check");
-  // const cors = require('cors');
-  // const corsOptions ={
-  //     origin:'http://localhost:3000', 
-  //     credentials:true,           
-  //     optionSuccessStatus:200
-  // }
-  // App.use(cors(corsOptions));
 function App(){
   
     return(
@@ -43,7 +37,9 @@ function App(){
                      <Route path='/otp2' exact element={<Otp2 />}>
                      </Route>   
                      <Route path='/password' exact element={<Password />}>
-                     </Route>                 
+                     </Route>    
+                     <Route path='/home' exact element={<Home />}>
+                     </Route>             
 
              </Routes>
         </Router>

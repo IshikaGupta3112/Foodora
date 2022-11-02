@@ -1,54 +1,51 @@
 import react,{useState , useEffect} from "react";
 import "./Otp.css";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { Link , useNavigate} from "react-router-dom";
 import axios from 'axios';
 function Otps2() {
   const [mssg,setmssg]=useState('');
-  const [userOtp, setuserOtp] = react.useState({
-    otp: "",
-  });
-//   var email =localStorage.getItem("myMail");
-  // console.log(email);
-//   var otp = userOtp.otp;
-//   const handleApi5=()=>{
-//     axios
-//     .post("https://foodorabackend-production.up.railway.app/user/verify/send",{email})
-//     .then(res=>{
-//       console.log(res.data.msg);
-//       setmssg(res.data.msg);
-//     })
-//     .catch(err=>{
-//       console.log(err);
-//       console.log(err.response.data.msg);
-//       setmssg(err.response.data.msg)
-//     })
-//     setCounter(29);
-//   }
-//   const handleApi4=()=>{
-//     axios 
-//     .post('https://foodorabackend-production.up.railway.app/user/verify' ,{email , otp} )
-//     .then(result=>{
-//       console.log(result.data.msg);
-//       setmssg(result.data.msg)})
-//     .catch(err3=>{
-//       console.log(err3);
-//       console.log(err3.response.data.msg);
-//       setmssg(err3.response.data.msg);
-//     })
-//   }
-  // const [errors, setErrors] = react.useState({});
-  const [isSubmit, setIsSubmit] = react.useState(false);
-  function handleInput(event) {
-    const name = event.target.name;
-    const value = event.target.value;
-    setuserOtp({ ...userOtp, [name]: value });
+  const [otp , setOtp] = useState("");
+  function handleOtp(e){
+    setOtp(e.target.value);
   }
-  function handleSubmit(event) {
-    event.preventDefault();
-    // setErrors(validate(userOtp));
-    setIsSubmit(true);
+  const navigate = useNavigate();
+  var email = localStorage.getItem("forgotMail");
+  console.log(email);
+  function handleSubmit(e) {
+    console.log(otp);
+    console.log(email);
+    e.preventDefault();
+    axios
+  .post("https://foodorabackend-production.up.railway.app/user/forgot/verify", {
+    email:email,
+    otp:otp
+  })
+  .then((res) => {
+    setmssg(res.data.msg);
+    console.log(res);
+    navigate("/password");
+  })
+  .catch((err) => {
+    console.log(err);
+  setmssg(err.response.data.msg);
+  });
+
   }
 
+ function handleApi5(){
+  axios
+  .post("https://foodorabackend-production.up.railway.app/user/forgot/send", {
+    email:email
+  })
+  .then((res) => {
+    setmssg(res.data.msg);
+    console.log(res);
+  })
+  .catch((err) => {
+    console.log(err);
+  setmssg(err.response.data.msg);
+  });
+ }
   const[counter,setCounter]=useState(29)
   useEffect(()=>{
       const timer =
@@ -56,15 +53,7 @@ function Otps2() {
        setInterval(() => setCounter(counter-1),1000);
       return()=>clearInterval(timer);
   },[counter]);
- 
 
-  // function validate(values) {
-  //   const error = {};
-  //   if (!values.otp) {
-  //     error.otp = "OTP is required!";
-  //   } 
-  //   return error;
-  // }
   return (
     <>
     <p id='backendmssg'>{mssg}</p>
@@ -77,20 +66,14 @@ function Otps2() {
             placeholder="Enter OTP"
             id="otp"
             name="otp"
-            value={userOtp.otp}
-            onChange={handleInput}
+            value={otp}
+            onChange={handleOtp}
             required
             maxLength={6}
           ></input>
-          {/* <p id="errors6">{errors.otp}</p> */}
-          <Link to='/password'>
-          <button type="submit" id='verify' 
-        //   onClick={handleApi4}
-          >VERIFY</button>
-          </Link>
-          {/* if otp enter correct then main page linking */}
+          <button type="submit" id='verify' >VERIFY</button>
           <p id='otpp'>Didn't get? <button disabled={(counter!==0) ? true : false} 
-        //   onClick={handleApi5} 
+          onClick={handleApi5} 
           id='resend'>
             Resend OTP
           </button>: {counter}</p>

@@ -1,0 +1,93 @@
+*{
+margin: 0;
+padding:0;
+box-sizing: border-box;
+}
+nav{
+position: absolute;
+width: 100vw;
+height: 7.17vh;
+left: 0vw;
+top: 0vh;
+background: #DB0007;
+z-index:2;
+}
+#homelogo{
+position: absolute;
+width: 5.54vh;
+height: 5.54vh;
+left:6vh;
+top: 0vh;
+}
+#profile{
+    position: absolute;
+   border-radius: 50%;
+   width:3.77vh;
+   height:3.77vh;
+    right: 6vh;
+    top: 13px;
+    background:
+    #C4C4C4;
+}
+#searchbar{
+position: absolute;
+width: 46.22vh;
+height: 4.4vh;
+left: 20.08vh;
+top: 11px;
+background: linear-gradient(90.27deg, rgba(255, 255, 255, 0.35) 0.23%, rgba(255, 255, 255, 0.133) 100%);
+border-radius: 10px;
+}
+#text1{
+position: absolute;
+width: 6.67vh;
+height: 3.14vh;
+/* left: 81.36vh; */
+left: 81.36vh;
+top: 2.05vh;
+font-family: 'Open Sans';
+font-style: normal;
+font-weight: 600;
+font-size: 2.26vh;
+line-height: 3.14vh;
+color: #FFFFFF;
+}
+#text2{
+position: absolute;
+width: 13.35vh;
+height: 3.14vh;
+left: 92.94vh;
+/* left: 92.94vh; */
+top: 2.05vh;
+font-family: 'Open Sans';
+font-style: normal;
+font-weight: 600;
+font-size: 2.26vh;
+line-height: 3.14vh;
+color: #FFFFFF;
+}
+#text3{
+position: absolute;
+width:10.07vh;
+height: 3.14vh;
+left: 111.08vh;
+top: 2.05vh;
+font-family: 'Open Sans';
+font-style: normal;
+font-weight: 600;
+font-size: 2.26vh;
+line-height: 3.14vh;
+color: #FFFFFF;
+}
+#cart{
+    position: absolute;
+    top: 1.5vh;
+    right: 15vh;
+}
+#search{
+    position: absolute;
+width: 24px;
+height: 24px;
+left: 490px;
+top: 16px;
+}

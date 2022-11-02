@@ -9,7 +9,7 @@ function Otp2() {
     <>
       <Navs />
       <Otps />
-      <img src={signinimg} alt="" id="logs" />
+      <img src={signinimg} alt="" id="logs3" />
     </>
   );
 }

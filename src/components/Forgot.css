@@ -16,12 +16,13 @@ border-radius: 40px;
   font-size: 2.8vw;
   color:#DB0007;
 }
-#errors5 {
+#err1 {
   position: absolute;
   color: #DB0007;
   left: 1.5vw;
   top: 9vh;
   font-weight: bold;
+  display:none;
 }
 #otpsend{
     position: absolute;
@@ -67,9 +68,10 @@ border-radius: 40px;
         width:40vw;
         left:20vw;
       }
-      #errors5 {
+      #err1 {
         top:9vh;
         font-size: 3.5vw;
         left: 5.5vw;
+        display:none;
       }
 }
