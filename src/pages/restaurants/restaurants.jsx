@@ -1,4 +1,4 @@
-import react from "react";
+
 import Pizzahut from '../../assets/Pizzahut.svg';
 import burgerking from '../../assets/burgerking.svg';
 import starbucks from '../../assets/starbucks.svg';

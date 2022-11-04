@@ -1,4 +1,3 @@
-import react from 'react';
 import Navbar from './components/Navbar.jsx';
 import Login from './components/Login.jsx';
 import Signup from './components/Signup.jsx';
@@ -11,11 +10,10 @@ import Home from './pages/homee/home.jsx';
 import {
     BrowserRouter as Router,
     Routes,
-    Route,
-    Link
+    Route
   } from "react-router-dom";
   
-    var y = localStorage.getItem("check");
+    // var y = localStorage.getItem("check");
 function App(){
   
     return(

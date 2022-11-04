@@ -1,4 +1,4 @@
-import react from "react";
+
 import lid from '../../assets/lid.svg';
 import cake from '../../assets/cake.svg';
 import pizza from '../../assets/pizza.svg';

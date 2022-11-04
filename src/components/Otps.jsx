@@ -1,6 +1,5 @@
 import react,{useState , useEffect} from "react";
 import "./Otp.css";
-import { Link , useNavigate} from "react-router-dom";
 import axios from 'axios';
 function Otps() {
   const [mssg,setmssg]=useState('');
@@ -24,7 +23,7 @@ function Otps() {
     })
     setCounter(29);
   }
-  const [isSubmit, setIsSubmit] = react.useState(false);
+  const [, setIsSubmit] = react.useState(false);
   function handleInput(event) {
     const name = event.target.name;
     const value = event.target.value;

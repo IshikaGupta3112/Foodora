@@ -1,6 +1,6 @@
-import react,{useState , useEffect} from "react";
+import {useState , useEffect} from "react";
 import "./Otp.css";
-import { Link , useNavigate} from "react-router-dom";
+import {  useNavigate} from "react-router-dom";
 import axios from 'axios';
 function Otps2() {
   const [mssg,setmssg]=useState('');

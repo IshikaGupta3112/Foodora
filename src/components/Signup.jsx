@@ -1,15 +1,14 @@
-import react, { useState,useEffect } from "react";
+import  { useState,useEffect } from "react";
 import axios from 'axios';
 import "./Signup.css";
 import Navs from "./navs.jsx";
 import signinimg from '../assets/signinimg.svg';
-import Otps from "./Otps.jsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/fontawesome-free-solid";
 import { Link  , useNavigate} from "react-router-dom";
 
 function Signup(){
-  const [status , setStatus]=useState(false);
+  const [, setStatus]=useState(false);
   const[mssg , setMssg] = useState("");
   const [userName, setuserName] = useState("");
   const [userEmail, setuserEmail] = useState("");
@@ -45,9 +44,9 @@ function Signup(){
      function handleSubmits(e){
       e.preventDefault();
       localStorage.setItem("myMail" , userEmail);
-     }
-        const rightpass =
-    /^(?=.[a-z])(?=.[A-Z])(?=.\d)(?=.[@$!%?&#])[A-Za-z\d@$!%?&#]{8,}$/;
+     };
+    //     const rightpass =
+    // /^(?=.[a-z])(?=.[A-Z])(?=.\d)(?=.[@$!%?&#])[A-Za-z\d@$!%?&#]{8,}$/;
     const rightmail= /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
     useEffect(() => {

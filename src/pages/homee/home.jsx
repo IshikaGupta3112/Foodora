@@ -1,4 +1,4 @@
-import react from 'react';
+
 import './home.css';
 import Navs2 from '../navss/navs2.jsx';
 import Item from '../items/Items.jsx';
