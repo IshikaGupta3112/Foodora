@@ -1,10 +1,10 @@
 import react from "react";
-import Pizzahut from '/Users/ishikagupta/Desktop/Foodora/foodora/foodora/src/assets/Pizzahut.svg';
-import burgerking from '/Users/ishikagupta/Desktop/Foodora/foodora/foodora/src/assets/burgerking.svg';
-import starbucks from '/Users/ishikagupta/Desktop/Foodora/foodora/foodora/src/assets/starbucks.svg';
-import macd from '/Users/ishikagupta/Desktop/Foodora/foodora/foodora/src/assets/macd.svg';
-import dominos from '/Users/ishikagupta/Desktop/Foodora/foodora/foodora/src/assets/dominos.svg';
-import dunkin from '/Users/ishikagupta/Desktop/Foodora/foodora/foodora/src/assets/dunkin.svg';
+import Pizzahut from '../../assets/Pizzahut.svg';
+import burgerking from '../../assets/burgerking.svg';
+import starbucks from '../../assets/starbucks.svg';
+import macd from '../../assets/macd.svg';
+import dominos from '../../assets/dominos.svg';
+import dunkin from '../../assets/dunkin.svg';
 import "./restaurants.css"
 function Restaurant(){
     return(

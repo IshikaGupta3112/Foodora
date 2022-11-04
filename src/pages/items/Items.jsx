@@ -1,14 +1,13 @@
 import react from "react";
-import burger from '/Users/ishikagupta/Desktop/Foodora/foodora/foodora/src/assets/burger.svg';
-import lid from '/Users/ishikagupta/Desktop/Foodora/foodora/foodora/src/assets/lid.svg';
-import cake from '/Users/ishikagupta/Desktop/Foodora/foodora/foodora/src/assets/cake.svg';
-import pizza from '/Users/ishikagupta/Desktop/Foodora/foodora/foodora/src/assets/pizza.svg';
-import hamburger from '/Users/ishikagupta/Desktop/Foodora/foodora/foodora/src/assets/hamburger.svg';
-import noodles from '/Users/ishikagupta/Desktop/Foodora/foodora/foodora/src/assets/noodles.svg';
-import samosa from '/Users/ishikagupta/Desktop/Foodora/foodora/foodora/src/assets/samosa.svg';
-import fish from '/Users/ishikagupta/Desktop/Foodora/foodora/foodora/src/assets/fish.svg';
-import fastfood from '/Users/ishikagupta/Desktop/Foodora/foodora/foodora/src/assets/fastfood.svg';
-import soup from '/Users/ishikagupta/Desktop/Foodora/foodora/foodora/src/assets/soup.svg';
+import lid from '../../assets/lid.svg';
+import cake from '../../assets/cake.svg';
+import pizza from '../../assets/pizza.svg';
+import hamburger from '../../assets/hamburger.svg';
+import noodles from '../../assets/noodles.svg';
+import samosa from '../../assets/samosa.svg';
+import fish from '../../assets/fish.svg';
+import fastfood from '../../assets/fastfood.svg';
+import soup from '../../assets/soup.svg';
 import "./Item.css"
 function Items(){
 return(

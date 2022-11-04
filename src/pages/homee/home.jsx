@@ -5,14 +5,14 @@ import Item from '../items/Items.jsx';
 import Restaurant from '../restaurants/restaurants.jsx';
 import CreateList from '../CreateList';
 import CreateRest from '../CreateRest';
-import burger from '/Users/ishikagupta/Desktop/Foodora/foodora/foodora/src/assets/burger.svg';
-import phone from '/Users/ishikagupta/Desktop/Foodora/foodora/foodora/src/assets/phone.svg';
-import email from '/Users/ishikagupta/Desktop/Foodora/foodora/foodora/src/assets/email.svg';
-import location from '/Users/ishikagupta/Desktop/Foodora/foodora/foodora/src/assets/location.svg';
-import twitter from '/Users/ishikagupta/Desktop/Foodora/foodora/foodora/src/assets/twitter.svg';
-import instagram from '/Users/ishikagupta/Desktop/Foodora/foodora/foodora/src/assets/instagram.svg';
-import discord from '/Users/ishikagupta/Desktop/Foodora/foodora/foodora/src/assets/discord.svg';
-import lettersend from '/Users/ishikagupta/Desktop/Foodora/foodora/foodora/src/assets/lettersend.svg';
+import burger from '../../assets/burger.svg';
+import phone from '../../assets/phone.svg';
+import email from '../../assets/email.svg';
+import location from '../../assets/location.svg';
+import twitter from '../../assets/twitter.svg';
+import instagram from '../../assets/instagram.svg';
+import discord from '../../assets/discord.svg';
+import lettersend from '../../assets/lettersend.svg';
 function Home(){
 return(
   <div>

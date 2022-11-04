@@ -1,6 +1,6 @@
 import react from "react" ;
-import star from '/Users/ishikagupta/Desktop/Foodora/foodora/foodora/src/assets/star.svg';
-import clock from '/Users/ishikagupta/Desktop/Foodora/foodora/foodora/src/assets/clock.svg';
+import star from '../assets/star.svg';
+import clock from '../assets/clock.svg';
 import "./restaurantItem.css";
 function RestaurantItems(props){
 return(

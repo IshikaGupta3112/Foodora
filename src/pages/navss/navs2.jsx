@@ -1,8 +1,8 @@
 import react from 'react';
 import './navs2.css';
-import logo from '/Users/ishikagupta/Desktop/Foodora/foodora/foodora/src/assets/logo.svg'
-import cart from '/Users/ishikagupta/Desktop/Foodora/foodora/foodora/src/assets/cart.svg'
-import search from '/Users/ishikagupta/Desktop/Foodora/foodora/foodora/src/assets/search.svg'
+import logo from '../../assets/logo.svg'
+import cart from '../../assets/cart.svg'
+import search from '../../assets/search.svg'
 function Navs2(){
 return (
 <div>

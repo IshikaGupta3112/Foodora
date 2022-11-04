@@ -1,6 +1,6 @@
 import react from "react";
 import RestaurantList from "./RestaurantList";
-import "/Users/ishikagupta/Desktop/Foodora/foodora/foodora/src/restarantItem/restaurantItem.css"
+import "../pages/items/Item.css"
 import RestaurantItems from "../restarantItem/restaurantItem";
 function CreateRest() {
   function createRest(RestaurantList) {

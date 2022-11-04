@@ -1,8 +1,8 @@
 import react from "react";
-import FoodList from "/Users/ishikagupta/Desktop/Foodora/foodora/foodora/src/pages/FoodList.js";
-import FoodList2 from "/Users/ishikagupta/Desktop/Foodora/foodora/foodora/src/pages/FoodList2.js";
-import Food from '/Users/ishikagupta/Desktop/Foodora/foodora/foodora/src/pages/foods/food.jsx'
-import "/Users/ishikagupta/Desktop/Foodora/foodora/foodora/src/pages/foods/food.css"
+import FoodList from "./FoodList";
+import FoodList2 from "./FoodList2";
+import Food from '../pages/foods/food.jsx'
+import "../pages/foods/food.css"
 function CreateList() {
   function createList(FoodList) {
     return (
