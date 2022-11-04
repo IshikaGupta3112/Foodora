@@ -5,89 +5,87 @@ box-sizing: border-box;
 }
 /* nav{
 position: absolute;
-width: 210vh;
-height: 7.17vh;
-left: 0vw;
-top: 0vh;
+width: 104.213rem;
+height: 3.55rem;
+left: 0rem;
+top: 0rem;
 background: #DB0007;
 z-index:2;
 } */
 #homelogo{
 position: absolute;
-width: 5.54vh;
-height: 5.54vh;
-left:6vh;
-top: 0vh;
+width: 2.749rem;
+height: 2.749rem;
+left:2.977rem;
+top: 0.3rem;
 }
 #profile{
     position: absolute;
    border-radius: 50%;
-   width:3.77vh;
-   height:3.77vh;
-    left: 170vh;
-    top: 13px;
+   width:1.87rem;
+   height:1.87rem;
+    left: 84.36rem;
+    top: 0.8125rem;
     background:
     #C4C4C4;
 }
 #searchbar{
 position: absolute;
-width: 46.22vh;
-height: 4.4vh;
-left: 20.08vh;
-top: 11px;
+width: 22.93rem;
+height: 2.18rem;
+left: 9.96rem;
+top: 0.6875rem;
 background: linear-gradient(90.27deg, rgba(255, 255, 255, 0.35) 0.23%, rgba(255, 255, 255, 0.133) 100%);
-border-radius: 10px;
+border-radius: 0.625rem;
 }
 #text1{
 position: absolute;
-width: 6.67vh;
-height: 3.14vh;
-/* left: 81.36vh; */
-left: 81.36vh;
-top: 2.05vh;
+width: 3.30rem;
+height: 1.558rem;
+left: 40.37rem;
+top: 1.017rem;
 font-family: 'Open Sans';
 font-style: normal;
 font-weight: 600;
-font-size: 2.26vh;
-line-height: 3.14vh;
+font-size: 1.121rem;
+line-height: 1.558rem;
 color: #FFFFFF;
 }
 #text2{
 position: absolute;
-width: 13.35vh;
-height: 3.14vh;
-left: 92.94vh;
-/* left: 92.94vh; */
-top: 2.05vh;
+width: 6.624rem;
+height: 1.558rem;
+left: 46.215rem;
+top: 1.017rem;
 font-family: 'Open Sans';
 font-style: normal;
 font-weight: 600;
-font-size: 2.26vh;
-line-height: 3.14vh;
+font-size: 1.121rem;
+line-height: 1.558rem;
 color: #FFFFFF;
 }
 #text3{
 position: absolute;
-width:10.07vh;
-height: 3.14vh;
-left: 111.08vh;
-top: 2.05vh;
+width:4.99rem;
+height: 1.558rem;
+left: 55.123rem;
+top: 1.017rem;
 font-family: 'Open Sans';
 font-style: normal;
 font-weight: 600;
-font-size: 2.26vh;
-line-height: 3.14vh;
+font-size: 1.121rem;
+line-height: 1.558rem;
 color: #FFFFFF;
 }
 #cart{
     position: absolute;
-    top: 1.5vh;
-    left: 160vh;
+    top: 0.744rem;
+    left: 79.4rem;
 }
 #search{
-    position: absolute;
-width: 24px;
-height: 24px;
-left: 490px;
-top: 16px;
+ position: absolute;
+width: 1.5rem;
+height: 1.5rem;
+left:30.625rem;
+top: 1rem;
 }

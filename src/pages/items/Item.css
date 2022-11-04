@@ -1,24 +1,99 @@
 #lid{
     position: absolute;
-    left: 12vh;
-    /* top: 91vh; */
+    left: 5.955rem;
+    top: 45.15rem;
     }
     #items1{
         position: absolute;
-        left: 14vh;
-        top:5vh;
-        /* top: 96vh; */
+        left: 6.94rem;
+        top: 47.64rem;
         color:white;
     }
     #cake{
         position: absolute;
-        left: 160vh;
-        /* top: 91vh; */
+        left: 79.4rem;
+        top: 44.6625rem;
         }
     #items2{
         position: absolute;
-        left: 162vh;
-        top:5vh;
-        /* top: 96vh;    */
+        left: 79.89rem;
+        top:47.64rem;  
+        color:white;
+    }    
+    #pizza{
+        position: absolute;
+        left:14.5rem;
+        top: 44.6625rem;
+        }
+    #items3{
+        position: absolute;
+        left: 14.5rem;
+        top:47.64rem; 
+        color:white;
+    }    
+    #hamburger{
+        position: absolute;
+        left: 23.83rem;
+        top: 44.6625rem;
+        }
+    #items4{
+        position: absolute;
+        left: 23.83rem;
+        top:47.64rem; 
+        color:white;
+    }    
+    #noodles{
+        position: absolute;
+        left: 33.83rem;
+        top: 44.6625rem;
+        }
+    #items5{
+        position: absolute;
+        left: 33.53rem;
+        top:47.64rem; 
+        color:white;
+    }    
+    #samosa{
+        position: absolute;
+        left: 43.83rem;
+        top: 44.6625rem;
+        }
+    #items6{
+        position: absolute;
+        left: 43.53rem;
+        top:47.64rem; 
+        color:white;
+    }    
+    #fish{
+        position: absolute;
+        left: 52.83rem;
+        top: 44.6625rem;
+        }
+    #items7{
+        position: absolute;
+        left: 53.3rem;
+        top:47.64rem; 
+        color:white;
+    }    
+    #fastfood{
+        position: absolute;
+        left: 61.83rem;
+        top: 44.6625rem;
+        }
+    #items8{
+        position: absolute;
+        left: 61rem;
+        top:47.64rem; 
+        color:white;
+    }    
+    #soup{
+        position: absolute;
+        left: 70.83rem;
+        top: 44.6625rem;
+        }
+    #items9{
+        position: absolute;
+        left: 71.2rem;
+        top:47.64rem; 
         color:white;
     }    

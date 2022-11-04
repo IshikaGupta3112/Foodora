@@ -1,0 +1,114 @@
+#resthead {
+  position: absolute;
+  width: 339px;
+  height: 44px;
+  left: 90px;
+  top: 1830px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 44px;
+
+  color: #ffffff;
+}
+#rest {
+  width: 21.18rem;
+  height: 17.375rem;
+  margin-left: 3.875rem;
+  background: linear-gradient(
+    135.77deg,
+    rgba(255, 255, 255, 0.4) -94.16%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  backdrop-filter: blur(1.31rem);
+  border-radius: 1rem;
+  border: 0.031rem solid rgba(255, 255, 255, 0.5);
+  overflow: hidden;
+}
+#myRestpic {
+  position: relative;
+  width: 19.68rem;
+  height: 11.5625rem;
+  left: 0.75rem;
+  top: 0.8125rem;
+  background: #c4c4c4;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+#restname {
+  position: relative;
+  width: 8.5rem;
+  height: 1.5625rem;
+  left: 1rem;
+  top: 1.2rem;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 1.5625rem;
+  color: #ffffff;
+}
+#restprice {
+  position: relative;
+  width: 8.437rem;
+  height: 1rem;
+  left: 1.2rem;
+  top: 1.3rem;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  text-decoration-line: line-through;
+  color: #ffffff;
+  opacity: 0.6;
+}
+.stars {
+  position: relative;
+  width: 0.75rem;
+  height: 0.75rem;
+  top: 1.4rem;
+}
+#stars1 {
+  left: 1rem;
+}
+#stars2 {
+  left: 1.18rem;
+}
+#stars3 {
+  left: 1.375rem;
+}
+#stars4 {
+  left: 1.5625rem;
+}
+#stars5 {
+  left: 1.75rem;
+}
+#clocks {
+  position: relative;
+  width: 0.75rem;
+  height: 0.75rem;
+  left: 13.1rem;
+  top: 1.4rem;
+}
+#times {
+  position: relative;
+  width: 2.125rem;
+  height: 0.75rem;
+  left: 17.96rem;
+  top: 0.35rem;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.5625rem;
+  line-height: 0.75rem;
+  color: #ffffff;
+}
+#restlist {
+  display: flex;
+  position: absolute;
+  margin-top: 122rem;
+  margin-left: 1.75rem;
+  margin-right: 5.625rem;
+}

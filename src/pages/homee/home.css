@@ -1,18 +1,18 @@
 *{
     margin:0;
     padding:0;
+    overflow-x:hidden;
     box-sizing: border-box;
-    /* overflow-x: hidden; */
 }
 body{
     /* background: #121212; */
 }
 #circle1{
 position: absolute;
-width: 46.69vh;
-height:46.69vh;
-left: 144.932vh;
-top: -13.85vh;
+width:23.1737rem;
+height: 23.1737rem;
+left: 71.9225rem;
+top: -6.875rem;
 border-radius: 50%;
 background: linear-gradient(180deg, #269100 0%, #FFBC0D 0.01%, #9A6F00 98.44%);
 transform: rotate(30deg);
@@ -20,115 +20,271 @@ transform: rotate(30deg);
 #rect{
 box-sizing: border-box;
 position: absolute;
-width: 62.97vh;
-height:62.97vh;
-left: 106.045vh;
-top: 13.602vh;
+width: 31.25rem;
+height: 31.25rem;
+left: 52.625rem;
+top: 6.75rem;
 z-index:2;
+border:0.5px solid rgba(255,255,255,0.5);
 background: linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0.55%, rgba(255, 255, 255, 0) 100%);
-backdrop-filter: blur(21px);
-border-radius: 44px;
-/* border:2px solid linear-gradient(white , grey); */
+backdrop-filter: blur(1.131rem);
+border-radius: 2.75rem;
 }
 #circle2{
 position: absolute;
-width: 248.87px;
-height: 248.87px;
-left: 714.43px;
-top: 430px;
+width: 15.55rem;
+height: 15.55rem;
+left:44.65rem;
+top: 26.875rem;
 background: linear-gradient(180deg, #9A6F00 0%, #FFBC0D 98.44%);
 transform: rotate(30deg);
 border-radius: 50%;
 }
 #burger{
     position: absolute;
-width: 565px;
-height: 547px;
-left: 698px;
-top: 90px;
+width: 35.3125rem;
+height: 34.1875rem;
+left: 43.625rem;
+top: 5.625rem;
 z-index:2;
 }
 #get{
     position: absolute;
-width: 595px;
-height: 142px;
-left: 90px;
-top: 180px;
+width:37.1875rem;
+height: 8.875rem;
+left: 5.625rem;
+top: 11.25rem;
 font-family: 'Open Sans';
 font-style: normal;
 font-weight: 600;
-font-size: 52px;
-line-height: 71px;
+font-size: 3.25rem;
+line-height:4.4375rem;
 color: #FFFFFF;
 }
 #text{
     position: absolute;
-width: 514px;
-height: 100px;
-left: 90px;
-top: 344px;
-
+width: 32.125rem;
+height: 6.25rem;
+left: 5.625rem;
+top: 21.5rem;
+font-family: 'Open Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 1.125rem;
+line-height: 1.5625rem;
+color: #FFFFFF;
+}
+#orderbtn{
+position: absolute;
+padding:0.625rem 1.25rem;
+left: 5.625rem;
+top: 29.125rem;
+background: #DB0007;
+border-radius: 2.09rem;
+ color: #FFBC0D;
+}
+#hr{
+position: absolute;
+width: 1340px;
+height: 0px;
+left: 50px;
+top: 2360px;
+border: 1px solid #FFFFFF;
+}
+#contactus{
+position: absolute;
+width: 217px;
+height: 54px;
+left: 590px;
+top: 2385px;
+font-family: 'Open Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 40px;
+line-height: 54px;
+color: #FFFFFF;
+}
+#contactmess{
+position: absolute;
+width: 420px;
+height: 25px;
+left: 488px;
+top:2455px;
 font-family: 'Open Sans';
 font-style: normal;
 font-weight: 400;
 font-size: 18px;
 line-height: 25px;
-
-color: #FFFFFF;
-
+text-align: center;
+color: #AEAEAE;
 }
-#orderbtn{
+#contactdiv{
 position: absolute;
-padding:10px 20px;
-left: 90px;
-top: 466px;
-background: #DB0007;
-border-radius: 33.5px;
- color: #FFBC0D;
+width: 1196px;
+height: 667px;
+left: 122px;
+top: 2520px;
+background: rgba(72, 72, 72, 0.5);
+box-shadow: 0px 0px 60px 30px rgba(0, 0, 0, 0.03);
+border-radius: 10px;
+overflow:hidden;
 }
-#lid{
+#contactinfo{
+position: relative;
+width: 491px;
+height: 647px;
+left: 10px;
+top: 10px;
+background: #121212;
+border-radius: 10px;
+overflow: hidden;
+}
+#contactInfo{
+position: relative;
+width: 291px;
+height: 42px;
+left: 40px;
+top: 40px;
+font-style: normal;
+font-weight: 600;
+font-size: 28px;
+line-height: 42px;
+color: #FFFFFF;
+overflow: hidden;
+}
+#say{
+position: absolute;
+width: 272px;
+height: 27px;
+left: 40px;
+top: 88px;
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 27px;
+color: #C9C9C9;
+}
+#phoneimg{
+position: absolute;
+width: 24px;
+height: 24px;
+left: 40px;
+top: 226px;
+}
+#emailimg{
+position: absolute;
+width: 220px;
+height: 20px;
+left: -59px;
+top: 300px;
+}
+#locationimg{
+position: absolute;
+width: 24px;
+height: 24px;
+left: 40px;
+top: 374px;
+}
+#letterimg{
+position: absolute;
+width: 240.79px;
+height: 240.31px;
+left: 780.87px;
+top: 480px;
+transform: rotate(0.75deg);
+}
+#instagramimg{
+position: absolute;
+width: 30px;
+height: 30px;
+left: 93px;
+top: 581px;
+}
+#twitterimg{
+position: absolute;
+width: 30px;
+height: 30px;
+left: 39px;
+top: 581px;
+}
+#discordimg{
+position: absolute;
+width: 30px;
+height: 30px;
+left: 147px;
+top: 581px;
+}
+#location{
+position: absolute;
+width: 288px;
+height: 72px;
+left: 89px;
+top: 374px;
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 24px;
+color: #FFFFFF;
+}
+#phoneno{
     position: absolute;
-    left: 12vh;
-    top: 91vh;
-    }
-    #items1{
-        position: absolute;
-        left: 14vh;
-        top:5vh;
-        top: 96vh;
-        color:white;
-    }
-    #cake{
-        position: absolute;
-        left: 160vh;
-        top: 90vh;
-        }
-    #items2{
-        position: absolute;
-        left: 161vh;
-        top:96vh;
-        top: 96vh;   
-        color:white;
-    }    
-    #pizza{
-        position: absolute;
-        left: 28vh;
-        top: 90vh;
-        }
-    #items3{
-        position: absolute;
-        left: 28.7vh;
-        top:96vh; 
-        color:white;
-    }    
-    #hamburger{
-        position: absolute;
-        left: 44vh;
-        top: 90vh;
-        }
-    #items4{
-        position: absolute;
-        left: 44vh;
-        top:96vh; 
-        color:white;
-    }    
+    width: 128px;
+    height: 24px;
+    left: 89px;
+    top: 226px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;    
+    color: #FFFFFF;  
+}
+#emailid{
+    position: absolute;
+    width: 175px;
+    height: 24px;
+    left: 89px;
+    top: 300px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #FFFFFF;   
+}
+#greycircle{
+position: absolute;
+width: 138px;
+height: 138px;
+left: 283px;
+top: 438px;
+z-index:2;
+background: rgba(72, 72, 72, 0.5);
+border-radius:50%;
+}
+#lightcircle{
+position: absolute;
+width: 269px;
+height: 269px;
+left: 311px;
+top: 464px;
+background: #1A1A1A;
+border-radius: 50%;
+}
+#divbtn{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 15px 48px;
+    gap: 10px;
+    
+    position:relative;
+    width: 214px;
+    height: 54px;
+    left: 920px;
+    top:-180px;
+    
+    background: #121212;
+    box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.12);
+    border-radius: 5px;
+
+    
+}

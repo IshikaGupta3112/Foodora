@@ -1,0 +1,119 @@
+#food{
+   width: 14.25rem;
+   height: 15.375rem;
+   margin-left: 1.875rem;
+   background: linear-gradient(135.77deg, rgba(255, 255, 255, 0.4) -94.16%, rgba(255, 255, 255, 0) 100%);
+   backdrop-filter: blur(1.31rem);
+   border-radius: 1rem;
+   border:0.031rem solid rgba(255,255,255,0.5);
+   overflow:hidden;
+   }
+   #mypic{
+   position: relative;
+   width: 12.81rem;
+   height: 9.25rem;
+   left: 0.75rem;
+   top: 0.8125rem;
+   background:#C4C4C4;
+   border-radius: 1rem;
+   overflow: hidden;
+   }
+   #foodname{
+   position: relative;
+   width: 8.5rem;
+   height: 1.5625rem;
+   left: 1rem;
+   top: 1rem;
+   font-family: 'Open Sans';
+   font-style: normal;
+   font-weight: 700;
+   font-size: 1.125rem;
+   line-height: 1.5625rem;
+   color: #FFFFFF;
+   }
+   #price{
+   position: relative;
+   width: 4.56rem;
+   height: 1.375rem;
+   left: 1rem;
+   top: 1.1875rem;
+   font-family: 'Open Sans';
+   font-style: normal;
+   font-weight: 600;
+   font-size: 1rem;
+   line-height: 1.375rem;
+   color: #11D800;
+   }
+   #actual{
+   position: relative;
+   width: 3.437rem;
+   height: 1rem;
+   left: 6.31rem;
+   top: 0rem;
+   font-family: 'Open Sans';
+   font-style: normal;
+   font-weight: 600;
+   font-size: 0.75rem;
+   line-height: 1rem;
+   text-decoration-line: line-through;
+   color: #FFFFFF;
+   opacity: 0.6;
+   }
+   .star{
+   position: relative;
+   width: 0.75rem;
+   height: 0.75rem;
+   top: 0.3125rem;
+   }
+   #star1{
+   left: 1rem;
+   }
+   #star2{
+       left: 1.18rem;
+       }
+       #star3{
+           left: 1.375rem;
+           }
+           #star4{
+               left: 1.5625rem;
+               }   
+               #star5{
+                   left:1.75rem;
+                   }     
+   #clock{
+   position: relative;
+   width: 0.75rem;
+   height: 0.75rem;
+   left: 6.5625rem;
+   top: 0.3125rem;
+   }   
+   #time{
+   position: relative;
+   width: 2.125rem;
+   height: 0.75rem;
+   left: 11.56rem;
+   top:-0.75rem;
+   font-family: 'Open Sans';
+   font-style: normal;
+   font-weight: 400;
+   font-size: 0.5625rem;
+   line-height: 0.75rem;
+   color: #FFFFFF;
+   }       
+   #foodItems{
+    display:flex;
+    position: absolute;
+    margin-top:76.875rem;
+    margin-left:3.75rem;
+    justify-content: space-between;
+    margin-right:5.625rem;
+   }
+   #foodItems2{
+    display:flex;
+    position: absolute;
+    margin-top:95rem;
+    margin-left:3.75rem;
+    /* justify-content: space-between; */
+    margin-right:5.625rem;
+   }
+   
