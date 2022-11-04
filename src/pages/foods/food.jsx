@@ -1,6 +1,6 @@
 import react from "react" ;
-import star from '/Users/ishikagupta/Desktop/Foodora/foodora/foodora/src/assets/star.svg';
-import clock from '/Users/ishikagupta/Desktop/Foodora/foodora/foodora/src/assets/clock.svg';
+import star from '../../assets/star.svg';
+import clock from '../../assets/clock.svg';
 import "./food.css";
 function Food(props){
 return(
@@ -18,7 +18,7 @@ return(
     <img src={clock} id="clock" alt="" />
     <p id="time" >30 mins</p>
    </div> */}
-   
+
    <div id="food">
     <img src={props.img} id="mypic"/>
     <p id='foodname'>{props.name}</p>
