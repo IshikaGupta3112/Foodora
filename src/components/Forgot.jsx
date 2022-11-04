@@ -1,8 +1,8 @@
-import  { useState , useEffect } from "react";
+import react, { useState , useEffect } from "react";
 import Navs from "./navs";
 import loginimg from '../assets/loginimg.svg';
 import "./Forgot.css";
-import { useNavigate} from "react-router-dom";
+import { Link , useNavigate} from "react-router-dom";
 import axios from 'axios';
 function Forgot() {
   const [forgotMail, setForgotMail] = useState("");

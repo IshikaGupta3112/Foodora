@@ -1,4 +1,4 @@
-
+import react from "react";
 import RestaurantList from "./RestaurantList";
 import "../pages/items/Item.css"
 import RestaurantItems from "../restarantItem/restaurantItem";

@@ -1,6 +1,18 @@
-
+import react from "react";
 import "../index.css";
-import { BrowserRouter as  Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIconProps } from "@fortawesome/react-fontawesome";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+var a;
+function show() {
+  if (a == 1) {
+    document.getElementById("ul").style.left = 0;
+    return (a = 0);
+  } else {
+    document.getElementById("ul").style.left = "-100vh";
+    return (a = 1);
+  }
+}
 function Navs() {
   return (
     <>

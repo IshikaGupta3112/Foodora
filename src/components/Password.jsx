@@ -1,10 +1,11 @@
-import {useEffect , useState} from "react";
+import react ,{useEffect , useState} from "react";
 import loginimg from '../assets/loginimg.svg';
 import Navs from "./navs.jsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/fontawesome-free-solid";
 import axios from 'axios';
 import "./password.css";
+import { Link } from "react-router-dom";
 var email = localStorage.getItem("forgotMail");
 console.log(email);
 function Password() {
@@ -33,7 +34,7 @@ function Password() {
       }
     }, [pass]);
     useEffect(() => {
-      if (repass===pass) {
+      if (repass==pass) {
         document.getElementById("err3").style.display = "none";
         console.log("true");
         setcorrectRepass(true);

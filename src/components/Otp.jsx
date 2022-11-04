@@ -1,8 +1,9 @@
-
+import react from "react";
 import "./Otp.css";
 import Otps2 from "./Otps2.jsx";
 import loginimg from '../assets/loginimg.svg';
 import Navs from "./navs.jsx";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 function Otp() {
   return (
     <>

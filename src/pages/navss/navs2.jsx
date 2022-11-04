@@ -1,4 +1,4 @@
-
+import react from 'react';
 import './navs2.css';
 import logo from '../../assets/logo.svg'
 import cart from '../../assets/cart.svg'

@@ -1,4 +1,4 @@
-
+import react from "react";
 import FoodList from "./FoodList";
 import FoodList2 from "./FoodList2";
 import Food from '../pages/foods/food.jsx'

@@ -1,4 +1,4 @@
-
+import react from "react" ;
 import star from '../assets/star.svg';
 import clock from '../assets/clock.svg';
 import "./restaurantItem.css";
