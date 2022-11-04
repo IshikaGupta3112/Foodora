@@ -17,6 +17,7 @@ function Home(){
 return(
   <div>
    <Navs2 />
+   <div id="overflow">
    <div id="circle1"></div>
    <div id="rect"></div>
    <div id="circle2"></div>
@@ -24,6 +25,7 @@ return(
    <p id="get">GET DELICIOUS FOOD<br />AT YOUR DOORSTEPS</p>
    <p id="text">Your hunger companion.When you crave for midnight delicacy, just dial our number.Speedy and quicker delivery with us. We promise to deliver on time.We deliver food and only good food.</p>
    <span id="orderbtn">Order Now</span>
+   </div>
    <Item />
    <Restaurant />
    <CreateList />
