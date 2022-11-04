@@ -1,5 +1,5 @@
 import react from "react";
-import "/Users/ishikagupta/Desktop/Foodora/foodora/foodora/src/index.css";
+import "../index.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FontAwesomeIconProps } from "@fortawesome/react-fontawesome";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
