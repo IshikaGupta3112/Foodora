@@ -1,0 +1,96 @@
+
+#paymentbox{
+width: 1250px;   
+background: linear-gradient(135.77deg, rgba(255, 255, 255, 0.4) -94.16%, rgba(255, 255, 255, 0) 100%);
+backdrop-filter: blur(21px);
+margin:7rem 0rem 2rem 5rem;
+border-radius: 16px;
+padding: 2rem;
+display:flex;
+flex-direction: column;
+}
+#itemslist{
+    display:flex;
+    flex-direction:column;
+}
+#itemnames1{
+    display:flex;
+}
+#taxes{
+    display:flex;
+    flex-direction: column;
+}
+#tax1{
+    display:flex;  
+}
+#total{
+    display:flex;
+    flex-direction: column;
+}
+#total1{
+    display:flex;
+}
+#itemname1{
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 700;
+font-size: 25px;
+color: #FFFFFF;
+width:500px;
+margin-top:10px;
+}
+#itemprice{
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+color: #FFFFFF;
+margin-top:10px;
+}
+#faketotal{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    color: #FFFFFF;
+    margin-top:10px;
+    margin-left:500px;
+}
+#taxname{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    color: #FFFFFF;
+    width:500px;
+    margin-top:10px;
+}
+#taxprice{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    color: #FFFFFF;
+    margin-top:10px;  
+}
+#totalname{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    color: #FFFFFF;
+    width:500px;
+    margin-top:10px;  
+}
+#totalprice{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    color: #FFFFFF;
+    margin-top:10px;  
+}
+#hr2{
+    width:640px;
+    margin-top:10px;
+}

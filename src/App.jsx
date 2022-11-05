@@ -12,12 +12,14 @@ import Contactus from './pages/contactus/contactus.jsx';
 import NewAddress from './newAddress/newaddress.jsx';
 import Verifyadd from './verifyAddress/verifyadd.jsx';
 import Payment from './payment/payment.jsx';
+import Cart from './cart/cart.jsx';
 import {
     BrowserRouter as Router,
     Routes,
     Route,
     Link
   } from "react-router-dom";
+
 
   
     var y = localStorage.getItem("check");
@@ -52,6 +54,8 @@ function App(){
                      <Route path='/veradd' exact element={<Verifyadd />}>
                      </Route>    
                      <Route path='/payment' exact element={<Payment />}>
+                     </Route> 
+                     <Route path='/cart' exact element={<Cart />}>
                      </Route>             
 
              </Routes>
