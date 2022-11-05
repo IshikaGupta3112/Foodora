@@ -1,6 +1,6 @@
 import react from "react";
 import RestaurantList from "./RestaurantList";
-import "../pages/items/Item.css"
+import "./items/Item.css"
 import RestaurantItems from "../restarantItem/restaurantItem";
 function CreateRest() {
   function createRest(RestaurantList) {

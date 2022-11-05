@@ -1,0 +1,99 @@
+*{
+    /* overflow-x: hidden; */
+}
+
+#ver{
+    color:white;
+    display:flex;
+    flex-direction: column;
+}
+#veraddp{
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 700;
+font-size: 32px;
+color: #FFFFFF;
+margin:6rem 0  0 12rem;
+}
+#veraddp2{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    color: #FFFFFF;
+    margin:1rem 0  1rem 12rem;
+    }
+#contentcenter{
+    width: 1100.35px;
+    margin:auto;
+    z-index:2;
+    background: linear-gradient(135.77deg, rgba(255, 255, 255, 0.4) -94.16%, rgba(255, 255, 255, 0) 100%);
+backdrop-filter: blur(21px);
+border-radius: 16px;
+margin:1rem 1rem 1rem 10rem;
+padding:2rem;
+border:1px solid rgba(255, 255, 255, 0.2);
+}
+#firstline{
+    font-family: 'Montserrat';
+    display:flex;
+    flex-direction:row;
+}
+#myname{
+   margin-left:-260px;
+   font-size:1.3rem;
+}
+#secondline{
+    font-family: 'Montserrat';
+    display:flex;
+    flex-direction: row;
+    margin-left:50px;
+}
+#secondline p{
+    padding:1rem 4rem 1rem 0rem;
+    font-size:0.9rem;
+   
+}
+#myno{
+    margin-left:50px;
+    font-size:0.9rem;
+}
+#myRadio{
+  height:20px;
+  margin-left:-280px;
+  margin-top:3px;
+}
+#padder{
+    padding:1rem 1rem 0 1rem;
+}
+
+@media (max-width:700px){
+    #secondline{
+        flex-direction: column;
+        padding:1rem 0 ;
+    }
+    #secondline p{
+        font-size:1.5rem;
+    }
+    #myname{
+        font-size:3rem;
+    }
+    #myno{
+        font-size:1.5rem;
+    }
+    #veraddp{
+        font-size:50px;
+        margin-left:470px;
+        width:500px;
+    }
+    #veraddp2{
+    font-size:30px;
+    margin-left:550px;
+    width:500px;
+    }
+    #myRadio{
+        height:30px;
+        margin-top:15px;
+    }
+}
+

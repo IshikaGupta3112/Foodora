@@ -1,0 +1,86 @@
+#newaddp{
+/* position: relative; */
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 700;
+font-size: 32px;
+margin:3rem;
+margin-top:7rem;
+color: #FFFFFF;
+}
+label{
+    color:white;
+   margin:1rem 0;
+   margin-left:0.7rem;
+   margin-top:1.5rem;
+   font-size:20px;
+}
+/* #addform{
+    background-color: pink;
+    height:200px;
+    width:700px;
+    margin:auto;
+} */
+#addform{
+  margin:auto;
+  background: linear-gradient(135.77deg, rgba(255, 255, 255, 0.4) -94.16%, rgba(255, 255, 255, 0) 100%);
+  backdrop-filter: blur(21px);
+  border-radius: 16px;
+  margin:2rem;
+  /* height:500px; */
+  width:1350px;
+}
+form{
+    padding-bottom:2rem;
+    margin:auto;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+#starrt{
+    display: flex;
+    flex-direction: column;
+    padding: 0 2rem;
+}
+#endd{
+    display: flex;
+    flex-direction: column;
+    padding: 0 2rem;   
+}
+input{
+    background-color: rgba(255, 255, 255, 0);
+    border:1px solid white;
+    padding:0.7rem;
+    margin-left:1em;
+    width:590px;
+}
+#nxtbtn{
+background: #97ED01;
+border-radius: 11px;
+border:none;
+width:120px;
+height:40px;
+/* padding:0.5rem 3rem; */
+color:white;
+font-weight: 700;
+margin-top:3rem;
+text-align: center;
+align-items: center;
+margin-left:70rem;
+}
+@media (max-width:700px){
+    #addform{
+        width:1000px;
+        margin-left:200px;
+    }
+    #newaddp{
+       margin:100px 0 50px 500px;
+       width:400px;
+    }
+    #nxtbtn{
+        margin-top:3rem;
+        margin-left:30rem;
+    }
+}

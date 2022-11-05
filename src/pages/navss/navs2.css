@@ -3,15 +3,15 @@ margin: 0;
 padding:0;
 box-sizing: border-box;
 }
-/* nav{
+nav{
 position: absolute;
-width: 99.213rem;
+width: 200vh;
 height: 3.55rem;
 left: 0rem;
 top: 0rem;
 background: #DB0007;
 z-index:2;
-} */
+}
 #homelogo{
 position: absolute;
 width: 2.749rem;

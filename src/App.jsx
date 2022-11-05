@@ -8,12 +8,17 @@ import Otp2 from './components/Otp2.jsx'
 import Main from './components/Main.jsx';
 import Password from './components/Password.jsx';
 import Home from './pages/homee/home.jsx';
+import Contactus from './pages/contactus/contactus.jsx';
+import NewAddress from './newAddress/newaddress.jsx';
+import Verifyadd from './verifyAddress/verifyadd.jsx';
+import Payment from './payment/payment.jsx';
 import {
     BrowserRouter as Router,
     Routes,
     Route,
     Link
   } from "react-router-dom";
+
   
     var y = localStorage.getItem("check");
 function App(){
@@ -39,6 +44,14 @@ function App(){
                      <Route path='/password' exact element={<Password />}>
                      </Route>    
                      <Route path='/home' exact element={<Home />}>
+                     </Route>      
+                     <Route path='/contact' exact element={<Contactus />}>
+                     </Route> 
+                     <Route path='/newadd' exact element={<NewAddress />}>
+                     </Route>    
+                     <Route path='/veradd' exact element={<Verifyadd />}>
+                     </Route>    
+                     <Route path='/payment' exact element={<Payment />}>
                      </Route>             
 
              </Routes>

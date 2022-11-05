@@ -20,5 +20,7 @@ const RestaurantList=[{
     time:"15mins",
     img:""
 }
+
+
 ];
 export default RestaurantList;
