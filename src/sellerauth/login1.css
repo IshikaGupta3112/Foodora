@@ -1,0 +1,163 @@
+#fulllog{
+    display:flex;
+    position: absolute; 
+    top:130px;
+    left:120px;
+    /* left: 0; 
+    right: 0; 
+    top: 0; 
+    bottom: 0; 
+    margin: auto; */
+}
+#loginpageimg{
+    height:580px;
+    width:620px;
+    border-radius:20px 0 0 20px;
+}
+#loginpageform{
+    width: 550px;
+    height: 580px;
+    background: linear-gradient(135.87deg, rgba(255, 255, 255, 0.4) -37.26%, rgba(255, 255, 255, 0) 99.84%);
+    border: 2px solid rgba(18, 18, 18, 0.53);
+    border-radius:0 20px 20px 0px; 
+}
+#sellerloginhead{
+  color: #ffffff;
+  font-size: 2.52rem;
+  margin-top:50px;
+  text-align: center;
+}
+#sellerback1{
+    position:absolute;
+    width:500px;
+    color:rgba(255,255,255,0.6);
+    font-size: 1.71rem;
+    text-align:center;
+    top:120px;
+    left:645px;
+}
+#sellerloginform{
+    text-align:center;
+    margin-top:78px;
+}
+#sellerloginform input{
+    background-color: rgba(255, 255, 255, 0);
+    border:1px solid white;
+    padding:0.7rem;
+    width: 23.94rem;
+    color:white;
+    border-radius:0.5rem;
+    margin-bottom:30px;
+}
+#validation1{
+    position:absolute;
+  font-size: 0.9rem;
+  color:rgba(255,255,255,0.8);
+  font-weight: bold;
+  top:228px;
+  left:710px;
+  display:none; 
+}
+#validation2{
+    position:absolute;
+    font-size: 0.9rem;
+  color:rgba(255,255,255,0.8);
+  font-weight: bold;
+  top:300px;
+  left:710px;
+  display:none;  
+}
+#sellerloginbtn{
+    cursor: pointer;
+    margin-top:1rem;
+    width: 12.492rem;
+    height: 2.481rem;
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid #ffffff;
+    border-radius: 0.5rem;
+    color:white; 
+}
+#sellerfrg{
+    text-align: center;
+    margin-top:30px;
+    font-weight: 900;
+  font-size: 1.17rem;
+}
+#sellerfrg a{
+  text-decoration: none;
+  color: white;
+}
+#sellersignuplink{
+    font-weight: 900;
+    font-size: 1.17rem;
+    color:rgba(255,255,255,0.6);
+    text-align: center;
+    margin-top:30px;
+}
+#sellersignuplink a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+#seye1{
+    position: absolute;
+    z-index: 2;
+    top: 17rem;
+    right: 6rem;
+    color:white;
+    cursor: pointer;  
+}
+@media (max-width:480px){
+    #loginpageimg{
+        display:none;
+    }
+    #loginpageform{
+        width:700px;
+        height: 980px;
+       position:absolute;
+     left:250px;
+     top:350px;  
+    }
+    #sellerloginhead{
+        font-size: 5rem;
+      }
+      #sellerloginform input{
+        width: 35.94rem;
+        padding:1rem;
+        font-size:2.5rem;
+        margin-bottom:80px;
+    }
+    #sellerloginbtn{
+        width: 16.492rem;
+        height: 4.481rem;
+        font-size:2.5rem;
+    }
+    #sellerfrg{
+        margin-top:50px;
+      font-size:3rem;
+    }
+    #sellersignuplink{
+        font-size: 2.5rem;
+        margin-top:40px;
+    }
+    #seye1{
+        top: 27.7rem;
+        right: 5rem;
+        height:2rem;
+    }
+    #validation1{
+      font-size: 2rem;
+      width:300px;
+      top:340px;
+      left:70px;
+    }
+    #sellerloginform{
+        margin-top:90px;
+    }
+    #sellerback1{
+        width:500px;
+        font-size: 3rem;
+        top:160px;
+        left:100px;
+    }
+}

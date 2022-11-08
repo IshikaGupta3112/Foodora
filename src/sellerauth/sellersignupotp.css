@@ -1,0 +1,44 @@
+#sellerback10{
+    position:absolute;
+    width:500px;
+    color:rgba(255,255,255,0.6);
+    font-size: 1.71rem;
+    text-align:center;
+    top:210px;
+    left:645px;
+}
+#sellerback5{
+        position:absolute;
+        width:500px;
+        color:rgba(255,255,255,0.6);
+        font-size: 1.71rem;
+        text-align:center;
+        top:120px;
+        left:645px;
+
+}
+#signupotp{
+    font-weight: 900;
+    font-size: 1.5rem;
+    color:rgba(255,255,255,0.6);
+    text-align: center;
+margin-top:40px;
+}
+@media (max-width:480px){
+    #sellerback10{
+        font-size: 2.5rem;
+        text-align:center;
+        top:250px;
+        left:100px;
+    }
+    #signupotp{
+        font-size: 2.5rem;
+    margin-top:80px;
+    }
+    #sellerback5{
+        font-size: 2.5rem;
+        top:100px;
+        left:100px;
+
+}
+}

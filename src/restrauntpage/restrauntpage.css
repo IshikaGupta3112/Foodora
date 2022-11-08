@@ -1,0 +1,334 @@
+#restrauntbox{
+    display:flex;
+    margin-top:7rem;
+    width:1300px;
+    margin-left:70px;
+    overflow-x:hidden;
+}
+#onepic{
+    margin-top:10px;
+width: 617.84px;
+height: 521.75px;
+background: #C4C4C4;
+border-radius: 20px;
+}
+#firstpic{
+    margin-top:10px;
+width: 343.71px;
+height: 255.87px;
+background:  #C4C4C4;
+border-radius: 20px;
+margin-left:10px;
+}
+#upperline{
+    display:flex;
+}
+#lowerline{
+    display:flex;
+}
+#fourpic{
+    display:flex;
+    flex-direction: column;
+}
+#rating{
+    color:white;
+    margin-top:-40px;
+    background-color:#378F00;
+    height:1.5rem;
+    width:4rem;
+    text-align: center;
+    border-radius:10px;
+    margin-left:1230px;
+}
+#review{
+    color:white;
+    margin-top:-25px;
+    margin-left:1300px;
+}
+#restrauntname{
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 700;
+font-size: 36px;
+color: #FFFFFF;
+margin:3rem 0 0 4.5rem;
+width:900px;
+}
+#restrauntitems{
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 32px;
+color: rgba(255, 255, 255, 0.6);
+margin:1.5rem 0 0 4.5rem;
+width:600px;
+}
+#restrauntaddress{
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 32px;
+color: rgba(255, 255, 255, 0.6);
+margin:0.3rem 0 0 4.5rem;
+width:600px;
+}
+#open{
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 500;
+font-size: 24px;
+color: #FFBC0D;
+margin-left:4.5rem;
+margin-top:10px;
+}
+#opentime{
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 24px;
+color: #FFFFFF;
+margin-top:-30px;
+margin-left:270px;
+}
+#addreview{
+    background-color: #DB0007;
+    color:white;
+    height:25px;
+    width:100px;
+    margin-left:70px;
+    margin-top:20px;
+    border-radius:10px;
+    text-align: center;
+    border:none;
+    cursor:pointer;
+}
+#directions{
+    color:white;
+    margin-top:-25px;
+    margin-left:210px;
+    cursor:pointer;
+}
+#share{
+    color:white;
+    margin-top:-20px;
+    margin-left:340px;
+    cursor:pointer;
+}
+#ul3{
+    color:white;
+    display:flex;
+    list-style:none;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 24px;
+color: #FFFFFF;
+margin-top:40px;
+margin-left:20px;
+}
+#ul3 li{
+    margin-left:50px;
+    cursor:pointer;
+}
+#restrauntcarditem{
+width: 1300px;
+height: 330px;
+background: linear-gradient(96.58deg, rgba(255, 255, 255, 0.8) -102.81%, rgba(255, 255, 255, 0) 98.87%);
+border-radius: 20px;
+margin-top:50px;
+margin-left:70px;
+display: flex;
+}
+#restrauntcardimg{
+    position:relative;
+width: 343.71px;
+height: 255.87px;
+left: 22px;
+top: 37px;
+background: #C4C4C4;
+border-radius: 20px;
+}
+#restrauntcardname{
+font-family: 'Open Sans';
+font-style: normal;
+font-weight: 600;
+font-size: 24px;
+line-height: 33px;
+color: #FFFFFF;
+}
+#restrauntcarddetails{
+    display: flex;
+    flex-direction: column;
+    margin-top:40px;
+    margin-left:50px;
+}
+#starsimg1{
+    height:30px;
+    margin-top:10px;
+    margin-left:10px;
+}
+#starsimg2{
+    height:30px;
+}
+#greenprice{
+    font-family: 'Open Sans';
+font-style: normal;
+font-weight: 600;
+font-size: 24px;
+line-height: 33px;
+color: #11D800;
+}
+#whiteprice{
+    font-family: 'Open Sans';
+font-style: normal;
+font-weight: 600;
+font-size: 24px;
+line-height: 33px;
+text-decoration-line: line-through;
+color: #FFFFFF;
+opacity: 0.6;
+margin-left:40px;
+}
+#cardprices{
+    display:flex;
+}
+#carddes{
+font-family: 'Open Sans';
+font-style: normal;
+font-weight: 100;
+font-size: 18px;
+color: rgba(255, 255, 255, 0.6);
+width:700px;
+margin-top:20px;
+}
+#restrauntadd{
+    width:100px;
+    height:30px;
+    font-size:15px;
+    color:white;
+    background-color:  #97ED01;
+    border:none;
+    margin-top:15px;
+    border-radius:10px;
+    cursor:pointer;
+}
+/* #directionimg{
+    margin-top:20px;
+    margin-left:200px;
+} */
+@media (max-width:600px){
+    #restrauntbox{
+     flex-direction:column;
+     margin-left:50px;
+    }
+    #onepic{
+    margin-left:70px;
+    width:1225px;
+    }
+    #fourpic{
+     margin-left:56px;   
+     margin-top:10px;
+    }
+    #firstpic{
+        width:750px;
+        height:350px;
+    }
+    #restrauntname{
+        margin-left:140px;
+        font-size:60px;
+        width:900px;
+    }
+    #restrauntitems{
+        margin-left:140px;
+        font-size:50px;
+        width:800px;
+    }
+    #restrauntaddress{
+        margin-left:140px;
+        font-size:50px;
+        width:900px; 
+    }
+    #rating{
+        font-size:30px;
+        height:3rem;
+    width:6rem;
+    margin:-55px 0 0 1130px;
+    }
+    #ratestar{
+        height:25px;
+    }
+    #review{
+        font-size:30px;
+        margin:-45px 0 0 1230px;
+    }
+    #open{
+        font-size:35px;
+        margin-left:140px;
+    }
+    #opentime{
+        font-size:35px;
+        margin-left:400px;
+        width:400px;
+        margin-top:-40px;
+    }
+    #addreview{
+        font-size:25px;
+        width:170px;
+        height:40px;
+        margin-left:140px;
+    }
+    #directions{
+        font-size:30px;
+        margin:-40px 0 0 350px;
+    }
+    #share{
+        font-size:30px;
+        margin:-40px 0 0 600px;
+        width:500px;
+    }
+    #ul3{
+        font-size:35px;
+        margin-left:100px;
+    }
+    #restrauntcardname{
+        margin-top:17px;
+        font-size: 40px;
+        }
+        #starsimg1{
+            height:40px;
+            margin-top:20px;
+            margin-left:10px;
+        }
+        #starsimg2{
+            height:40px;
+        }
+        #restrauntcarditem{
+            height: 390px;
+            }
+            #restrauntcardimg{
+            width: 343.71px;
+            height: 305.87px;
+            }
+            #carddes{
+                font-size: 25px;
+                width:850px;
+                margin-top:10px;
+                }
+            
+  
+}
+@media (max-width:1280px) and (min-width:1280px){
+    #restrauntbox{
+        margin-left:50px;
+       } 
+}
+@media (max-width:1024px) and (min-width:1024px){
+    #restrauntbox{
+        margin-left:50px
+       } 
+}
+@media (max-width:540px) and (min-width:540px){
+    #restrauntbox{
+        margin-left:45px;
+       } 
+}

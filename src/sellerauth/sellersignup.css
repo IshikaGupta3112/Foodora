@@ -1,0 +1,96 @@
+#validation6{
+    position:absolute;
+    font-size: 0.9rem;
+    color:rgba(255,255,255,0.8);
+    font-weight: bold;
+    top:208px;
+    left:710px;
+    display:none; 
+}
+#validation7{
+    position:absolute;
+    font-size: 0.9rem;
+    color:rgba(255,255,255,0.8);
+    font-weight: bold;
+    top:280px;
+    left:710px;
+    display:none; 
+}
+#validation8{
+    position:absolute;
+    font-size: 0.9rem;
+    color:rgba(255,255,255,0.8);
+    font-weight: bold;
+    top:352px;
+    left:710px;
+    display:none; 
+}
+#validation9{
+    position:absolute;
+    font-size: 0.9rem;
+    color:rgba(255,255,255,0.8);
+    font-weight: bold;
+    top:424px;
+    left:710px;
+    display:none; 
+}
+#sellersignuphead{
+    color: #ffffff;
+    font-size: 2.52rem;
+    margin-top:30px;
+    text-align: center;
+}
+#seye5{
+    position: absolute;
+    z-index: 2;
+    top: 24.7rem;
+    right: 6rem;
+    color:white;  
+    cursor: pointer;
+}
+#seye4{
+    position: absolute;
+    z-index: 2;
+    top: 20.1rem;
+    right: 6rem;
+    color:white;  
+    cursor: pointer;
+}
+#signuppageform{
+    width: 550px;
+    height: 580px;
+    background: linear-gradient(135.87deg, rgba(255, 255, 255, 0.4) -37.26%, rgba(255, 255, 255, 0) 99.84%);
+    border: 2px solid rgba(18, 18, 18, 0.53);
+    border-radius:0 20px 20px 0px; 
+}
+@media (max-width:480px){
+   #signuppageform{
+    width:700px;
+    height: 1080px;
+   position:absolute;
+ left:250px;
+ top:350px;  
+   } 
+   #seye5{
+    top: 44.3rem;
+    right: 5rem;
+    height:2rem;
+}
+#seye4{
+    top: 33.9rem;
+    right: 5rem;
+    height:2rem;
+}
+#validation7{
+    font-size: 2.5rem;
+    top:430px;
+    left:70px;
+    width:300px;
+}
+#validation9{
+    font-size: 2.5rem;
+    top:770px;
+    left:70px;
+    width:300px;
+}
+}

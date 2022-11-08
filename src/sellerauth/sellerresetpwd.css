@@ -1,0 +1,62 @@
+#seye3{
+    position: absolute;
+    z-index: 2;
+    top: 21rem;
+    right: 6rem;
+    color:white;  
+    cursor: pointer;
+}
+#seye2{
+    position: absolute;
+    z-index: 2;
+    top: 16.3rem;
+    right: 6rem;
+    color:white; 
+    cursor: pointer; 
+}
+#sellerresethead{
+    color: #ffffff;
+  font-size: 2.52rem;
+  margin-top:114px;
+  text-align: center;
+}
+#validation4{
+    position:absolute;
+    font-size: 0.9rem;
+    color:rgba(255,255,255,0.8);
+    font-weight: bold;
+    top:292px;
+    left:710px;
+    display:none; 
+}
+#validation5{
+    position:absolute;
+    font-size: 0.9rem;
+    color:rgba(255,255,255,0.8);
+    font-weight: bold;
+    top:364px;
+    left:710px;
+    display:none; 
+}
+@media (max-width:480px){
+    #sellerresethead{
+      font-size: 5rem;
+    }    
+    #seye3{
+        top: 32rem;
+        right: 5rem;
+        height:2rem;
+    }
+    #seye2{
+        top: 21rem;
+        height:2rem;
+        right: 5rem;
+    }
+    #validation5{
+        position:absolute;
+        font-size: 2.5rem;
+        width:400px;
+        top:570px;
+        left:70px;
+    }
+}

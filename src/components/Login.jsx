@@ -1,5 +1,5 @@
 import React ,{useState , useEffect}from 'react' ;
-import loginimg from '../assets/loginimg.svg';
+import loginpage from '../assets/loginpage.jpg';
 import Navs from "./navs.jsx";
 import "./Login.css";
 import { Link } from "react-router-dom";
@@ -69,10 +69,9 @@ const Login = () => {
     return (
       <div>
         <Navs />
-        <p id='backend'>{mssge}</p>
-     <h1 id='hungry'>HUNGRY??</h1>
-    <p id='order'>Order Now From Your Favourite Restraunt..</p>
-    <img src={loginimg} alt="hello" id="logs1" />
+        <img src={loginpage} id='loginpage' alt='' />
+        <div id='backgrey'></div>
+        <p id='backend'>{mssge}</p> 
     <h1 id="log">LOGIN</h1>
    <div id="auth">
     <form id="form1" onSubmit={handlesubmit}>

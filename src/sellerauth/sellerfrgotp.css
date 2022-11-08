@@ -1,0 +1,11 @@
+#resend2{
+        text-decoration: none;
+        font-size: 1.17rem;
+        font-weight: bold;
+        border:0;
+}
+@media (max-width:480px){
+    #resend2{
+        font-size: 2.5rem;
+    }
+}

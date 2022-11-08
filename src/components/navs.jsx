@@ -1,42 +1,29 @@
 import react from "react";
 import "../index.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { FontAwesomeIconProps } from "@fortawesome/react-fontawesome";
+import logo from '../assets/logo.svg';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-var a;
-function show() {
-  if (a == 1) {
-    document.getElementById("ul").style.left = 0;
-    return (a = 0);
-  } else {
-    document.getElementById("ul").style.left = "-100vh";
-    return (a = 1);
-  }
-}
+// var a;
+// function show() {
+//   if (a == 1) {
+//     document.getElementById("ul").style.left = 0;
+//     return (a = 0);
+//   } else {
+//     document.getElementById("ul").style.left = "-100vh";
+//     return (a = 1);
+//   }
+// }
 function Navs() {
   return (
     <>
-    <p id='logos'>FOODORA</p>
-      <nav>
-        <ul id="ul">
-          <div>
-            <li id='homes'>
-              <Link to="/">HOME</Link>
-            </li>
-          </div>
-          <div>
-            <li id='logins'>
-              <Link to="/login">LOGIN</Link>
-            </li>
-          </div>
-          <div>
-            <li id='signups'>
-              <Link to="/signup">SIGNUP</Link>
-            </li>
-          </div>
-        </ul>
+      <nav id='navbar'>
+      <img src ={logo}  alt ='hii' id="homelogo"/>
+            <p id='loginlink'>
+              <Link to="/login">Login</Link>
+            </p>
+            <p id='signlink'>
+              <Link to="/signup">Signup</Link>
+            </p>
       </nav>
-      {/* <FontAwesomeIcon icon="fa-solid fa-house" id='homeicon'/> */}
     </>
   );
 }

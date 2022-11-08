@@ -1,12 +1,13 @@
 import react, { useState , useEffect } from "react";
 import Navs from "./navs";
-import loginimg from '../assets/loginimg.svg';
+import loginpage from '../assets/loginpage.jpg';
 import "./Forgot.css";
 import { Link , useNavigate} from "react-router-dom";
 import axios from 'axios';
 function Forgot() {
   const [forgotMail, setForgotMail] = useState("");
   const [mssg,setMssg]=useState('');
+  const [route1 , setRoute1] = useState(false);
   
   function handleForgotMial(e) {
    setForgotMail(e.target.value);
@@ -37,8 +38,11 @@ function Forgot() {
         })
         .then((res) => {
           setMssg(res.data.msg);
-          console.log(res);    
+          console.log(res);  
+          setRoute1(true);
+          console.log(route1);  
           navigate("/otp");
+          // localStorage.setItem("routecheck1" ,setRoute1);
         })
         .catch((err) => {
           console.log(err);
@@ -49,9 +53,9 @@ function Forgot() {
   return (
     <>
       <Navs />
-      <p id='backend'>{mssg}</p>
-      <h1 id='hungry'>HUNGRY??</h1>
-        <p id='order'>Order Now From Your Favourite Restraunt..</p>
+      <img src={loginpage} id='loginpage' alt='' />
+      <div id="backgrey"></div>
+      <p id='backend2'>{mssg}</p>
       <h1 id="log2">Email Verification</h1>
       <div id="auth3">
         <form id="form1" onSubmit={handleSubmit}>
@@ -67,10 +71,8 @@ function Forgot() {
           ></input>
           <p id="err1">Invalid mail</p>
             <button type="submit" id='otpsend'>SEND OTP</button>
-
         </form>
       </div>
-      <img src={loginimg} alt="" id="logs1" />
     </>
   );
 }

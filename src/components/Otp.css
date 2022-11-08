@@ -1,143 +1,109 @@
 #auth4 {
     position: absolute;
-  left: 60vw;
-  width:25vw;
-  height:35vh;
-  top: 38vh;
-  background: rgba(255, 204, 204, 0.4);
-border: 2px solid rgba(18, 18, 18, 0.53);
-box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
-border-radius: 40px;
+  left:52.2rem;
+  width:22.5rem;
+  height:17.36rem;
+  top:18.87rem;
 }
 #log3 {
   position: absolute;
-  bottom: 68vh;
-  left: 62vw;
-  font-size: 2.8vw;
-  color: #DB0007;
-}
-#enters{
-    position:absolute;
-    font-size: 1vw;
+ top: -2.48rem;
+  left: 52.2rem;
+  font-size: 2.52rem;
+  color: #ffffff;
+  width:400px;
 }
 #otp{
-    position: absolute;
-    padding-left: 1vw;
-  border-radius: 5vh;
-  top: 7vh;
-  height: 5vh;
-  width: 22.6vw;
-  background-color: white;
-  left: 1vw; 
+  position: absolute;
+ border-radius:0.5rem;
+  top: 3rem;
+  height: 3rem;
+  width: 23.94rem;
+  padding-left:0.875rem;
+  background-color: rgba(0,0,0,0);
+  left:0rem;
+  color:white;
 }
 #verify{
-    position: absolute;
-    cursor: pointer;
-    width: 13.88vw;
-    top: 17vh;
-    left: 5.5vw;
-    height: 5vh;
-    background: rgba(219, 0, 7, 0.2);
-    border: 1px solid #db0007;
-    border-radius: 45px;
-    color: #db0007;  
+  position: absolute;
+  cursor: pointer;
+  width: 12.492rem;
+  top: 8.40rem;
+  left: 6.4rem;
+  height: 2.481rem;
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid #ffffff;
+  border-radius: 0.5rem;
+  color:white;
 }
 #otpp{
     position: absolute;
-    top: 25vh;
+    top: 12.9rem;
     font-weight: 900;
-    font-size: 1.3vw;
-    left:5vw;
+    font-size: 1.17rem;
+    left:5.5rem;
+    color:rgba(255,255,255,0.6);
+
 }
 #resend{
     text-decoration: none;
-    font-size: 1.3vw;
+    font-size: 1.17rem;
     font-weight: bold;
-    background-color:rgba(247, 107, 107, 0.1);
-    border:0
+    border:0;
 }
-#enters{
+/* #enters{
     position:absolute;
     font-weight: 900;
     font-size: 1.2vw;
     left:1vw;
     top:1.5vh;
-}
-#backendmssg2{
+} */
+#backendmssg{
   position:absolute;
-  bottom:64vh;
-  left:65.5vw;
-  color:red;
-  font-size: 1.9vw;
+  top:18.5rem;
+  left:58.05rem;
+  width:300px;
+  color:rgba(255,255,255,0.6);
+  font-size: 1.71rem;
 }
-#logso{
-  position: absolute;
-  width: 50vw;
-  height: 70vh;
-  left: 0px;
-  top: 14vw;
-}
-@media (max-width:600px){
-    #logs {
-        position: absolute;
-        width: 100vw;
-        top: 45vh;
-        left: 0px;
-      } 
-      #hungry {
-      display:none;
-      }
-      #order{
-     display:none;
-      }
-      #auth4 {
-        left: 10vw;
-        width: 79vw;
-        height: 30vh;
-        top: 25vh;
-      }
-      #log3 {
-        position: absolute;
-        top: -25vh;
-        left: 15vw;
-        font-size: 9vw;
-        z-index: 2;
-      }
-      #otp {
-        width:70vw;
-        left:4vw;
-      }
-      #verify{
-        width:40vw;
-        left:20vw;
-      }
-      #errors6 {
-        top:12vh;
-        font-size: 3.5vw;
-        left: 5.5vw;
-      }
-      #enters{
-        font-size: 4vw;
-        left:2vw;
-    }
-    #otpp{
-        top:24vh;
-        font-size: 4.5vw;
-        left: 14vw;
-    }
-    #resend{
-      text-decoration: none;
-      font-size: 4.5vw;
-      font-weight: bold;
-      background-color:rgba(247, 107, 107, 0.1);
-      border:0
+@media (max-width:500px){
+
+  #log3{
+    font-size:6rem;
+    top:20rem;
+    left:15rem; 
+    width:1000px;
   }
-  #backendmssg2{
-    bottom:77vh;
-    /* top:22vh; */
-    left:35vw;
-    color:red;
-    font-size: 4vw;
+  #auth4 {
+    left:23rem;
+    top: 50.88rem;
   }
-      
+  #otp {
+    top: 1.73rem;
+    height: 5rem;
+    width: 40.94rem;
+    font-size:2rem;
+  }
+  #verify {
+    width: 20.492rem;
+    top: 13.40rem;
+    left: 13.65rem;
+    font-size:2rem;
+    height: 4.481rem;
+  }
+  #otpp {
+    top: 23.37rem;
+    left: 4rem;
+    font-size: 3rem;
+    width:700px;
+  }
+  #resend{
+   font-size:3rem;
+  }
+  #backendmssg{
+    top:44rem;
+    left:35.2rem;
+    width:500px;
+    font-size:3rem;
+  }
 }

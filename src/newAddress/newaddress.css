@@ -30,7 +30,7 @@ label{
   /* height:500px; */
   width:1350px;
 }
-form{
+#newaddform{
     padding-bottom:2rem;
     margin:auto;
     display:flex;
@@ -49,12 +49,13 @@ form{
     flex-direction: column;
     padding: 0 2rem;   
 }
-input{
+#newaddform input{
     background-color: rgba(255, 255, 255, 0);
     border:1px solid white;
     padding:0.7rem;
     margin-left:1em;
     width:590px;
+    color:white;
 }
 #nxtbtn{
 background: #97ED01;
@@ -69,6 +70,7 @@ margin-top:3rem;
 text-align: center;
 align-items: center;
 margin-left:70rem;
+cursor:pointer;
 }
 @media (max-width:700px){
     #addform{

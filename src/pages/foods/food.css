@@ -115,5 +115,6 @@
     margin-left:3.75rem;
     /* justify-content: space-between; */
     margin-right:5.625rem;
+    overflow-x:hidden;
    }
    

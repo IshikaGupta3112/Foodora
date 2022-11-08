@@ -1,0 +1,17 @@
+#sellernav{
+        position: absolute;
+        width:91.95rem;
+        height: 3.5rem;
+        left: 0rem;
+        top: 0rem;
+        background: #3451FF;
+        z-index:2;
+        overflow-x:hidden;
+}
+#homelogo2{
+    position: absolute;
+    width: 4rem;
+    height:4rem;
+    left:2.977rem;
+    top: 0.3rem;
+}

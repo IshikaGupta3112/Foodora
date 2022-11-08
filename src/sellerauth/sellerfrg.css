@@ -1,0 +1,43 @@
+#sellerfrghead{
+    color: #ffffff;
+    font-size: 2.52rem;
+    margin-top:140px;
+    text-align: center;
+}
+#validation3{
+    position:absolute;
+    font-size: 0.9rem;
+    color:rgba(255,255,255,0.8);
+    font-weight: bold;
+    top:318px;
+    left:710px;
+    display:none; 
+}
+#sellerback2{
+    position:absolute;
+    width:500px;
+    color:rgba(255,255,255,0.6);
+    font-size: 1.71rem;
+    text-align:center;
+    top:210px;
+    left:645px;
+}
+@media (max-width:480px){
+    #sellerback2{
+        width:500px;
+        font-size: 3rem;
+        top:250px;
+        left:100px;
+    } 
+    #validation3{
+        font-size: 2.5rem;
+        width:300px;
+        top:420px;
+        left:70px;
+    }
+    #sellerfrghead{
+        font-size: 5rem;
+        text-align: center;
+        margin-top:140px;
+    }
+}

@@ -10,7 +10,7 @@ function Otps2() {
   }
   const navigate = useNavigate();
   var email = localStorage.getItem("forgotMail");
-  console.log(email);
+  // console.log(email);
   function handleSubmit(e) {
     console.log(otp);
     console.log(email);
@@ -59,7 +59,6 @@ function Otps2() {
     <p id='backendmssg'>{mssg}</p>
       <h1 id="log3">OTP verification</h1>
       <div id="auth4">
-        <p id='enters'>Enter OTP send at abc.......@gmail.com</p>
         <form id="form1" onSubmit={handleSubmit}>
           <input
             type="text"
@@ -76,7 +75,7 @@ function Otps2() {
           onClick={handleApi5} 
           id='resend'>
             Resend OTP
-          </button>: {counter}</p>
+          </button> : {counter}</p>
         </form>
       </div>
     </>

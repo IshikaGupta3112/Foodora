@@ -359,7 +359,7 @@ color: #FFFFFF;
     margin-top:1.5rem;
     list-style:none;
 }
-li{
+.ul1 li{
     width: 160px;
 height: 26px;
 font-style: normal;

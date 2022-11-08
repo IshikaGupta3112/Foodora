@@ -6,7 +6,6 @@ function Navbar() {
   return (
     <>
       <Navs />
-      <img src={background} alt="" id="back" />
     </>
   );
 }

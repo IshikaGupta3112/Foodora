@@ -1,4 +1,3 @@
-
 import "./verifyadd.css"
 function Verify(props){
 return(

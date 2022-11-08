@@ -54,10 +54,9 @@ function Otps() {
   },[counter]);
   return (
     <>
-    <p id='backendmssg2'>{mssg}</p>
+    <p id='backendmssg'>{mssg}</p>
       <h1 id="log3">OTP verification</h1>
       <div id="auth4">
-        <p id='enters'>Enter OTP send at abc.......@gmail.com</p>
         <form id="form1" onSubmit={handleSubmit}>
           <input
             type="text"

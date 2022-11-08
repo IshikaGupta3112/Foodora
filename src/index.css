@@ -2,75 +2,87 @@
     margin:0;
     padding:0;
     box-sizing: border-box;
-    /* overflow:hidden; */
     font-family: 'Open Sans', sans-serif;
 }
-body{
-    background-color:rgb(247, 213, 176);
-}
-#back{
-position: absolute;
-height: 85vh;
-width:100vw;
-right: 0.347vw;
-top: 14vh;
-}
-nav{
+#navbar{
     position: absolute;
-    height:10vh;
-    width:100vw;
-    left: 0vw;
-    right: 0vw;
-    top: 0vh; 
-    background: #FFBC0D;
-}
-nav ul{
-    display:flex;
-    list-style: none;
-    float:right;
-}
-nav ul li{
-    padding:4vh 2vw; 
-    font-size: 2vh;
-}
-nav ul li a{
-    text-decoration: none;
-    color: #DB0007;
-  
-}
-nav ul li a:active,:visited{
-    padding:1vh;
-    background-color: white;
-    border-radius: 10px;
-}
-#logos{
+    width:91.95rem;
+    height: 3.5rem;
+    left: 0rem;
+    top: 0rem;
+    background: #DB0007;
+    z-index:2;
+    overflow-x:hidden;
+    }
+   
+#loginlink a{
     position: absolute;
-    /* width: 13.194vw;
-    height: 5.02vh; */
-    left: 2vw;
-    top:3.2vh;
-    bottom:1.3vw;
-    z-index:7;
-    font-family: 'Montserrat';
+    width: 3.30rem;
+    height: 1.558rem;
+    left: 72.37rem;
+    top: 1rem;
+    font-family: 'Open Sans';
     font-style: normal;
-    font-weight: 900;
-    font-size:3.9vh;
-    color: #DB0007; 
+    font-weight: 600;
+    font-size: 1.7rem;
+    line-height: 1.558rem;
+    color: #FFFFFF;
+    text-decoration: none;
 }
-@media (max-width:600px){
-    nav{
-        height:6vh;
-    } 
-    #logos{
-        width: 20vh;
-        height: 7vh;
-        left: 3vw;
-        top:1vh;
-        font-weight: 900;
-        font-size:3vh;
-    }
-    nav ul li{
-        padding:2vh 1vh; 
-        font-size: 1.5vh;
-    }
+#signlink a{
+        position: absolute;
+        width: 3.30rem;
+        height: 1.558rem;
+        left: 80.37rem;
+        top: 1rem;
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 1.7rem;
+        line-height: 1.558rem;
+        color: #FFFFFF;
+        text-decoration: none;
 }
+@media (max-width:500px){
+ #loginlink a{
+    left: 10.37rem;
+ }   
+ #signlink a{
+    left: 20.37rem;
+ } 
+ #navbar{
+    height: 5rem;  
+ }  
+}
+/* @media (max-width:500px){
+    #navbar{
+        height:7rem;
+        }   
+        #homelogo1{
+            width: 6rem;
+            height:6rem;
+            left:4rem;
+        }
+        #loginlink a{
+            left: 60.37rem;
+            top: 2.7rem;
+            font-size:3rem;
+        }
+        #signlink a{
+            left: 74.37rem;
+            top: 2.7rem;
+            font-size:3rem;
+        }
+}
+@media (max-width:340px){
+    #loginlink a{
+        left: 15.37rem;
+        top: 2.7rem;
+        font-size:3rem;
+    }
+    #signlink a{
+        left:30.37rem;
+        top: 2.7rem;
+        font-size:3rem;
+    }
+} */

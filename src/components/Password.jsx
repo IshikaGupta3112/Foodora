@@ -1,14 +1,14 @@
 import react ,{useEffect , useState} from "react";
-import loginimg from '../assets/loginimg.svg';
+import loginpage from '../assets/loginpage.jpg';
 import Navs from "./navs.jsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/fontawesome-free-solid";
 import axios from 'axios';
 import "./password.css";
 import { Link } from "react-router-dom";
-var email = localStorage.getItem("forgotMail");
-console.log(email);
 function Password() {
+  var email = localStorage.getItem("forgotMail");
+  console.log(email);
     const [pass , setPass] = useState("");
     const [repass , setRepass]=useState("");
    const[correctpass , setcorrectpass] =useState(false);
@@ -75,9 +75,8 @@ console.log(email);
       <Navs />
       <div>
         <p id='backend1'>{mssg}</p>
-        <h1 id='hungry'>HUNGRY??</h1>
-        <p id='order'>Order Now From Your Favourite Restraunt..</p>
-        <img src={loginimg} alt="hello" id="logs1" />
+        <img src={loginpage} id='loginpage' />
+        <div id='backgrey'></div>
       </div>
       <div class='headerss'>
       <h1 id="log5">Reset Password</h1>

@@ -2,8 +2,7 @@ import react, { useState,useEffect } from "react";
 import axios from 'axios';
 import "./Signup.css";
 import Navs from "./navs.jsx";
-import signinimg from '../assets/signinimg.svg';
-import Otps from "./Otps.jsx";
+import signuppage from '../assets/signuppage.jpg';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/fontawesome-free-solid";
 import { Link  , useNavigate} from "react-router-dom";
@@ -115,9 +114,9 @@ function Signup(){
     return (
           <>
             <Navs />
-            <p id='backendmssg'>{mssg}</p>
-            <h1 id='hungry'>HUNGRY??</h1>
-              <p id='order'>Order Now From Your Favourite Restraunt..</p>
+            <img src={signuppage} alt="" id="loginpage" />
+            <div id='backgrey'></div>
+            <p id='backendmssg2'>{mssg}</p>
             <h1 id="log1">SIGNUP</h1>
             <div id="auths">
               <div className="form">
@@ -193,7 +192,6 @@ function Signup(){
                 </form>
               </div>
             </div>
-            <img src={signinimg} alt="" id="logs3" />
                 
           </>
         );

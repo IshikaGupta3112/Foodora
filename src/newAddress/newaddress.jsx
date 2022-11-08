@@ -7,7 +7,7 @@ return(<>
 <div>
 <p id='newaddp'>ADD NEW ADDRESS</p>
 <div id="addform">
-    <form >
+    <form id='newaddform'>
         <div id="starrt">
         <label htmlFor='name'>Name</label>
         <input type="text" />

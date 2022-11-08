@@ -1,110 +1,98 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  /* overflow: hidden; */
-}
-body {
-  background: #ffffff;
-}
 #auths {
   position: absolute;
-  background: rgba(255, 204, 204, 0.4);
-border: 2px solid rgba(18,18,18,0.53);
-box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
-border-radius: 2.77vw;
-  left: 60vw;
-  width: 30vw;
-  height: 55vh;
-  top: 27.7vh;
+  left: 51rem;
+  width: 28rem;
+  height: 26rem;
+  top: 13rem;
 }
 #log1 {
   position: absolute;
-  bottom: 75vh;
-  left: 70vw;
-  color:#DB0007;
-  font-size: 2.8vw;
-}
-#logs3 {
-  position: absolute;
-  width: 50vw;
-  height: 70vh;
-  left: 0px;
-  top: 14vw;
+  top: -8.5rem;
+  width:400px;
+  left: 51.5rem;
+  color:#ffffff;
+  font-size: 2.52rem;
 }
 #eye1 {
   position: absolute;
-  top: 22.1vh;
-  right:2vw;
+  top: 13.3rem;
+  right:3rem;
   z-index: 2;
+  color:white;
 }
 #eye2 {
   position: absolute;
-  top: 30.8vh;
-  right: 2vw;
+  top: 18.4rem;
+  right: 3rem;
   z-index: 2;
+  color:white;
 }
 .fullname{
-    position: absolute;
-    padding-left: 1vw;
-    border-radius: 5vh;
-    top: 3.5vh;
-    height: 5vh;
-    width: 27.5vw;
-    background-color: white;
-    left: 1vw;
+  position: absolute;
+  border-radius:0.5rem;
+   top: 1.73rem;
+   height: 3rem;
+   width: 23.94rem;
+   padding-left:0.875rem;
+   background-color: rgba(0,0,0,0);
+   left: 0.875rem;
+   color:white;
 }
 .emails{
-    position: absolute;
-    padding-left: 1vw;
-    border-radius: 5vh;
-    top: 12vh;
-    height: 5vh;
-    width: 27.5vw;
-    background-color: white;
-    left: 1vw;
+  position: absolute;
+  border-radius:0.5rem;
+   top: 7rem;
+   height: 3rem;
+   width: 23.94rem;
+   padding-left:0.875rem;
+   background-color: rgba(0,0,0,0);
+   left: 0.875rem;
+   color:white;
 }
 .passwords{
-    position: absolute;
-    padding-left: 1vw;
-    border-radius: 5vh;
-    top: 20.5vh;
-    height: 5vh;
-    width: 27.5vw;
-    background-color: white;
-    left: 1vw; 
+  position: absolute;
+  border-radius:0.5rem;
+   top: 12.25rem;
+   height: 3rem;
+   width: 23.94rem;
+   padding-left:0.875rem;
+   background-color: rgba(0,0,0,0);
+   left: 0.875rem;
+   color:white;
 }
 .repasswords{
-    position: absolute;
-    padding-left: 1vw;
-    border-radius: 5vh;
-    top: 29vh;
-    height: 5vh;
-    width: 27.5vw;
-    background-color: white;
-    left: 1vw;   
+  position: absolute;
+  border-radius:0.5rem;
+   top: 17.5rem;
+   height: 3rem;
+   width: 23.94rem;
+   padding-left:0.875rem;
+   background-color: rgba(0,0,0,0);
+   left: 0.875rem;
+   color:white;
 }
 #form2 button{
-    position: absolute;
-    cursor: pointer;
-  width: 13.88vw;
-  top: 39vh;
-  left:8vw;
-  height: 5vh;
-  background: rgba(219, 0, 7, 0.2);
-  border: 1px solid #db0007;
-  border-radius: 45px;
-  color: #db0007;
+  position: absolute;
+  cursor: pointer;
+  width: 12.492rem;
+  top: 23.40rem;
+  left: 7.65rem;
+  height: 2.481rem;
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid #ffffff;
+  border-radius: 0.5rem;
+  color:white;
 }
 #customer{
-    position: absolute;
-    top: 48vh;
-    font-weight: 900;
-    font-size: 1.3vw;
-    left: 6vw;
+  position: absolute;
+  top: 27.34rem;
+  font-weight: 900;
+  font-size: 1.17rem;
+  left: 6.3rem;
+  color:rgba(255,255,255,0.6);
 }
 #customer a{
-    color:#DB0007;
+    color:white;
     text-decoration: none;
 }
 #errors1 {
@@ -119,10 +107,10 @@ border-radius: 2.77vw;
 }
 #errors2 {
   position: absolute;
-  top: 17.2vh;
-  font-size: 1vw;
-  color: #DB0007;
-  left: 1.5vw;
+  top: 10.2rem;
+  font-size: 0.9rem;
+  color:rgba(255,255,255,0.8);
+  left: 2rem;
   font-weight: bold;
   display:none;
 }
@@ -137,100 +125,100 @@ border-radius: 2.77vw;
 }
 #errors4 {
   position: absolute;
-  top: 34vh;
-  font-size: 1vw;
-  color: #DB0007;
-  left: 1.5vw;
+  top: 20.6rem;
+  font-size: 0.9rem;
+  color:rgba(255,255,255,0.8);
+  left: 2rem;
   font-weight: bold;
   display:none;
 }
-#backendmssg{
+#backendmssg2{
   position:absolute;
-  bottom:72vh;
-  left:67vw;
-  color:red;
- font-size: 1.9vw;
+  top:12rem;
+  left:57.2rem;
+  width:500px;
+  color:rgba(255,255,255,0.6);
+  font-size: 1.71rem;
 }
-@media (max-width:600px){
-    #logs3{
-        width:87vw;
-        top: 48vh;
-        left: 5vw;
-      } 
-      #hungry {
-      display:none;
-      }
-      #order{
-     display:none;
-      }
-      #auths {
-        left: 10vw;
-        width: 79vw;
-        height: 49vh;
-        top: 13vh;
-      }
-     #log1{
-     bottom:88.4vh;
-     left:36.5vw;
-     font-size:6vw;
-     }
-     .fullname{
-        width: 70vw;
-        left:4vw;
-     }
-      .emails {
-        width: 70vw;
-        left:4vw;
-      }
-      .passwords{
-        width: 70vw;
-        left:4vw;
-      }
-      .repasswords{
-        width: 70vw;
-        left:4vw;
-      }
-      #form2 button{
-        width:40vw;
-        left:20vw;
-        top:37vh;
-      }
-      #customer{
-        top: 44vh;
-        font-size: 3vw;
-        left: 19vw;
-    }
-      #eye1 {
-        top: 22.5vh;
-        right: 7vw;
-      }
-      #eye2 {
-        top: 31vh;
-        right: 7vw;
-      }
-      #errors1 {
-        font-size: 3vw;
-        left: 6vw;
-
-      }
-      #errors2 {
-        font-size: 3vw;
-        left: 6vw;
-      }
-      #errors3 {
-        font-size: 3vw;
-        left: 6vw;
-      }
-      #errors4 {
-        font-size: 3vw;
-        left: 6vw;
-      }
-      #backendmssg{
-        position:absolute;
-       bottom:87vh;
-        left:35vw;
-        color:red;
-        font-size: 3vw;
-       
-      }
+@media (max-width:500px){
+  #log1{
+    font-size:6rem;
+    top:18rem;
+    left:34rem; 
+  }
+  #auths {
+    left:23rem;
+    top: 45.88rem;
+  }
+  .fullname{
+    top: 1.73rem;
+    height: 5rem;
+    width: 40.94rem;
+    font-size:2rem;
+  }
+  .emails {
+    top: 11rem;
+    height: 5rem;
+    width: 40.94rem;
+    font-size:2rem;
+  }
+  .passwords {
+    top: 20rem;
+    height: 5rem;
+    width: 40.94rem;
+    font-size:2rem;
+  }
+  .repasswords {
+    top: 29rem;
+    height: 5rem;
+    width: 40.94rem;
+    font-size:2rem;
+  }
+  #eye1 {
+    position: absolute;
+    z-index: 2;
+    top: 21.4rem;
+    right: -14.5rem;
+    color:white;
+    font-size:2rem;
+  }
+  #eye2 {
+    position: absolute;
+    z-index: 2;
+    top: 30.4rem;
+    right: -14.5rem;
+    color:white;
+    font-size:2rem;
+  }
+  #errors2 {
+    top: 16rem;
+    font-size: 2rem;
+    width:700px;
+    left: 3rem;
+  }
+  #errors4 {
+    top: 34rem;
+    font-size: 2rem;
+    width:700px;
+    left: 3rem;
+  }
+#form2 button {
+    width: 20.492rem;
+    top: 38.40rem;
+    left: 13.65rem;
+    font-size:2rem;
+    height: 4.481rem;
+  }
+  #customer{
+    top: 44.37rem;
+    left: 5rem;
+    font-size: 3rem;
+    width:600px;
+  }
+  #backendmssg2{
+    top:41rem;
+    left:33.2rem;
+    width:500px;
+    font-size:3rem;
+  }
 }

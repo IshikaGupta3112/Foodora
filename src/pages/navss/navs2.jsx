@@ -6,7 +6,7 @@ import search from '../../assets/search.svg'
 function Navs2(){
 return (
 <div>
-<nav>
+<nav id='nav2'>
 <img src ={logo}  alt ='hii' id="homelogo"/>
 <div id="searchbar"></div>
 <img src={search} alt="search" id="search" />
@@ -16,7 +16,6 @@ return (
 <img src={cart} alt="cart" id="cart" />
 <div id='profile'></div>
 </nav>
-
 </div>);
 }
 export default Navs2;
