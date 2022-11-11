@@ -1,0 +1,41 @@
+#btns{
+    margin:auto;
+   display:block;
+   margin-top:40px;
+   width:100px;
+}
+#sellerbtn{
+    padding:0.5rem;
+    width:100px;
+    font-weight:bold;
+}
+#buyerbtn{
+    padding:0.5rem;
+    width:100px;
+    font-weight:bold;
+    margin-top:30px;
+}
+#frontpage{
+    position:absolute;
+    z-index: -1;
+    top:0;
+}
+#frontpage img{
+    width:100vw;
+    height:100vh;
+    overflow:hidden;
+   
+}
+#areuu{
+    /* margin-top:-100px; */
+    margin-top:290px;
+    color:white;
+    font-weight:bold;
+}
+#areuu2{
+    /* margin-top:-100px; */
+    font-size:70px;
+    margin-top:250px;
+    color:white;
+    font-weight:bold;
+}

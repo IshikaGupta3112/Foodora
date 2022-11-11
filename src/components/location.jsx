@@ -4,6 +4,7 @@ import Navs2 from '../pages/navss/navs2';
 import { useNavigate } from 'react-router-dom';
 import location from '../assets/location.jpg';
 import axios from 'axios';
+import Navs from './navs';
 function Location(){
     const Navigate = useNavigate();
     var id= localStorage.getItem("userid");
@@ -58,12 +59,12 @@ const getLocation = () => {
   console.log("longitude:"+lng);
  
 return(<>
-<Navbar/>
+<Navs />
 <div id="fulllog">
 <img src={location} id='loginpageimg'></img>
 <div id='loginpageform'>
 <h1 id="sellerloginhead">Location</h1>
-    <form id='sellerloginform' 
+    {/* <form id='sellerloginform' 
     onSubmit={handlesubmit}
     >
         <input type='text' 
@@ -74,7 +75,7 @@ return(<>
         ></input> 
         <button type='submit'id='donebtn'>Done</button>
         <p id='locateor'>Or</p>
-    </form>
+    </form> */}
     <button 
 onClick={getLocation}
 id='locatemebtn'

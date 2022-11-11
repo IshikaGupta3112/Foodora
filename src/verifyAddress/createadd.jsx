@@ -1,6 +1,6 @@
 import AddressList from "./addresslist";
 import Verify from "./template";
-import "./verifyadd.css"
+import "./verifyadd.css";
 function CreateaddressList() {
   function createList(AddressList) {
     return (
@@ -16,10 +16,8 @@ function CreateaddressList() {
   }
   return (
     <>
-    <div id="Addressitem">
-      {AddressList.map(createList)};
-   </div>
- </>
+      <div id="Addressitem">{AddressList.map(createList)};</div>
+    </>
   );
 }
 
