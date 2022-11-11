@@ -129,6 +129,9 @@ border-radius:0 20px 20px 0px;
   font-weight: bold;
   display:none;
 } 
+#areu{
+  color:white;
+}
 @media (max-width:500px){
   #loginpage{
     display:none;

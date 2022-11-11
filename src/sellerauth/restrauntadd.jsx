@@ -3,9 +3,11 @@ import restrauntadd from "../assets/restrauntadd.jpg";
 import axios from "axios";
 import FormData from 'form-data';
 import SellerNav from "./sellernav";
+import { useNavigate } from "react-router-dom";
 import "./restrauntadd.css";
 function RestrauntAdd() {
   const [formd, setformd] = useState([]);
+  const Navigate = useNavigate();
   // let token1=localStorage.getItem("token1");
   const [restrauntName, setRestrauntName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -81,6 +83,7 @@ function RestrauntAdd() {
         .then((res) => {
           console.log(res.data);
           setMssg7(res.data.msg);
+          Navigate("/foodadd");
         })
         .catch((err) => {
           console.log(err);

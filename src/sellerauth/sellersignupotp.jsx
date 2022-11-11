@@ -5,6 +5,7 @@ import sellerfrgotp from '../assets/sellerfrgotp.svg';
 import SellerNav from './sellernav';
 import {Link , useNavigate} from 'react-router-dom';
 function SellerSignupOtp(){
+  const Navigate = useNavigate();
     const [mssg4,setmssg4]=useState('');
   const [userOtp, setuserOtp] = useState({
     otp: "",
@@ -40,7 +41,7 @@ function SellerSignupOtp(){
       setmssg4(result.data.msg)
       localStorage.setItem("id1" , result.data.id);
       console.log(result.data.id);})
-      
+      Navigate("/restaurantadd")
     .catch(err3=>{
       console.log(err3);
       console.log(err3.response.data.msg);

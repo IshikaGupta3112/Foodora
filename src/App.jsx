@@ -31,6 +31,8 @@ import {
     Route,
     Link
   } from "react-router-dom";
+import SellerorBuyer from './components/sellerorbuyer.jsx';
+import Seller from './sellerauth/sellerpage.jsx';
     // var y = localStorage.getItem("check");
     // var y = localStorage.getItem("routecheck1");
     // localStorage.removeItem("routecheck1");
@@ -39,7 +41,7 @@ function App(){
         <div>   
              <Router>
                 <Routes>
-                   <Route path='/' exact element={<Navbar /> }>  
+                   <Route path='/buyer' exact element={<Navbar /> }>  
                      </Route>
                      <Route path='/signup' exact element={<Signup />}>
                      </Route>
@@ -91,7 +93,10 @@ function App(){
                      </Route> 
                      <Route path='/location' exact element={<Location/>}>
                      </Route> 
-                           
+                     <Route path='/seller' exact element={<Seller/>}>
+                     </Route> 
+                     <Route path='/' exact element={<SellerorBuyer/>}>
+                     </Route>    
 
              </Routes>
         </Router>
