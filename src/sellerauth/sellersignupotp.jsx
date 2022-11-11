@@ -41,7 +41,7 @@ function SellerSignupOtp(){
       setmssg4(result.data.msg)
       localStorage.setItem("id1" , result.data.id);
       console.log(result.data.id);})
-      Navigate("/restaurantadd")
+      Navigate("/restrauntadd")
     .catch(err3=>{
       console.log(err3);
       console.log(err3.response.data.msg);
