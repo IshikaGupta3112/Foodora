@@ -1,24 +1,25 @@
 import './restrauntpage.css'
 import star from '../assets/star.svg';
 function Restrauntcard(props){
+    var url="https://foodorabackend-production.up.railway.app/";
     return(<>
     <div id='restrauntcarditem'>
-<div id='restrauntcardimg'>
-    </div>   
+<img src={url+props.imgpath} id='restrauntcardimg'>
+    </img>   
     <div id='restrauntcarddetails'>
-    <p id='restrauntcardname'>{props.name}</p> 
+    <p id='restrauntcardname'>{props.foodname}</p> 
     <div id='starsimg'>
-        <img src={star} id='starsimg2'></img>
-        <img src={star} id='starsimg1'></img>
-        <img src={star} id='starsimg1'></img>
-        <img src={star} id='starsimg1'></img>
-        <img src={star} id='starsimg1'></img>
+        {/* <img src={star} id='starsimg2'></img> */}
+        {/* <img src={star} id='starsimg1'></img> */}
+        {/* <img src={star} id='starsimg1'></img> */}
+        {/* <img src={star} id='starsimg1'></img> */}
+        {/* <img src={star} id='starsimg1'></img> */}
         </div>
       <div id='cardprices'>
-        <p id='greenprice'>{props.price}</p>
-        <p id='whiteprice'>{props.actPrice}</p>
+        <p id='greenprice'>{props.food_price}</p>
+        {/* <p id='whiteprice'>{props.actPrice}</p> */}
         </div>  
-        <p id='carddes'>{props.detail}</p>
+        <p id='carddes'>{props.food_desc}</p>
         <button id='restrauntadd'>Add To Cart</button>
     </div>
 </div>

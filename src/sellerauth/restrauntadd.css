@@ -1,0 +1,90 @@
+#restrauntform{
+    text-align:center;
+    margin-top:60px;
+}
+#restrauntform input{
+    background-color: rgba(255, 255, 255, 0);
+    border:1px solid white;
+    padding:0.7rem;
+    width: 23.94rem;
+    color:white;
+    border-radius:0.5rem;
+    margin-bottom:30px;
+}
+#restrauntaddhead{
+    color: #ffffff;
+    font-size: 2.52rem;
+    margin-top:5px;
+    text-align: center;
+}
+
+#close{
+    position:absolute;
+    width:400px;
+    top:366px;
+    left:546px;
+    font-size:1rem;
+}
+#opening{
+    position:absolute;
+    width:400px;
+    top:292px;
+    left:550px;
+    font-size:1rem;
+}
+#validation10{
+    position:absolute;
+    font-size: 0.9rem;
+    color:rgba(255,255,255,0.8);
+    font-weight: bold;
+    top:240px;
+    left:710px;
+    display:none; 
+}
+#imagefilesform{
+display:none;
+}
+#imagefilesform input{
+    display:flex;
+    flex-direction: column;
+    padding:1rem;
+}
+#sellerback6{
+    position:absolute;
+    width:500px;
+    color:rgba(255,255,255,0.6);
+    font-size: 1.71rem;
+    text-align:center;
+    top:0px;
+    left:645px;
+}
+@media (max-width:480px){
+    #restrauntform input{
+        width: 35.94rem;
+        padding:1rem;
+        font-size:2.5rem;
+        margin-bottom:60px;
+    }
+    #restrauntaddhead{
+        font-size:4.5rem;
+    }
+    #restrauntform {
+     margin-top:70px;
+    }
+    #close{
+        font-size:2rem;
+        top:650px;
+        left:-50px;
+    }
+    #opening{
+        font-size:2rem;
+        top:800px;
+        left:-40px;  
+    }
+    #validation10{
+        font-size: 2.2rem;
+        width:400px;
+        top:510px;
+        left:70px;
+    }
+}

@@ -30,21 +30,21 @@ const Login = () => {
   const rightmail= /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
     useEffect(() => {
       if (password.length>0) {
-        document.getElementById("error2").style.display = "none";
+        document.getElementById("validation2").style.display = "none";
         console.log("true");
         setIsCorrectPass(true);
       } else if (password) {
-        document.getElementById("error2").style.display = "block";
+        document.getElementById("validation2").style.display = "block";
         setIsCorrectPass(false);
       }
     }, [password]);
     useEffect(() => {
       if (rightmail.test(userEmail)) {
-        document.getElementById("error1").style.display = "none";
+        document.getElementById("validation1").style.display = "none";
         console.log("true");
         setIsCorrectEmail(true);
       } else if (userEmail) {
-        document.getElementById("error1").style.display = "block";
+        document.getElementById("validation1").style.display = "block";
         setIsCorrectEmail(false);
       }
     }, [userEmail]);
@@ -67,51 +67,97 @@ const Login = () => {
       }
     }
     return (
-      <div>
-        <Navs />
-        <img src={loginpage} id='loginpage' alt='' />
-        <div id='backgrey'></div>
-        <p id='backend'>{mssge}</p> 
-    <h1 id="log">LOGIN</h1>
-   <div id="auth">
-    <form id="form1" onSubmit={handlesubmit}>
-        <input
-          type="text"
-          id="email"
-          className='email'
-          placeholder="Enter your Email"
-          onChange={handleuserEmail}
-          value={userEmail}
-          required
-        />
-        <p id="error1">Incorrect usermail. Please try again.</p>
-        <input
-          type={show ? "text" : "password"}
-          id="password"
-          className="password"
-          placeholder="Enter your password"
-          onChange={handlepass}
-          value={password}
-          required
-        />
-        {show ? (
-          <FontAwesomeIcon icon={faEye} id="eye" onClick={showHide} />
-        ) : (
-          <FontAwesomeIcon icon={faEyeSlash} id="eye" onClick={showHide} />
-        )}
-        <p id="error2">Required</p>
-        <button className="loginbtn" type="submit" onClick={handleApi}>
-          LOGIN
-        </button>
-        <Link to="/forgot" id="forgot">
-          <p id='frg'>Forgotten Password?</p>
-       </Link>
-       <p id='mssg'>New To Foodora? <Link to="/signup">
-        SIGN UP
-     </Link></p>
-        </form>
+      <>
+      <Navs />
+      <div id="fulllog">
+        <img src={loginpage} id="loginpageimg"></img>
+        <div id="loginpageform">
+          <h1 id="sellerloginhead">LOGIN</h1>
+          <p id="validation1">Invalid Mail</p>
+          <p id="validation2">Invalid</p>
+          <p id="sellerback1">{mssge}</p>
+          <form id="sellerloginform" onSubmit={handlesubmit}>
+            <input
+              type="text"
+              placeholder="Enter your Email"
+              onChange={handleuserEmail}
+              value={userEmail}
+              required
+            ></input>
+            <input
+              type={show ? "text" : "password"}
+              placeholder="Enter your password"
+              onChange={handlepass}
+              value={password}
+              required
+            ></input>
+            {show ? (
+              <FontAwesomeIcon icon={faEye} id="seye1" onClick={showHide} />
+            ) : (
+              <FontAwesomeIcon
+                icon={faEyeSlash}
+                id="seye1"
+                onClick={showHide}
+              />
+            )}
+            <button type="submit" id="sellerloginbtn" onClick={handleApi}>
+              Login
+            </button>
+          </form>
+          <p id="sellerfrg">
+            <Link to="/forgot">Forgot Password?</Link>
+          </p>
+          <p id="sellersignuplink">
+            New To Foodora? <Link to="/signup">SIGN UP</Link>
+          </p>
+        </div>
       </div>
-      </div>
+    </>
+  //     <div>
+  //       <Navs />
+  //       <img src={loginpage} id='loginpage' alt='' />
+  //       <div id='backgrey'></div>
+  //       <p id='backend'>{mssge}</p> 
+  //   <h1 id="log">LOGIN</h1>
+  //  <div id="auth">
+  //   <form id="form1" onSubmit={handlesubmit}>
+  //       <input
+  //         type="text"
+  //         id="email"
+  //         className='email'
+  //         placeholder="Enter your Email"
+  //         onChange={handleuserEmail}
+  //         value={userEmail}
+  //         required
+  //       />
+  //       <p id="error1">Incorrect usermail. Please try again.</p>
+  //       <input
+  //         type={show ? "text" : "password"}
+  //         id="password"
+  //         className="password"
+  //         placeholder="Enter your password"
+  //         onChange={handlepass}
+  //         value={password}
+  //         required
+  //       />
+  //       {show ? (
+  //         <FontAwesomeIcon icon={faEye} id="eye" onClick={showHide} />
+  //       ) : (
+  //         <FontAwesomeIcon icon={faEyeSlash} id="eye" onClick={showHide} />
+  //       )}
+  //       <p id="error2">Required</p>
+  //       <button className="loginbtn" type="submit" onClick={handleApi}>
+  //         LOGIN
+  //       </button>
+  //       <Link to="/forgot" id="forgot">
+  //         <p id='frg'>Forgotten Password?</p>
+  //      </Link>
+  //      <p id='mssg'>New To Foodora? <Link to="/signup">
+  //       SIGN UP
+  //    </Link></p>
+  //       </form>
+  //     </div>
+  //     </div>
     );
 }
 

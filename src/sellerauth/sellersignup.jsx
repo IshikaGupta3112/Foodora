@@ -1,5 +1,6 @@
 import './sellersignup.css'
 import {useState ,useEffect} from 'react';
+// import jwt from 'jwt_decode';
 import axios from 'axios';
 import sellersignup from '../assets/sellersignup.svg'
 import SellerNav from './sellernav';
@@ -7,6 +8,10 @@ import {Link , useNavigate} from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/fontawesome-free-solid";
 function SellerSignup(){
+    // var jwt = require("jsonwebtoken")
+    // var token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNmEyZWNkYWNhZmU2ZTZkMDhhMzYxNyIsImlhdCI6MTY2NzkwMzE4MiwiZXhwIjoxNjY3OTAzODQyfQ.rkZ22zuxBZ0dx6qXhKtCBepcWzzqLo1hr7Utl8cyM5A";
+    // var decode= jwt.decode(token);
+    // console.log(decode);
     const[mssg3 , setMssg3] = useState("");
   const [userName, setuserName] = useState("");
   const [userEmail, setuserEmail] = useState("");
@@ -96,7 +101,10 @@ function SellerSignup(){
           })
           .then((res) => {
             setMssg3(res.data.msg);
-            console.log(res);    
+            console.log(res);
+            localStorage.setItem('token1' , res.data.token);
+            // localStorage.setItem("id1" , res.data.id);
+            // console.log(res.data.id);
             navigate("/sellersignupotp");
           })
           .catch((err) => {

@@ -51,41 +51,41 @@ function Signup(){
 
     useEffect(() => {
       if (userName.length>0) {
-        document.getElementById("errors1").style.display = "none";
+        document.getElementById("validation6").style.display = "none";
         console.log("true");
         setIsCorrectname(true);
       } else if (userName) {
-        document.getElementById("errors1").style.display = "block";
+        document.getElementById("validation6").style.display = "block";
         setIsCorrectname(false);
       }
     }, [userName]);
     useEffect(() => {
       if (password.length>0) {
-        document.getElementById("errors3").style.display = "none";
+        document.getElementById("validation8").style.display = "none";
         console.log("true");
         setIsCorrectPass(true);
       } else if (password) {
-        document.getElementById("errors3").style.display = "block";
+        document.getElementById("validation8").style.display = "block";
         setIsCorrectPass(false);
       }
     }, [password]);
     useEffect(() => {
       if (rightmail.test(userEmail)) {
-        document.getElementById("errors2").style.display = "none";
+        document.getElementById("validation7").style.display = "none";
         console.log("true");
         setIsCorrectmail(true);
       } else if (userEmail) {
-        document.getElementById("errors2").style.display = "block";
+        document.getElementById("validation7").style.display = "block";
         setIsCorrectmail(false);
       }
     }, [userEmail]);
     useEffect(() => {
       if (repassword==password) {
-        document.getElementById("errors4").style.display = "none";
+        document.getElementById("validation9").style.display = "none";
         console.log("true");
         setIsCorrectRepass(true);
       } else if (repassword) {
-        document.getElementById("errors4").style.display = "block";
+        document.getElementById("validation9").style.display = "block";
         setIsCorrectRepass(false);
       }
     }, [repassword]);
@@ -112,88 +112,146 @@ function Signup(){
       }
     }
     return (
-          <>
-            <Navs />
-            <img src={signuppage} alt="" id="loginpage" />
-            <div id='backgrey'></div>
-            <p id='backendmssg2'>{mssg}</p>
-            <h1 id="log1">SIGNUP</h1>
-            <div id="auths">
-              <div className="form">
-                <form id="form2" onSubmit={handleSubmits}>
-                  <input
-                    type="text"
-                    placeholder="Full Name"
-                    name="fullname"
-                    id="fullname"
-                    className="fullname"
-                    value={userName}
-                    onChange={handleuserName}
-                    required
-                  ></input>
-                  <p id="errors1">required</p>
-                  <input
-                    type="text"
-                    placeholder="Enter your email"
-                    name="emails"
-                    id="emails"
-                    className="emails"
-                    value={userEmail}
-                    onChange={handleuserEmail}
-                    required
-                  ></input>
-                  <p id="errors2">Invalid mail!</p>
-                  <input
-                    type={show1 ? "text" : "password"}
-                    placeholder="Password"
-                    name="passwords"
-                    id="passwords"
-                    className="passwords"
-                    value={password}
-                    onChange={handlepass}
-                    required
-                  ></input>
+      <>
+      <Navs />
+      <div id="fulllog">
+          <img src={signuppage} id='loginpageimg'>    
+          </img>
+          <div id='signuppageform'>
+              <h1 id='sellersignuphead'>
+               SIGNUP
+              </h1>
+              <p id='validation6'>Invalid </p>
+              <p id='validation7'>Invalid Mail</p>
+              <p id='validation8'>Invalid </p>
+              <p id='validation9'>Didn't match</p>
+              <p id='sellerback5'>{mssg}</p>
+              <form id='sellerloginform' onSubmit={handleSubmits}>
+                  <input type='text' placeholder='Enter your name' name="fullname"
+                      value={userName}
+                      onChange={handleuserName}
+                      required>
+                    </input> 
+                  <input type='email' placeholder='Enter Your Email' name="emails"
+                      value={userEmail}
+                      onChange={handleuserEmail}
+                      required></input>
+                  <input  type={show1 ? "text" : "password"} placeholder='Enter your password' name="passwords"
+                      value={password}
+                      onChange={handlepass}
+                      required></input>
                   {show1 ? (
-                    <FontAwesomeIcon icon={faEye} id="eye1" onClick={showHide1} />
-                  ) : (
-                    <FontAwesomeIcon
-                      icon={faEyeSlash}
-                      id="eye1"
-                      onClick={showHide1}
-                    />
-                  )}
-                  <p id="errors3">invalid password</p>
-                  <input
-                    type={show2 ? "text" : "password"}
-                    placeholder="Re-enter password"
-                    name="repasswords"
-                    id="repasswords"
-                    className="repasswords"
-                    value={repassword}
-                    onChange={handleRepass}
-                    required
-                  ></input>
+                <FontAwesomeIcon icon={faEye} id="seye4" onClick={showHide1} />
+              ) : (
+                <FontAwesomeIcon
+                  icon={faEyeSlash}
+                  id="seye4"
+                  onClick={showHide1}
+                />
+              )}
+                  <input   type={show2 ? "text" : "password"} placeholder ='Re-enter password'  name="repasswords"
+                      value={repassword}
+                      onChange={handleRepass}
+                      required></input>
                   {show2 ? (
-                    <FontAwesomeIcon icon={faEye} id="eye2" onClick={showHide2} />
-                  ) : (
-                    <FontAwesomeIcon
-                      icon={faEyeSlash}
-                      id="eye2"
-                      onClick={showHide2}
-                    />
-                  )}
-                  <p id="errors4">didn't match</p>
-                  <button type="submit" 
-                  onClick={postdata}
-                  >SIGNUP</button>
-                  <p id='customer'>Already a customer?  <Link to="/login">
-                   Login
-                  </Link></p>
-                </form>
-              </div>
-            </div>
+                <FontAwesomeIcon icon={faEye} id="seye5" onClick={showHide2} />
+              ) : (
+                <FontAwesomeIcon
+                  icon={faEyeSlash}
+                  id="seye5"
+                  onClick={showHide2}
+                />
+              )}
+                  <button type='submit' id='sellerloginbtn' onClick={postdata}>Signup</button>
+              </form>
+              <p id='sellersignuplink'>Already a customer? <Link to="/login">LOGIN</Link></p>
+          </div>
+      </div>
+      </>
+
+
+          // <>
+          //   <Navs />
+          //   <img src={signuppage} alt="" id="loginpage" />
+          //   <div id='backgrey'></div>
+          //   <p id='backendmssg2'>{mssg}</p>
+          //   <h1 id="log1">SIGNUP</h1>
+          //   <div id="auths">
+          //     <div className="form">
+          //       <form id="form2" onSubmit={handleSubmits}>
+          //         <input
+          //           type="text"
+          //           placeholder="Full Name"
+          //           name="fullname"
+          //           id="fullname"
+          //           className="fullname"
+          //           value={userName}
+          //           onChange={handleuserName}
+          //           required
+          //         ></input>
+          //         <p id="errors1">required</p>
+          //         <input
+          //           type="text"
+          //           placeholder="Enter your email"
+          //           name="emails"
+          //           id="emails"
+          //           className="emails"
+          //           value={userEmail}
+          //           onChange={handleuserEmail}
+          //           required
+          //         ></input>
+          //         <p id="errors2">Invalid mail!</p>
+          //         <input
+          //           type={show1 ? "text" : "password"}
+          //           placeholder="Password"
+          //           name="passwords"
+          //           id="passwords"
+          //           className="passwords"
+          //           value={password}
+          //           onChange={handlepass}
+          //           required
+          //         ></input>
+          //         {show1 ? (
+          //           <FontAwesomeIcon icon={faEye} id="eye1" onClick={showHide1} />
+          //         ) : (
+          //           <FontAwesomeIcon
+          //             icon={faEyeSlash}
+          //             id="eye1"
+          //             onClick={showHide1}
+          //           />
+          //         )}
+          //         <p id="errors3">invalid password</p>
+          //         <input
+          //           type={show2 ? "text" : "password"}
+          //           placeholder="Re-enter password"
+          //           name="repasswords"
+          //           id="repasswords"
+          //           className="repasswords"
+          //           value={repassword}
+          //           onChange={handleRepass}
+          //           required
+          //         ></input>
+          //         {show2 ? (
+          //           <FontAwesomeIcon icon={faEye} id="eye2" onClick={showHide2} />
+          //         ) : (
+          //           <FontAwesomeIcon
+          //             icon={faEyeSlash}
+          //             id="eye2"
+          //             onClick={showHide2}
+          //           />
+          //         )}
+          //         <p id="errors4">didn't match</p>
+          //         <button type="submit" 
+          //         onClick={postdata}
+          //         >SIGNUP</button>
+          //         <p id='customer'>Already a customer?  <Link to="/login">
+          //          Login
+          //         </Link></p>
+          //       </form>
+          //     </div>
+          //   </div>
                 
-          </>
+          // </>
         );
 }
 export default Signup;

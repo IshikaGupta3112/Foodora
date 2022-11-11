@@ -2,7 +2,7 @@ import react, { useState , useEffect } from "react";
 import Navs from "./navs";
 import loginpage from '../assets/loginpage.jpg';
 import "./Forgot.css";
-import { Link , useNavigate} from "react-router-dom";
+import { Link , NavLink, useNavigate} from "react-router-dom";
 import axios from 'axios';
 function Forgot() {
   const [forgotMail, setForgotMail] = useState("");
@@ -19,11 +19,11 @@ function Forgot() {
 
   useEffect(() => {
     if (rightmail.test(forgotMail)) {
-      document.getElementById("err1").style.display = "none";
+      document.getElementById("validation3").style.display = "none";
       console.log("true");
       setCorrectMail(true);
     } else if (forgotMail) {
-      document.getElementById("err1").style.display = "block";
+      document.getElementById("validation3").style.display = "block";
       setCorrectMail(false);
     }
   }, [forgotMail]);
@@ -52,28 +52,51 @@ function Forgot() {
   }
   return (
     <>
-      <Navs />
-      <img src={loginpage} id='loginpage' alt='' />
-      <div id="backgrey"></div>
-      <p id='backend2'>{mssg}</p>
-      <h1 id="log2">Email Verification</h1>
-      <div id="auth3">
-        <form id="form1" onSubmit={handleSubmit}>
-          <input
-            type="email"
-            placeholder="Enter your email"
-            className="email"
-            id="emailname"
-            name="email"
-            value={forgotMail}
-            onChange={handleForgotMial}
-            required
-          ></input>
-          <p id="err1">Invalid mail</p>
-            <button type="submit" id='otpsend'>SEND OTP</button>
-        </form>
-      </div>
+    <Navs />
+    <div id="fulllog">
+        <img src={loginpage} id='loginpageimg'>    
+        </img>
+        <div id='loginpageform'>
+            <h1 id='sellerfrghead'>
+               Forgot Password
+            </h1>
+            <p id='validation3'>Invalid Mail</p>
+            <p id='sellerback2'>{mssg}</p>
+            <form id='sellerloginform' 
+            onSubmit={handleSubmit}
+            >
+                <input type='email' placeholder='Enter Your Email' name="email"
+        value={forgotMail}
+        onChange={handleForgotMial}
+        required></input>
+                <button type='submit' id='sellerloginbtn'>Send Otp</button>
+            </form>
+        </div>
+    </div>
     </>
+    // <>
+    //   <Navs />
+    //   <img src={loginpage} id='loginpage' alt='' />
+    //   <div id="backgrey"></div>
+    //   <p id='backend2'>{mssg}</p>
+    //   <h1 id="log2">Email Verification</h1>
+    //   <div id="auth3">
+    //     <form id="form1" onSubmit={handleSubmit}>
+    //       <input
+    //         type="email"
+    //         placeholder="Enter your email"
+    //         className="email"
+    //         id="emailname"
+    //         name="email"
+    //         value={forgotMail}
+    //         onChange={handleForgotMial}
+    //         required
+    //       ></input>
+    //       <p id="err1">Invalid mail</p>
+    //         <button type="submit" id='otpsend'>SEND OTP</button>
+    //     </form>
+    //   </div>
+    // </>
   );
 }
 export default Forgot;

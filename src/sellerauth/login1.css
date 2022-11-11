@@ -76,12 +76,14 @@
     border: 1px solid #ffffff;
     border-radius: 0.5rem;
     color:white; 
+    text-align: center;
 }
 #sellerfrg{
     text-align: center;
     margin-top:30px;
     font-weight: 900;
   font-size: 1.17rem;
+  color:white;
 }
 #sellerfrg a{
   text-decoration: none;

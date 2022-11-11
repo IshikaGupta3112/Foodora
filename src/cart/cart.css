@@ -1,11 +1,11 @@
 #cartbox{
-width: 1250px;
+width: 1300px;
 background: linear-gradient(135.77deg, rgba(255, 255, 255, 0.4) -94.16%, rgba(255, 255, 255, 0) 100%);
 backdrop-filter: blur(21px);
 border-radius: 20px;
 margin-top:7rem;
 margin-left:4rem;
-padding:2rem;
+/* padding:0rem; */
 display:flex;
 flex-direction: column;
 }
@@ -22,8 +22,16 @@ font-weight: 700;
 font-size: 25px;
 line-height: 39px;
 color: #FFFFFF;
-margin-left:20px;
+margin-left:0px;
 
+}
+#categoryitem2{
+    display:flex;
+    flex-wrap:wrap;
+    margin-top:100px;
+    margin-left:100px;
+    width:1250px;
+overflow-x:hidden;
 }
 #plus{
     background: #97ED01;
@@ -33,7 +41,7 @@ margin-left:20px;
     border-radius: 10px 0px 0px 10px;
     color:white;
     font-size:25px;
-    margin-left:100px;
+    margin-left:50px;
     cursor:pointer;
 }
 #quantity{
@@ -94,7 +102,6 @@ margin-top:10px;
     #quantity{
         width:2.8rem;
         height:2.8rem;
-        /* padding-top:0.8rem; */
         font-size:30px;
     }
     #nxtbtn2{

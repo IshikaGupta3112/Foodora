@@ -12,10 +12,12 @@
 
   color: #ffffff;
 }
-#rest {
+.rest {
   width: 21.18rem;
   height: 17.375rem;
-  margin-left: 3.875rem;
+  margin-left: 3rem;
+  margin-right:1rem;
+  margin-top:20px;
   background: linear-gradient(
     135.77deg,
     rgba(255, 255, 255, 0.4) -94.16%,
@@ -32,13 +34,13 @@
   height: 11.5625rem;
   left: 0.75rem;
   top: 0.8125rem;
-  background: #c4c4c4;
+  /* background: #c4c4c4; */
   border-radius: 1rem;
   overflow: hidden;
 }
 #restname {
   position: relative;
-  width: 8.5rem;
+  width: 20rem;
   height: 1.5625rem;
   left: 1rem;
   top: 1.2rem;
@@ -58,9 +60,8 @@
   font-family: "Open Sans";
   font-style: normal;
   font-weight: 600;
-  font-size: 0.75rem;
+  font-size: 1rem;
   line-height: 1rem;
-  text-decoration-line: line-through;
   color: #ffffff;
   opacity: 0.6;
 }
@@ -111,4 +112,20 @@
   margin-top: 122rem;
   margin-left: 1.75rem;
   margin-right: 5.625rem;
+  /* flex-wrap:wrap; */
+  /* width:1200px; */
+  /* overflow:scroll; */
+}
+#forwardbtn{
+border-radius: 50%;
+height:70px;
+width:70px;
+margin-top:110px;
+}
+#prevbtn{
+  border-radius: 50%;
+  height:70px;
+  width:70px;
+margin-top:110px;
+
 }

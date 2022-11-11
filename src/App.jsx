@@ -22,6 +22,9 @@ import SellerFrgOtp from './sellerauth/sellerfrgotp.jsx';
 import SellerResetPwd from './sellerauth/sellerresetpwd.jsx';
 import SellerSignup from './sellerauth/sellersignup.jsx';
 import SellerSignupOtp from './sellerauth/sellersignupotp.jsx';
+import RestrauntAdd from './sellerauth/restrauntadd.jsx';
+import FoodAdd from './sellerauth/foodadd.jsx';
+import Location from './components/location.jsx';
 import {
     BrowserRouter as Router,
     Routes,
@@ -81,6 +84,12 @@ function App(){
                      <Route path='/sellersignup' exact element={<SellerSignup />}>
                      </Route>   
                      <Route path='/sellersignupotp' exact element={<SellerSignupOtp />}>
+                     </Route> 
+                     <Route path='/restrauntadd' exact element={<RestrauntAdd />}>
+                     </Route> 
+                     <Route path='/foodadd' exact element={<FoodAdd />}>
+                     </Route> 
+                     <Route path='/location' exact element={<Location/>}>
                      </Route> 
                            
 

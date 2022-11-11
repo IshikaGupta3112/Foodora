@@ -3,7 +3,7 @@ import react , { useState, useEffect } from 'react';
 import axios from 'axios';
 import sellerfrgotp from '../assets/sellerfrgotp.svg';
 import SellerNav from './sellernav';
-import {Link} from 'react-router-dom';
+import {Link , useNavigate} from 'react-router-dom';
 function SellerSignupOtp(){
     const [mssg4,setmssg4]=useState('');
   const [userOtp, setuserOtp] = useState({
@@ -37,7 +37,10 @@ function SellerSignupOtp(){
     .post('https://foodorabackend-production.up.railway.app/seller/verify' ,{email , otp} )
     .then(result=>{
       console.log(result.data.msg);
-      setmssg4(result.data.msg)})
+      setmssg4(result.data.msg)
+      localStorage.setItem("id1" , result.data.id);
+      console.log(result.data.id);})
+      
     .catch(err3=>{
       console.log(err3);
       console.log(err3.response.data.msg);
