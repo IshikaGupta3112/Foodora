@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/fontawesome-free-solid";
 import axios from 'axios';
 import "./password.css";
-import { Link } from "react-router-dom";
+import { Link  , useNavigate} from "react-router-dom";
 function Password() {
   var email = localStorage.getItem("forgotMail");
   console.log(email);
@@ -50,7 +50,7 @@ function Password() {
     function showHide2() {
       setShow2(!show2);
     }
-
+const Navigate=useNavigate();
   function handleSubmit(e) {
 console.log(email);
     e.preventDefault();
@@ -63,6 +63,7 @@ console.log(email);
       .then((res) => {
         setMssg(res.data.msg);
         console.log(res);
+        Navigate("/login");
       })
       .catch((err) => {
         console.log(err);

@@ -2,7 +2,7 @@ import React ,{useState , useEffect}from 'react' ;
 import loginpage from '../assets/loginpage.jpg';
 import Navs from "./navs.jsx";
 import "./Login.css";
-import { Link } from "react-router-dom";
+import { Link , useNavigate} from "react-router-dom";
 import axios from 'axios';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/fontawesome-free-solid";
@@ -48,6 +48,7 @@ const Login = () => {
         setIsCorrectEmail(false);
       }
     }, [userEmail]);
+    const Navigate = useNavigate();
     function handleApi() {
       if (iscorrectEmail && iscorrectpass) {
         axios
@@ -58,7 +59,11 @@ const Login = () => {
           .then((res) => {
             console.log(res.data);
             setMessge(res.data.msg);
-          
+          console.log(res.data.id);
+          console.log(res.data.accesstoken);
+          localStorage.setItem("accesstoken" , res.data.accesstoken);
+          localStorage.setItem("userid" , res.data.id);
+          Navigate("/location");
           })
           .catch((err) => {
             console.log(err);

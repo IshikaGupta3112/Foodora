@@ -64,7 +64,7 @@ return(
 <p id="restrauntname">{restarr.restaurantname}</p>
 {/* <p id='rating'>3.6 <img src={star} id='ratestar'/></p> */}
 {/* <p id='review'>Reviews</p> */}
-<p id="restrauntitems">Burger, Fastfood, Beverages</p>
+{/* <p id="restrauntitems">Burger, Fastfood, Beverages</p> */}
 <p id="restrauntaddress">{restarr.restaurantaddress}</p>
 <p id='open'>Open Now</p>
 <p id='opentime'>{restarr.restaurant_openingtime} - {restarr.restaurant_closingtime}</p>

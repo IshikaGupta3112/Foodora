@@ -12,11 +12,11 @@ function CreateCart(props){
         <>
         {/* <div id='cartbox'> */}
             <div id='firstItem'>
-                <p id='itemname'>{props.name}</p>
-                <button id='plus'onClick={increase}>+</button>
-                <div id='quantity'>{count}</div>
-                <button id='minus'onClick={decrease}>-</button>
-                <p id='pricecart'>{props.price}</p>
+                <p id='itemname'>{props.foodname}</p>
+                {/* <button id='plus'onClick={increase}>+</button> */}
+                <div id='quantity'>{props.quantity}</div>
+                {/* <button id='minus'onClick={decrease}>-</button> */}
+                <p id='pricecart'>{props.food_price}</p>
             </div>
             {/* </div> */}
         </>

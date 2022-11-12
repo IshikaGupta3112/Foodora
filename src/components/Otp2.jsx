@@ -45,8 +45,9 @@ function Otp2() {
       localStorage.setItem("accesstoken" , result.data.accesstoken);
       var token= localStorage.getItem("accesstoken");
       console.log(token);
-      setmssg(result.data.msg)})
-      Navigate("/location")
+      setmssg(result.data.msg);
+      Navigate("/location");
+    })
     .catch(err3=>{
       console.log(err3);
       console.log(err3.response.data.msg);

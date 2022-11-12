@@ -53,10 +53,10 @@ function RestrauntAdd() {
     fd.append("mobilenumber", phoneNumber);
     fd.append("restaurantname", restrauntName);
     fd.append("id", id);
-    var object = {};
-    fd.forEach((value, key) => (object[key] = value));
-    console.log(object);
-    console.log(id);
+    // var object = {};
+    // fd.forEach((value, key) => (object[key] = value));
+    // console.log(object);
+    // console.log(id);
     //   for (var pair of fd.entries()) {
     //     console.log(pair[0]+ ', ' + pair[1]);
     // }

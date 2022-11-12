@@ -36,8 +36,11 @@ width: 22.94rem;
 height: 2.18rem;
 left: 9.96rem;
 top: 0.6875rem;
+padding-left:1rem;
 background: linear-gradient(90.27deg, rgba(255, 255, 255, 0.35) 0.23%, rgba(255, 255, 255, 0.133) 100%);
 border-radius: 0.625rem;
+border:none;
+color:white;
 }
 #text1{
 position: absolute;

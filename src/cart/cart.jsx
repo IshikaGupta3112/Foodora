@@ -5,7 +5,13 @@ import "./cart.css";
 import Createlistcart from './createcart.jsx' 
 import CreateCart from "./cartcomp";
 import Cartitem from './cart.js'
+import axios from "axios";
+import { useEffect } from "react";
+var userid = localStorage.getItem("userid");
 function Cart(){
+const [arr , setArr] =useState([]);
+const [success, setSuccess] =useState(false);
+const [success2, setSuccess2] =useState(false);
     // const [count , setCount] = useState(1);
     // function increase(){
     // setCount(count+1);
@@ -14,12 +20,54 @@ function Cart(){
     //     if(count>0)
     //     setCount(count-1);
     //     }
+    var accesstoken = localStorage.getItem("accesstoken");
+ function handleorder(){
+    console.log(accesstoken);
+    axios
+    .post("https://foodorabackend-production.up.railway.app/user/checkout" ,{},
+     { 
+      headers:{
+      Authorization:`Bearer ${accesstoken}`
+    } , 
+    }
+    )
+    .then((res) => {
+        console.log(res.data);
+        console.log(res.data.success);
+        setSuccess(res.data.success);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+ }  
+
+ useEffect(()=>{
+axios
+.post("https://foodorabackend-production.up.railway.app/user/viewcart" , {
+  user_id:userid
+})
+.then((res) => {
+    console.log(res);
+    setArr(res.data.cart);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+ },[]);
+    function createcart2(arr) {
+        return (
+          <CreateCart
+            foodname={arr.foodname}
+           food_price={(arr.food_price)*arr.quantity}
+           quantity={arr.quantity}
+          />
+        );
+      }
     return(
         <>
         <Navs2 />
-      
         <div id='cartbox'>
-        <Createlistcart />
+        {(success==false)?arr.map(createcart2):<p id='cartpar'>The Cart Is Empty</p>}
             {/* <div id='firstItem'>
                 <p id='itemname'>Chicken Burger Fries </p>
                 <button id='plus'onClick={increase}>+</button>
@@ -48,7 +96,7 @@ function Cart(){
                 <button id='minus'>-</button>
                 <p id='pricecart'>Rs.390</p>
             </div>*/}
-            <button type="submit" id='nxtbtn2'>NEXT</button> 
+            <button onClick={handleorder} id='nxtbtn2'disabled={(success) ? true : false}>NEXT</button> 
         </div>
         <Contactus/>
         </>

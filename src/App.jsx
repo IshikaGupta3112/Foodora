@@ -28,6 +28,9 @@ import Location from "./components/location.jsx";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import SellerorBuyer from "./components/sellerorbuyer.jsx";
 import Seller from "./sellerauth/sellerpage.jsx";
+import FoodPage from "./pages/foodonclick/foodonclick.jsx";
+import SellerProfile from "./sellerauth/sellerprofile/sellerprofile.jsx";
+import UserProfile from "./components/userprofile/useprofile.jsx";
 // var y = localStorage.getItem("check");
 // var y = localStorage.getItem("routecheck1");
 // localStorage.removeItem("routecheck1");
@@ -76,6 +79,9 @@ function App() {
           <Route path="/location" exact element={<Location />}></Route>
           <Route path="/seller" exact element={<Seller />}></Route>
           <Route path="/" exact element={<SellerorBuyer />}></Route>
+          <Route path="/foodpage" exact element={<FoodPage/>}></Route>
+          <Route path="/sellerprofile" exact element={<SellerProfile />}></Route>
+          <Route path="/userprofile" exact element={<UserProfile />}></Route>
         </Routes>
       </Router>
     </div>

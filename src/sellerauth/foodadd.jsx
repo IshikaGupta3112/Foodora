@@ -4,6 +4,7 @@ import restrauntadd from '../assets/restrauntadd1.jpg'
 import FormData from 'form-data';
 import { useState , useEffect } from 'react';
 import axios from 'axios';
+import {useNavigate} from 'react-router-dom';
 function FoodAdd(){
  let sellerid=localStorage.getItem("id1");
  const [foodname, setFoodname] = useState('');  
@@ -41,6 +42,7 @@ function FoodAdd(){
           setIsCorrectprice(false);
         }
       }, [foodprice]);
+      const Navigate=useNavigate();
       function handlesubmit(e) {
         console.log(sellerid);
         const fd= new FormData();
@@ -61,6 +63,7 @@ function FoodAdd(){
             .then((res) => {
               console.log(res.data);
               setMssg8(res.data.msg);
+              Navigate("/sellerprofile");
             })
             .catch((err) => {
               console.log(err);

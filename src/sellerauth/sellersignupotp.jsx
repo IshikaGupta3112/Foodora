@@ -38,7 +38,7 @@ function SellerSignupOtp(){
     .post('https://foodorabackend-production.up.railway.app/seller/verify' ,{email , otp} )
     .then(result=>{
       console.log(result.data);
-      setmssg4(result.data.msg)
+      setmssg4(result.data.msg);
       localStorage.setItem("id1" , result.data.id);
       console.log(result.data.id);
       Navigate("/restrauntadd");

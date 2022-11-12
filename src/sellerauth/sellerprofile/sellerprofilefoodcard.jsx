@@ -1,6 +1,4 @@
-import './restrauntpage.css'
 import {useEffect} from 'react';
-import star from '../assets/star.svg';
 import {useNavigate} from 'react-router-dom';
 function Restrauntcard(props){
     const Navigate = useNavigate();
@@ -20,15 +18,9 @@ function Restrauntcard(props){
     <div id='restrauntcarddetails'>
     <p id='restrauntcardname'>{props.foodname}</p> 
     <div id='starsimg'>
-        {/* <img src={star} id='starsimg2'></img> */}
-        {/* <img src={star} id='starsimg1'></img> */}
-        {/* <img src={star} id='starsimg1'></img> */}
-        {/* <img src={star} id='starsimg1'></img> */}
-        {/* <img src={star} id='starsimg1'></img> */}
         </div>
       <div id='cardprices'>
         <p id='greenprice'>{props.food_price}</p>
-        {/* <p id='whiteprice'>{props.actPrice}</p> */}
         </div>  
         <p id='carddes'>{props.food_desc}</p>
         {/* <button id='restrauntadd'>Add To Cart</button> */}

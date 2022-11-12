@@ -131,9 +131,9 @@ return(
    <p id="text">Your hunger companion.When you crave for midnight delicacy, just dial our number.Speedy and quicker delivery with us. We promise to deliver on time.We deliver food and only good food.</p>
    {/* <span id="orderbtn">Order Now</span> */}
    </div>
-   <Item />
-   <Restaurant />
-   <CreateList />
+   {/* <Item /> */}
+   {/* <Restaurant /> */}
+   {/* <CreateList /> */}
    <p id="resthead">Restaurants Near You</p>
    <div id="restlist">
       <button onClick={decrease} disabled={(i==0) ? true : false} id='prevbtn'>&larr;</button>

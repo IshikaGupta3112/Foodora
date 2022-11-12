@@ -1,0 +1,138 @@
+#hello{
+    color:white;
+}
+#foodpagediv{
+    width: 35.18rem;
+  height: 35.375rem;
+  margin-left: 12rem;
+  margin-right:1rem;
+  margin-top:150px;
+  background: linear-gradient(
+    135.77deg,
+    rgba(255, 255, 255, 0.4) -94.16%,
+    rgba(255, 255, 255, 0) 100%);
+    backdrop-filter: blur(1.31rem);
+  border-radius: 1rem;
+  border: 0.031rem solid rgba(255, 255, 255, 0.5);
+  overflow: hidden;
+}
+#foodrestpic{
+    position:relative;
+    width: 30.68rem;
+    height: 18.5625rem;
+    left: 2rem;
+    top: 2rem;
+    background: #c4c4c4;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+#foodrestname {
+    position: relative;
+    width: 20rem;
+    height: 1.5625rem;
+    left: 2rem;
+    top: 4rem;
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2.5rem;
+    line-height: 1.5625rem;
+    color: #ffffff;
+  }
+  #foodrestprice {
+    position: relative;
+    width: 8.437rem;
+    height: 1rem;
+    left: 2rem;
+    top: 6rem;
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 1rem;
+    color: rgba(12, 233, 75, 0.719);
+    /* opacity: 0.6; */
+  }
+  #foodrestdesc {
+    position: relative;
+    width: 20rem;
+    height: 1rem;
+    left: 2rem;
+    top: 8rem;
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 1rem;
+    color: #ffffff;
+    opacity: 0.6;
+  }
+#addtocart{
+    position:absolute;
+    background: #97ED01;
+border-radius: 11px;
+top:400px;
+left:1000px;
+border:none;
+width:200px;
+height:70px;
+/* padding:0.5rem 3rem; */
+color:white;
+font-size:2rem;
+font-weight: 700;
+/* margin-top:-70rem; */
+text-align: center;
+align-items: center;
+/* margin-left:70rem; */
+cursor:pointer;
+}
+#counts{
+    color:white;
+    position:absolute;
+    top:370px;
+    left:1100px;
+    font-size:40px;
+    text-align:center;
+    background-color: white;
+    color:black;
+    width:60px;
+}
+#plus2{
+    position:absolute;
+    background: #97ED01;
+    border:none;
+    width:3rem;
+    height:3rem;
+    left:-50px;
+    border-radius: 10px 0px 0px 10px;
+    color:white;
+    font-size:25px;
+   top:0px;
+    cursor:pointer;
+}
+#quantity2{
+    position:absolute;
+  background-color: #FFFFFF;  
+  width:3rem;
+  height:3rem;
+  top:400px;
+  text-align: center;
+  padding-top:1rem;
+  position:absolute;
+  left:1000px;
+  font-weight:bold;
+}
+#minus2{
+    position:absolute;
+    background: #97ED01;
+    border:none;
+    width:3rem;
+    height:3rem;
+    left:50px;
+    top:0px;
+    border-radius: 0px 10px 10px 0px;
+    text-align: center;
+    color:white;
+    font-size:25px; 
+    cursor:pointer;
+}

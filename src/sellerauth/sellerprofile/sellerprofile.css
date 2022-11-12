@@ -1,0 +1,43 @@
+#profile{
+    color:white;
+}
+#sellerrest{
+    width: 930px;
+    height: 650px;
+    background: linear-gradient(135.87deg, rgba(255, 255, 255, 0.4) -37.26%, rgba(255, 255, 255, 0) 99.84%);
+    border: 2px solid rgba(18, 18, 18, 0.53);
+    border-radius:20px 20px 20px 20px; 
+    margin-top:120px; 
+    margin-left:240px;
+}
+#sellerRestname{
+    color: #ffffff;
+    font-size: 2.52rem;
+    margin-top:50px;
+    text-align: center;
+}
+#sellerrestpic{
+    position:relative;
+    width: 30.68rem;
+    height: 18.5625rem;
+    left: 13rem;
+    top: 2rem;
+    background: #c4c4c4;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+#sellerRestbtn{
+    background: #97ED01;
+    border-radius: 11px;
+    border:none;
+    width:120px;
+    height:40px;
+    /* padding:0.5rem 3rem; */
+    color:white;
+    font-weight: 700;
+    margin-top:3rem;
+    text-align: center;
+    align-items: center;
+    margin-left:70rem;
+    cursor:pointer; 
+}

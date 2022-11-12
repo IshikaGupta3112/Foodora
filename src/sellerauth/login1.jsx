@@ -3,13 +3,14 @@ import { useState ,useEffect} from "react";
 import axios from 'axios';
 import loginimg2 from "../assets/loginimg2.svg";
 import SellerNav from "./sellernav";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/fontawesome-free-solid";
 function SellerLogin() {
   const [userEmail, setuserEmail] = useState("");
   const [password, setPassword] = useState("");
   const [mssg1, setMssg1] = useState("");
+  const [sellerToken, setSellerToken] = useState("");
   function handleuserEmail(e) {
     setuserEmail(e.target.value);
   }
@@ -48,6 +49,7 @@ function SellerLogin() {
       setIsCorrectEmail(false);
     }
   }, [userEmail]);
+  const Navigate = useNavigate();
   function handleApi() {
     if (iscorrectEmail && iscorrectpass) {
       axios
@@ -58,6 +60,11 @@ function SellerLogin() {
         .then((res) => {
           console.log(res.data);
           setMssg1(res.data.msg);
+          console.log(res.data.accesstoken);
+          localStorage.setItem("sellerToken" , res.data.accesstoken);
+          console.log(res.data.id);
+          localStorage.setItem("sellerid" , res.data.id);
+          Navigate("/sellerprofile");
         })
         .catch((err) => {
           console.log(err);

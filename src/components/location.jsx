@@ -80,7 +80,7 @@ return(<>
 onClick={getLocation}
 id='locatemebtn'
 >LocateMe</button>   
-<p id='sellerfrg'>{status}</p>
+{/* <p id='sellerfrg'>{status}</p> */}
   {/* {lat && <p id='locstatus'>Latitude: {lat}</p>}  */}
   {/* {lng && <p id='locstatus'>Longitude: {lng}</p>}  */}
 </div>
