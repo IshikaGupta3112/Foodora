@@ -18,7 +18,8 @@ function RestrauntAdd() {
   const [id, setid] = useState("");
   const [mssg7, setMssg7] = useState("");
   useEffect(() => {
-    var sellerid = localStorage.getItem("id1");
+    // var sellerid = localStorage.getItem("id1");
+    var sellerid = localStorage.getItem("restid");
     setid(sellerid);
   }, []);
 
@@ -41,7 +42,12 @@ function RestrauntAdd() {
     console.log(e.target.files);
     setRestimg(e.target.files[0]);
   }
-
+  var accesstoken=localStorage.getItem("accesstoken2");
+  const config ={
+      headers:{
+        Authorization:`Bearer ${accesstoken}`,
+      }
+    }
   function handlesubmit(e) {
     e.preventDefault();
     console.log(restrauntName,phoneNumber,restrauntadd,openingTime,closingTime,id,restimg);
@@ -64,22 +70,7 @@ function RestrauntAdd() {
       axios
         .post(
           "https://foodorabackend-production.up.railway.app/seller/restaurantregister",
-          fd,
-          // {
-          //   headers: {
-          //     "Content-type": "multipart/form-data",
-          //   },
-          // }
-          //   {
-          //  restaurantname:restrauntName,
-          //  mobilenumber:phoneNumber,
-          //  restaurantaddress:address,
-          //  restaurant_openingtime:openingTime,
-          //  restaurant_closingtime:closingTime,
-          //  id:id,
-          // //  image:restimg,
-          //   }
-        )
+          fd,config)
         .then((res) => {
           console.log(res.data);
           setMssg7(res.data.msg);

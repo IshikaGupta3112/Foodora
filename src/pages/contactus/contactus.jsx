@@ -6,6 +6,7 @@ import twitter from '../../assets/twitter.svg';
 import instagram from '../../assets/instagram.svg';
 import discord from '../../assets/discord.svg';
 import lettersend from '../../assets/lettersend.svg';
+import { Link } from 'react-router-dom';
 function Contactus(){
 return(
     <>
@@ -19,11 +20,11 @@ return(
     <p id="contactInfo">Contact Information</p>
     <div id="phone">
     <img src={phone} id="phoneimg" alt="" />
-    <p id="phoneno">+91  1234567890</p>
+    <p id="phoneno">+91  7902014458</p>
     </div>
     <div id="email">
     <img src={email} id="emailimg" alt="" />
-    <p id="emailid">email@examplel.com</p>
+    <p id="emailid">foodorafoodservice@gmail.com</p>
     </div>
     <div id="locations">
     <img src={location} id="locationimg" alt="" />
@@ -34,7 +35,7 @@ return(
    </div>
    <div id="links">
     <div id="Company1"> 
-    <p id="company">Company</p>
+    <Link to ='/company'><p id="company">Company</p></Link>
     <ul class="ul1">
         <li>About Us</li>
         <li>Blog</li>
@@ -44,7 +45,7 @@ return(
     </ul>
     </div>
     <div id="Company2"> 
-    <p id="company">Support</p>
+    <Link to ='/support'><p id="company">Support</p></Link>
     <ul class="ul1">
         <li>Help center</li>
         <li>Terms of service</li>

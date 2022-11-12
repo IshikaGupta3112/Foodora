@@ -31,6 +31,9 @@ import Seller from "./sellerauth/sellerpage.jsx";
 import FoodPage from "./pages/foodonclick/foodonclick.jsx";
 import SellerProfile from "./sellerauth/sellerprofile/sellerprofile.jsx";
 import UserProfile from "./components/userprofile/useprofile.jsx";
+import Company from "./pages/contactus/company.jsx";
+import Support from "./pages/contactus/support.jsx";
+import SearchPage from "./pages/navss/searchpage.jsx";
 // var y = localStorage.getItem("check");
 // var y = localStorage.getItem("routecheck1");
 // localStorage.removeItem("routecheck1");
@@ -82,6 +85,9 @@ function App() {
           <Route path="/foodpage" exact element={<FoodPage/>}></Route>
           <Route path="/sellerprofile" exact element={<SellerProfile />}></Route>
           <Route path="/userprofile" exact element={<UserProfile />}></Route>
+          <Route path="/company" exact element={<Company />}></Route>
+          <Route path="/support" exact element={<Support/>}></Route>
+          <Route path="/searchpage" exact element={<SearchPage/>}></Route>
         </Routes>
       </Router>
     </div>

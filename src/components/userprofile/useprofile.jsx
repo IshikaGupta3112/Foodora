@@ -16,10 +16,12 @@ function UserProfile(){
     axios
     .post("https://foodorabackend-production.up.railway.app/user/userprofile" , {
         _id:userid
-    })
+    } , config)
     .then((res) => {
         console.log(res.data);
         setArr(res.data);
+        console.log(res.data.imagepath);
+        localStorage.setItem("imagepath" , res.data.imagepath);
       })
       .catch((err) => {
         console.log(err);

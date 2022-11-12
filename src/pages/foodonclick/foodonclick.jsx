@@ -11,56 +11,64 @@ function FoodPage(){
     var restid=localStorage.getItem("restid");
     var foodname=localStorage.getItem("jugaad");
     const [data , setData] = useState([]);
-    const [count , setCount] = useState(0);
+    const [count , setCount] = useState(-1);
     const [success, setSuccess] = useState(false);
-    // const [foodname , setFoodname] = useState("");
-    console.log("F" + foodid +  "M" + restid);
+    const [foodname2 , setFoodname2] = useState("");
+    console.log( foodid);
+    console.log( restid);
+    var accesstoken = localStorage.getItem("accesstoken");
+    const config ={
+      headers:{
+        Authorization:`Bearer ${accesstoken}`,
+      }
+    }
     useEffect(()=>{
     axios
     .post("https://foodorabackend-production.up.railway.app/user/fooddetails" , {
       food_id:foodid,
       seller_id:restid  
-    })
+    } , config)
     .then((res) => {
         console.log(res.data);
         setData(res.data);
         console.log(data);
         console.log(res.data.foodname);
-        localStorage.setItem("jugaad" , foodname);
+        localStorage.setItem("jugaad" , res.data.foodname);
         // setFoodname(res.data.foodname);
       })
       .catch((err) => {
         console.log(err);
       });
       console.log(foodname);
-      const sendPostRequest = async () => {
-        try {
-            const resp = await axios.post('https://foodorabackend-production.up.railway.app/user/fooditemcount', {
-                foodname:foodname , 
-                    user_id:userid,
-                    seller_id:restid
-            });
-            console.log(resp.data);
-            setCount(resp.data.count);
-                console.log(count);
-        } catch (err) {
-            console.error(err);
-        }
-    };   
-    sendPostRequest();
-        // axios
-        // .post("https://foodorabackend-production.up.railway.app/user/fooditemcount" , {
-        //     foodname:foodname , 
-        //     user_id:userid
-        // })
-        // .then((res) => {
-        //     console.log(res.data);
-        //     setCount(res.data.count);
-        //     console.log(count);
-        //   })
-        //   .catch((err) => {
-        //     console.log(err);
-        //   });
+    //   const sendPostRequest = async () => {
+    //     try {
+    //         const resp = await axios.post('https://foodorabackend-production.up.railway.app/user/fooditemcount', {
+    //             foodname:foodname , 
+    //                 user_id:userid,
+    //                 seller_id:restid
+    //         } , config);
+    //         console.log(resp.data);
+    //         setCount(resp.data.count);
+    //             console.log(count);
+    //     } catch (err) {
+    //         console.error(err);
+    //     }
+    // };   
+    // sendPostRequest();
+        axios
+        .post("https://foodorabackend-production.up.railway.app/user/fooditemcount" , {
+            foodname:foodname , 
+            user_id:userid ,
+            seller_id:restid
+        },config)
+        .then((res) => {
+            console.log(res.data);
+            setCount(res.data.count);
+            console.log(count);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
     },[])
     function increase(){
     setCount(count+1);
@@ -69,15 +77,28 @@ function FoodPage(){
         seller_id:restid,
         food_id:foodid,
         user_id:userid
-    })
+    } , config)
      .then((res) => {
             console.log(res.data);
-            // setCount(res.data.count);
-            // console.log(count);
           })
           .catch((err) => {
             console.log(err);
           });
+
+          // axios
+          // .post("https://foodorabackend-production.up.railway.app/user/fooditemcount" , {
+          //     foodname:foodname , 
+          //     user_id:userid,
+          //     seller_id:restid
+          // } , config)
+          // .then((res) => {
+          //     console.log(res.data);
+          //     setCount(res.data.count);
+          //     console.log(count);
+          //   })
+          //   .catch((err) => {
+          //     console.log(err);
+          //   });
     }
     function decrease(){
         if(count>0)
@@ -87,7 +108,7 @@ function FoodPage(){
         seller_id:restid,
         food_id:foodid,
         user_id:userid
-    })
+    } , config)
      .then((res) => {
             console.log(res.data);
             // setCount(res.data.count);
@@ -96,6 +117,21 @@ function FoodPage(){
           .catch((err) => {
             console.log(err);
           });
+
+          // axios
+          // .post("https://foodorabackend-production.up.railway.app/user/fooditemcount" , {
+          //     foodname:foodname , 
+          //     user_id:userid , 
+          //     seller_id:restid
+          // },config)
+          // .then((res) => {
+          //     console.log(res.data);
+          //     setCount(res.data.count);
+          //     console.log(count);
+          //   })
+          //   .catch((err) => {
+          //     console.log(err);
+          //   });
         }
 
 return (

@@ -13,7 +13,8 @@ function FoodAdd(){
  const [foodimg, setFoodImg] = useState("");  
  const [id, setid] = useState("");
   useEffect(() => {
-    var sellerid = localStorage.getItem("id1");
+    // var sellerid = localStorage.getItem("id1");
+    var sellerid = localStorage.getItem("restid");
     setid(sellerid);
   }, []);
  const[mssg8 , setMssg8]=useState('');
@@ -43,6 +44,12 @@ function FoodAdd(){
         }
       }, [foodprice]);
       const Navigate=useNavigate();
+      var accesstoken=localStorage.getItem("accesstoken2");
+      const config ={
+          headers:{
+            Authorization:`Bearer ${accesstoken}`,
+          }
+        }
       function handlesubmit(e) {
         console.log(sellerid);
         const fd= new FormData();
@@ -58,7 +65,7 @@ function FoodAdd(){
         e.preventDefault();
         if (iscorrectprice){
           axios
-            .post("https://foodorabackend-production.up.railway.app/seller/foodlisting", fd
+            .post("https://foodorabackend-production.up.railway.app/seller/foodlisting", fd , config
             )
             .then((res) => {
               console.log(res.data);

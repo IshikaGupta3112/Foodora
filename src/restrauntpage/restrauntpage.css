@@ -29,6 +29,7 @@ margin-left:10px;
 #fourpic{
     display:flex;
     flex-direction: column;
+    overflow:hidden;
 }
 #rating{
     color:white;

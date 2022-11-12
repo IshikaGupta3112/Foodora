@@ -3,7 +3,6 @@ import Navs2 from '../pages/navss/navs2';
 import './restrauntpage.css';
 import {useEffect} from 'react';
 import star from '../assets/star.svg';
-// import direction from '../assets/direction.svg';
 import share from '../assets/share.svg';
 import Restrauntcard from './restrauntcard';
 import CreateRestraunt from './createrestraunt';
@@ -16,9 +15,15 @@ const [restarr , setRestarr] = useState([]);
 const [food , setFood] = useState([]);
 const [imgpath, setimgpath] = useState([]);
 var url="https://foodorabackend-production.up.railway.app/";
+var accesstoken = localStorage.getItem("accesstoken");
+const config ={
+  headers:{
+    Authorization:`Bearer ${accesstoken}`,
+  }
+}
 useEffect(()=>{  
 axios
-.get("https://foodorabackend-production.up.railway.app/user/restaurant/"+newrestid)
+.get("https://foodorabackend-production.up.railway.app/user/restaurant/"+newrestid , config )
 .then((res) => {
     console.log(res.data.seller);
     setimgpath(res.data.seller.imgpath);
@@ -66,7 +71,7 @@ return(
 {/* <p id='review'>Reviews</p> */}
 {/* <p id="restrauntitems">Burger, Fastfood, Beverages</p> */}
 <p id="restrauntaddress">{restarr.restaurantaddress}</p>
-<p id='open'>Open Now</p>
+{/* <p id='open'>Open Now</p> */}
 <p id='opentime'>{restarr.restaurant_openingtime} - {restarr.restaurant_closingtime}</p>
 {/* <button id='addreview'>Add Reviews</button> */}
 {/* <img src={direction} id='directionimg' /> */}

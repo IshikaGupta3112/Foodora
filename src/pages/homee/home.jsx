@@ -58,7 +58,7 @@ const getLocation = () => {
           latitude:lat , 
           longitude:lng , 
           user_id:id
-      })
+      },config)
       .then((res) => {
           console.log(res);
           Navigate("/home");

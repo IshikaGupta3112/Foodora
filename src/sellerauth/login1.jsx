@@ -61,9 +61,10 @@ function SellerLogin() {
           console.log(res.data);
           setMssg1(res.data.msg);
           console.log(res.data.accesstoken);
-          localStorage.setItem("sellerToken" , res.data.accesstoken);
+          localStorage.setItem("accesstoken2" , res.data.accesstoken);
           console.log(res.data.id);
           localStorage.setItem("sellerid" , res.data.id);
+          localStorage.setItem("restid" , res.data.id);
           Navigate("/sellerprofile");
         })
         .catch((err) => {

@@ -12,6 +12,12 @@ function Cart(){
 const [arr , setArr] =useState([]);
 const [success, setSuccess] =useState(false);
 const [success2, setSuccess2] =useState(false);
+var accesstoken = localStorage.getItem("accesstoken");
+  const config ={
+    headers:{
+      Authorization:`Bearer ${accesstoken}`,
+    }
+  }
     // const [count , setCount] = useState(1);
     // function increase(){
     // setCount(count+1);
@@ -20,16 +26,15 @@ const [success2, setSuccess2] =useState(false);
     //     if(count>0)
     //     setCount(count-1);
     //     }
-    var accesstoken = localStorage.getItem("accesstoken");
  function handleorder(){
     console.log(accesstoken);
     axios
-    .post("https://foodorabackend-production.up.railway.app/user/checkout" ,{},
-     { 
-      headers:{
-      Authorization:`Bearer ${accesstoken}`
-    } , 
-    }
+    .post("https://foodorabackend-production.up.railway.app/user/checkout" ,{},config
+    //  { 
+    //   headers:{
+    //   Authorization:`Bearer ${accesstoken}`
+    // } , 
+    // }
     )
     .then((res) => {
         console.log(res.data);
@@ -40,12 +45,12 @@ const [success2, setSuccess2] =useState(false);
         console.log(err);
       });
  }  
-
+ 
  useEffect(()=>{
 axios
 .post("https://foodorabackend-production.up.railway.app/user/viewcart" , {
   user_id:userid
-})
+},config)
 .then((res) => {
     console.log(res);
     setArr(res.data.cart);

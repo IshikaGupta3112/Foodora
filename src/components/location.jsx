@@ -17,7 +17,12 @@ function Location(){
     e.preventDefault();
 //    localStorage.setItem('location' , )
   }
-
+  var accesstoken = localStorage.getItem("accesstoken");
+  const config ={
+    headers:{
+      Authorization:`Bearer ${accesstoken}`,
+    }
+  }
     const [lat, setLat] = useState(null);
 const [lng, setLng] = useState(null);
 const [status, setStatus] = useState(null);
@@ -37,7 +42,7 @@ const getLocation = () => {
               latitude:lat , 
               longitude:lng , 
               user_id:id
-          })
+          }, config)
           .then((res) => {
               console.log(res);
               Navigate("/home");

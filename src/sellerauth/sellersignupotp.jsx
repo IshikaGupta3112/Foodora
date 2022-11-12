@@ -39,7 +39,10 @@ function SellerSignupOtp(){
     .then(result=>{
       console.log(result.data);
       setmssg4(result.data.msg);
+      console.log(result.data.accesstoken)
       localStorage.setItem("id1" , result.data.id);
+      localStorage.setItem("restid" , result.data.id);
+      localStorage.setItem("accesstoken2" , result.data.accesstoken);
       console.log(result.data.id);
       Navigate("/restrauntadd");
     })

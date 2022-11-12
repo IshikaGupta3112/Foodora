@@ -9,17 +9,25 @@ import SellerNav from '../sellernav';
 import Restrauntcard from './sellerprofilefoodcard';
 import { Link } from 'react-router-dom';
 function SellerProfile(){
-var sellerid=localStorage.getItem('sellerid');
+// var sellerid=localStorage.getItem('sellerid');
+var sellerid=localStorage.getItem('restid');
 const [food , setFood]=useState([]);
 const [imgpath, setimgpath] = useState([]);
 const [sellerRestarr , setSellerRestarr]=useState([]);
 var url="https://foodorabackend-production.up.railway.app/";
-console.log(sellerid);    
+console.log(sellerid); 
+var accesstoken = localStorage.getItem("accesstoken2");
+const config ={
+  headers:{
+    Authorization:`Bearer ${accesstoken}`,
+  }
+}
+ 
 useEffect(()=>{
 axios
 .post("https://foodorabackend-production.up.railway.app/seller/sellerprofile" , {
 _id:sellerid,
-})
+},config)
 .then((res) => {
     console.log(res);
     console.log(res.data.sellerDetails);
