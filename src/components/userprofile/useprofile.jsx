@@ -4,6 +4,7 @@ import profileimg from '../../assets/profileimg.png'
 import './userprofile.css';
 import { useEffect , useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 function UserProfile(){
     var userid=localStorage.getItem("userid");
     var accesstoken = localStorage.getItem("accesstoken");
@@ -67,6 +68,7 @@ return(
     <input type='file' onChange={handlefiles} name='image'></input>
     <button type='submit' id='profilephoto' >Upload</button>
 </form>
+{/* <p id='userprofname2'><Link to='/orderhistory' >View order history</Link></p> */}
 </div>
     </div>
 </div>

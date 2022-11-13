@@ -72,7 +72,7 @@ axios
         <>
         <Navs2 />
         <div id='cartbox'>
-        {(success==false)?arr.map(createcart2):<p id='cartpar'>The Cart Is Empty</p>}
+        {(success==false)?arr.map(createcart2):((document.getElementById('nxtbtn2').style.display='none')&&<p id='cartpar'>Order Placed</p>)}
             {/* <div id='firstItem'>
                 <p id='itemname'>Chicken Burger Fries </p>
                 <button id='plus'onClick={increase}>+</button>

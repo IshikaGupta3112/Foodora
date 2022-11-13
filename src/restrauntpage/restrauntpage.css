@@ -11,6 +11,7 @@ width: 617.84px;
 height: 521.75px;
 background: #C4C4C4;
 border-radius: 20px;
+overflow: hidden;
 }
 #firstpic{
     margin-top:10px;

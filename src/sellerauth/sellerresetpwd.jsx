@@ -9,6 +9,7 @@ import { faEye, faEyeSlash } from "@fortawesome/fontawesome-free-solid";
 function SellerResetPwd(){
     var email = localStorage.getItem("sellerfrgmail");
     // console.log(email);
+    const Navigate = useNavigate();
     const [pass , setPass] = useState("");
     const [repass , setRepass]=useState("");
    const[correctpass , setcorrectpass] =useState(false);
@@ -61,6 +62,7 @@ function SellerResetPwd(){
               .then((res) => {
                 setMssg6(res.data.msg);
                 console.log(res);
+                Navigate("/sellerlogin");
               })
               .catch((err) => {
                 console.log(err);

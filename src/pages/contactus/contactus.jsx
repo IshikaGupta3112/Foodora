@@ -55,12 +55,11 @@ return(
     </ul>
     </div> 
     <div id="socialHandles">
-    <img src={twitter} id="twitterimg" alt="" />
-    <img src={instagram} id="instagramimg" alt="" />
-    <img src={discord} id="discordimg" alt="" />
+    <a href="https://twitter.com/ISHIKAG86216704" target="_blank"></a><img src={twitter} id="twitterimg" alt="" />
+    <a href="https://www.instagram.com/aggarwal_ishika_3112" target="_blank"><img src={instagram} id="instagramimg" alt="" /></a>
+    <a href="https://www.facebook.com/profile.php?id=100034862500809" target="_blank"></a><img src={discord} id="discordimg" alt="" />
     </div>  
     </div>
- 
    </div>
    </div>
     </>

@@ -5,6 +5,7 @@ import Contactus from '../contactus/contactus';
 import Navs2 from '../navss/navs2';
 import './foodonclick.css';
 function FoodPage(){
+  var url="https://foodorabackend-production.up.railway.app/";
     var userid=localStorage.getItem("userid");
     console.log(userid);
     var foodid=localStorage.getItem("foodid");
@@ -138,7 +139,7 @@ return (
     <>
     <Navs2 />
 <div id='foodpagediv'>
-<img id='foodrestpic'></img>
+<img src={url+data.foodimg}id='foodrestpic'></img>
 {console.log(data)}
 <p id='foodrestname'>{data.foodname}</p>
 <p id='foodrestprice'>{data.foodprice}</p>

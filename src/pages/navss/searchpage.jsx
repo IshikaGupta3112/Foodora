@@ -44,8 +44,9 @@ function SearchPage(){
     onChange={handleSearch} 
     placeholder="Search here"
     value={search}></input>
+    
     </div>
-     {/* <button onClick={decrease} disabled={(i==0) ? true : false} id='prevbtn'>&larr;</button> */}
+    
      <div id='searcharr'>
       {restarr.map((rest)=>createRest(rest))};
       </div>
