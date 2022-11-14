@@ -44,7 +44,7 @@
   flex-direction: row;
 }
 #myname {
-  margin-left: -260px;
+  margin-left: 38px;
   font-size: 1.3rem;
 }
 #secondline {
@@ -62,10 +62,10 @@
   font-size: 0.9rem;
 }
 #myRadio {
-  height: 20px;
+  /* height: 20px;
   margin-left: -280px;
   margin-top: 3px;
-  cursor: pointer;
+  cursor: pointer; */
 }
 #padder {
   padding: 1rem 1rem 0 1rem;
@@ -101,4 +101,14 @@
   }
 }
 @media (max-width: 440px) {
+  #myname{
+    /* margin-left: -260px;
+    font-size: 1.3rem; */
+  }
+  #myRadio {
+    /* height: 20px;
+    margin-left: -280px;
+    margin-top: 3px;
+    cursor: pointer; */
+  }
 }

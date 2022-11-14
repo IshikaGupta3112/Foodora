@@ -5,6 +5,7 @@ import FormData from 'form-data';
 import SellerNav from "./sellernav";
 import { useNavigate } from "react-router-dom";
 import "./restrauntadd.css";
+import SellerNav2 from "./sellernav2";
 function RestrauntAdd() {
   const [formd, setformd] = useState([]);
   const Navigate = useNavigate();
@@ -14,6 +15,7 @@ function RestrauntAdd() {
   const [address, setAddress] = useState("");
   const [openingTime, setOpeningTime] = useState("");
   const [closingTime, setClosingTime] = useState("");
+  const [pincode, setPincode] = useState("");
   const [restimg, setRestimg] = useState([]);
   const [id, setid] = useState("");
   const [mssg7, setMssg7] = useState("");
@@ -38,6 +40,9 @@ function RestrauntAdd() {
   function handleclosingTime(e) {
     setClosingTime(e.target.value);
   }
+  function handlePincode(e) {
+    setPincode(e.target.value);
+  }
   function handlefiles(e) {
     console.log(e.target.files);
     setRestimg(e.target.files[0]);
@@ -58,6 +63,7 @@ function RestrauntAdd() {
     fd.append("restaurantaddress", address);
     fd.append("mobilenumber", phoneNumber);
     fd.append("restaurantname", restrauntName);
+    fd.append("pincode", pincode);
     fd.append("id", id);
     // var object = {};
     // fd.forEach((value, key) => (object[key] = value));
@@ -102,10 +108,10 @@ function RestrauntAdd() {
 
   return (
     <>
-      <SellerNav />
+      <SellerNav2 />
       <div id="fulllog">
-        <img src={restrauntadd} id="loginpageimg"></img>
-        <div id="signuppageform">
+        <img src={restrauntadd} id="loginpageimg2"></img>
+        <div id="signuppageform2">
           <h1 id="restrauntaddhead">Restaurant Information</h1>
           <p id="validation10">Invalid Phone no.</p>
           <p id="sellerback6">{mssg7}</p>
@@ -163,6 +169,14 @@ function RestrauntAdd() {
               required
             ></input>
             <input type="file" name="image" onChange={handlefiles}></input>
+            <input
+              type="text"
+              name="pincode"
+              placeholder="Pincode"
+              onChange={handlePincode}
+              value={pincode}
+              required
+            ></input>
             {/* <input type='text' name='id' value={iddata}></input> */}
             <button
               id="sellerloginbtn"

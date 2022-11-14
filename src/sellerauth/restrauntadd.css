@@ -35,7 +35,8 @@
 #validation10{
     position:absolute;
     font-size: 0.9rem;
-    color:rgba(255,255,255,0.8);
+    /* color:rgba(255,255,255,0.8); */
+    color:red;
     font-weight: bold;
     top:240px;
     left:710px;
@@ -57,6 +58,18 @@ display:none;
     text-align:center;
     top:0px;
     left:645px;
+}
+#signuppageform2{
+    width: 550px;
+    height: 700px;
+    background: linear-gradient(135.87deg, rgba(255, 255, 255, 0.4) -37.26%, rgba(255, 255, 255, 0) 99.84%);
+    border: 2px solid rgba(18, 18, 18, 0.53);
+    border-radius:0 20px 20px 0px; 
+}
+#loginpageimg2{
+    height:700px;
+    width:620px;
+    border-radius:20px 0 0 20px;
 }
 @media (max-width:480px){
     #restrauntform input{

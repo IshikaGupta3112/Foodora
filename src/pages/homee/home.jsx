@@ -11,12 +11,14 @@ import CreateRest from '../CreateRest';
 import burger from '../../assets/burger.svg';
 import Contactus from '../contactus/contactus';
 import RestaurantList from '../RestaurantList';
+import Loader from '../../Loader';
 var n;
 function Home(){
   const[imgarr  , setimgarr] = useState([]);
     const Navigate = useNavigate();
     var id= localStorage.getItem("userid");
     const [locations , setlocations] = useState();
+    const [loading , setloading] = useState(false);
   function handlelocations(e){
     setlocations(e.target.value);
   }
@@ -28,6 +30,7 @@ function Home(){
 const [lng, setLng] = useState(null);
 const [status, setStatus] = useState(null);
 useEffect(() => {
+  setloading(true);
 const getLocation = () => {
     if (!navigator.geolocation) {
       setStatus('Geolocation is not supported by your browser');
@@ -57,7 +60,7 @@ const getLocation = () => {
       .post("https://foodorabackend-production.up.railway.app/user/location",{
           latitude:lat , 
           longitude:lng , 
-          user_id:id
+          user_id:userid
       },config)
       .then((res) => {
           console.log(res);
@@ -129,11 +132,11 @@ return(
    <img src={burger} alt="burger" id="burger"/>
    <p id="get">GET DELICIOUS FOOD<br />AT YOUR DOORSTEPS</p>
    <p id="text">Your hunger companion.When you crave for midnight delicacy, just dial our number.Speedy and quicker delivery with us. We promise to deliver on time.We deliver food and only good food.</p>
-   {/* <span id="orderbtn">Order Now</span> */}
+   <span id="orderbtn">Order Now</span>
    </div>
-   {/* <Item /> */}
-   {/* <Restaurant /> */}
-   {/* <CreateList /> */}
+   <Item />
+   <Restaurant />
+   <CreateList />
    <p id="resthead">Restaurants Near You</p>
    <div id="restlist">
       <button onClick={decrease} disabled={(i==0) ? true : false} id='prevbtn'>&larr;</button>

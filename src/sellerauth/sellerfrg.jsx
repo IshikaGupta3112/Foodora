@@ -4,9 +4,12 @@ import axios from "axios";
 import sellerfrg from '../assets/sellerfrg.svg';
 import SellerNav from './sellernav';
 import {Link  , useNavigate} from 'react-router-dom';
+import SellerNav2 from './sellernav2';
+import Loader from '../Loader';
 function SellerFrg(){
     const [forgotMail, setForgotMail] = useState("");
   const [mssg2,setMssg2]=useState('');
+  const [loading,setLoading]=useState(false);
   function handleForgotMial(e) {
     setForgotMail(e.target.value);
    }
@@ -29,6 +32,7 @@ function SellerFrg(){
     localStorage.setItem("sellerfrgmail" , forgotMail);
     console.log(forgotMail);
     if (correctMail) {
+      setLoading(true);
       axios
         .post("https://foodorabackend-production.up.railway.app/seller/forgot/send", {
           email:forgotMail
@@ -36,18 +40,21 @@ function SellerFrg(){
         .then((res) => {
           setMssg2(res.data.msg);
           console.log(res);   
+          setLoading(false);
           navigate("/sellerfrgotp");
           // localStorage.setItem("routecheck1" ,setRoute1);
         })
         .catch((err) => {
           console.log(err);
+          setLoading(false);
         setMssg2(err.response.data.msg);
         });
     }
   }
     return(
         <>
-        <SellerNav />
+        <SellerNav2 />
+        {loading?<Loader/>:(
         <div id="fulllog">
             <img src={sellerfrg} id='loginpageimg'>    
             </img>
@@ -67,7 +74,7 @@ function SellerFrg(){
                     <button type='submit' id='sellerloginbtn'>Send Otp</button>
                 </form>
             </div>
-        </div>
+        </div>)}
         </>
     );
 }

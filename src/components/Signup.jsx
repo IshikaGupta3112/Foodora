@@ -6,6 +6,8 @@ import signuppage from '../assets/signuppage.jpg';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/fontawesome-free-solid";
 import { Link  , useNavigate} from "react-router-dom";
+import Navs3 from "./navs2";
+import Loader from "../Loader";
 
 function Signup(){
   const [status , setStatus]=useState(false);
@@ -14,13 +16,12 @@ function Signup(){
   const [userEmail, setuserEmail] = useState("");
   const [password, setPassword] = useState("");
   const [repassword, setRepassword] = useState("");
+  const [loading, setLoading] = useState(false);
   function handleuserName(e) {
     setuserName(e.target.value);
   }
   function handleuserEmail(e) {
     setuserEmail(e.target.value);
-    // console.log(userEmail);
-    // localStorage.setItem("myMail" , userEmail);
   }
   function handlepass(e) {
     setPassword(e.target.value);
@@ -33,7 +34,7 @@ function Signup(){
   function showHide1() {
         setShow1(!show1);
       }
-      
+
       function showHide2() {
         setShow2(!show2);
       }
@@ -44,8 +45,29 @@ function Signup(){
      function handleSubmits(e){
       e.preventDefault();
       localStorage.setItem("myMail" , userEmail);
+      setLoading(true);
+      if (iscorrectmail && iscorrectpass&& iscorrectRepass&& iscorrectname) {
+        axios
+          .post("https://foodorabackend-production.up.railway.app/user/register", {
+            username:userName,
+            email:userEmail , 
+            password:password
+          })
+          .then((res) => {
+            setMssg(res.data.msg);
+            console.log(res);    
+            setStatus(res.data.success);
+            setLoading(false);
+            navigate("/otp2");
+          })
+          .catch((err) => {
+            console.log(err);
+            setLoading(false);
+          setMssg(err.response.data.msg);
+          });
+      }
      }
-        const rightpass =
+    const rightpass =
     /^(?=.[a-z])(?=.[A-Z])(?=.\d)(?=.[@$!%?&#])[A-Za-z\d@$!%?&#]{8,}$/;
     const rightmail= /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
@@ -89,31 +111,34 @@ function Signup(){
         setIsCorrectRepass(false);
       }
     }, [repassword]);
-    // var data = { userName,userEmail, password };
     const navigate = useNavigate();
-    function postdata() {
-      if (iscorrectmail && iscorrectpass&& iscorrectRepass&& iscorrectname) {
-        axios
-          .post("https://foodorabackend-production.up.railway.app/user/register", {
-            username:userName,
-            email:userEmail , 
-            password:password
-          })
-          .then((res) => {
-            setMssg(res.data.msg);
-            console.log(res);    
-            setStatus(res.data.success);
-            navigate("/otp2");
-          })
-          .catch((err) => {
-            console.log(err);
-          setMssg(err.response.data.msg);
-          });
-      }
-    }
+    // function postdata() {
+    //   setLoading(true);
+    //   if (iscorrectmail && iscorrectpass&& iscorrectRepass&& iscorrectname) {
+    //     axios
+    //       .post("https://foodorabackend-production.up.railway.app/user/register", {
+    //         username:userName,
+    //         email:userEmail , 
+    //         password:password
+    //       })
+    //       .then((res) => {
+    //         setMssg(res.data.msg);
+    //         console.log(res);    
+    //         setStatus(res.data.success);
+    //         setLoading(false);
+    //         navigate("/otp2");
+    //       })
+    //       .catch((err) => {
+    //         console.log(err);
+    //         setLoading(false);
+    //       setMssg(err.response.data.msg);
+    //       });
+    //   }
+    // }
     return (
       <>
-      <Navs />
+      <Navs3 />
+      {loading?<Loader/>:(
       <div id="fulllog">
           <img src={signuppage} id='loginpageimg'>    
           </img>
@@ -162,96 +187,15 @@ function Signup(){
                   onClick={showHide2}
                 />
               )}
-                  <button type='submit' id='sellerloginbtn' onClick={postdata}>Signup</button>
+                  <button type='submit' id='sellerloginbtn' 
+                  // onClick={postdata}
+                  >Signup</button>
               </form>
               <p id='sellersignuplink'>Already a customer? <Link to="/login">LOGIN</Link></p>
           </div>
       </div>
+      )}
       </>
-
-
-          // <>
-          //   <Navs />
-          //   <img src={signuppage} alt="" id="loginpage" />
-          //   <div id='backgrey'></div>
-          //   <p id='backendmssg2'>{mssg}</p>
-          //   <h1 id="log1">SIGNUP</h1>
-          //   <div id="auths">
-          //     <div className="form">
-          //       <form id="form2" onSubmit={handleSubmits}>
-          //         <input
-          //           type="text"
-          //           placeholder="Full Name"
-          //           name="fullname"
-          //           id="fullname"
-          //           className="fullname"
-          //           value={userName}
-          //           onChange={handleuserName}
-          //           required
-          //         ></input>
-          //         <p id="errors1">required</p>
-          //         <input
-          //           type="text"
-          //           placeholder="Enter your email"
-          //           name="emails"
-          //           id="emails"
-          //           className="emails"
-          //           value={userEmail}
-          //           onChange={handleuserEmail}
-          //           required
-          //         ></input>
-          //         <p id="errors2">Invalid mail!</p>
-          //         <input
-          //           type={show1 ? "text" : "password"}
-          //           placeholder="Password"
-          //           name="passwords"
-          //           id="passwords"
-          //           className="passwords"
-          //           value={password}
-          //           onChange={handlepass}
-          //           required
-          //         ></input>
-          //         {show1 ? (
-          //           <FontAwesomeIcon icon={faEye} id="eye1" onClick={showHide1} />
-          //         ) : (
-          //           <FontAwesomeIcon
-          //             icon={faEyeSlash}
-          //             id="eye1"
-          //             onClick={showHide1}
-          //           />
-          //         )}
-          //         <p id="errors3">invalid password</p>
-          //         <input
-          //           type={show2 ? "text" : "password"}
-          //           placeholder="Re-enter password"
-          //           name="repasswords"
-          //           id="repasswords"
-          //           className="repasswords"
-          //           value={repassword}
-          //           onChange={handleRepass}
-          //           required
-          //         ></input>
-          //         {show2 ? (
-          //           <FontAwesomeIcon icon={faEye} id="eye2" onClick={showHide2} />
-          //         ) : (
-          //           <FontAwesomeIcon
-          //             icon={faEyeSlash}
-          //             id="eye2"
-          //             onClick={showHide2}
-          //           />
-          //         )}
-          //         <p id="errors4">didn't match</p>
-          //         <button type="submit" 
-          //         onClick={postdata}
-          //         >SIGNUP</button>
-          //         <p id='customer'>Already a customer?  <Link to="/login">
-          //          Login
-          //         </Link></p>
-          //       </form>
-          //     </div>
-          //   </div>
-                
-          // </>
         );
 }
 export default Signup;

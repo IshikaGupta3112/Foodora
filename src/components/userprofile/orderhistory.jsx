@@ -1,6 +1,7 @@
 import Navs2 from "../../pages/navss/navs2";
 import {useEffect , useState} from 'react';
 import axios from "axios";
+import Ordercard from "./ordercard";
 function Orderhistory(){
     const [n , setN] = useState("");
     var i , j;
@@ -14,6 +15,9 @@ function Orderhistory(){
         }
       }
     const [arr , setArr] = useState([]);
+const [num,setNum] = useState();
+const[nestedarr , setNestedArray] =useState([]);
+// let nestedarr=[];
     useEffect(()=>{
     axios
     .post("https://foodorabackend-production.up.railway.app/user/userprofile" , {
@@ -22,27 +26,50 @@ function Orderhistory(){
     .then((res) => {
         console.log(res.data.orderhistory.length);
         console.log(res.data.orderhistory);
-        setN(res.data.orderhistory.length);
-        console.log(n);
-//         titles=res.data.near.map(obj=>obj.imgpath[0]);
-//   console.log(titles);
-        arr = res.data.orderhistory.map(obj=>obj[0])
-        console.log(arr);
-        console.log(res.data.orderhistory[0][0].foodname);
-        setArr(res.data.orderhistory[0][0]);
-      })
-      .catch((err) => {
+        console.log(res.data.orderhistory.length);
+        setArr(res.data.orderhistory);
+        setNum(res.data.orderhistory.length);
+          })
+    .catch((err) => {
         console.log(err);
       });
-  
     },[])
-   
+    console.log(arr);  
+    console.log(num); 
+    for(i=0;i<num;i++){
+      for(j=0;j<arr[i].length;j++){
+        console.log(arr[i][j]);
+        // setNestedArray(arr[i][j]);
+        // nestedarr=arr[i][j].map(obj=>obj.foodname);
+      }
+    }
+    console.log(nestedarr);
+    // titles=res.data.near.map(obj=>obj.imgpath[0]);
+    // console.log(titles);
+    // console.log(nestedarr) ;
+// let k=0;
+// const [nestedArr, setNestedArray] = useState([])
+//     function arrayNest(arr) {
+//       console.log(arr);
+//         setNestedArray(localArr=>[...localArr,arr])
+//         console.log(nestedArr)
+//       }
+    
+// arrayNest(arr)
+function createOrder(){
+  return(
+    <Ordercard
+          foodname={arr.foodname}
+          food_price={arr.food_price}
+          quantity={arr.quantity}
+        />
+  )
+}
     return(<>
     <Navs2 />
-    <div id='orderhistory'>   
-    <p>Foodname:{arr.foodname}</p>
-    <p>Foodprice:{arr.food_price}</p>
-    <p>Quantity:{arr.quantity}</p>
+    {/* {arr.map(arrayNe/st)} */}
+    <div id='padder2'>
+    {arr.map(createOrder)};
     </div>
     </>);
     }

@@ -6,7 +6,9 @@ import { Link , useNavigate} from "react-router-dom";
 import axios from 'axios';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/fontawesome-free-solid";
-
+import Navs3 from './navs2';
+import Loader from '../Loader';
+import * as ReactBootstrap from 'react-bootstrap';
 const Login = () => {
   const [userEmail, setuserEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -26,6 +28,7 @@ const Login = () => {
   }
   const [iscorrectpass, setIsCorrectPass] = useState(false);
   const [iscorrectEmail, setIsCorrectEmail] = useState(false);
+  const [loading, setLoading] = useState(false);
   
   const rightmail= /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
     useEffect(() => {
@@ -50,6 +53,7 @@ const Login = () => {
     }, [userEmail]);
     const Navigate = useNavigate();
     function handleApi() {
+      setLoading(true);
       if (iscorrectEmail && iscorrectpass) {
         axios
           .post("https://foodorabackend-production.up.railway.app/user/signin", {
@@ -60,6 +64,7 @@ const Login = () => {
             console.log(res.data);
             setMessge(res.data.msg);
           console.log(res.data.id);
+      setLoading(false);
           console.log(res.data.accesstoken);
           localStorage.setItem("accesstoken" , res.data.accesstoken);
           localStorage.setItem("userid" , res.data.id);
@@ -67,20 +72,24 @@ const Login = () => {
           })
           .catch((err) => {
             console.log(err);
+            setLoading(false);
             setMessge(err.response.data.msg);
           });
       }
     }
+    console.log(loading);
     return (
       <>
-      <Navs />
-      <div id="fulllog">
+      <Navs3 />
+      {loading? <Loader/>:
+     ( <div id="fulllog">
         <img src={loginpage} id="loginpageimg"></img>
         <div id="loginpageform">
           <h1 id="sellerloginhead">LOGIN</h1>
           <p id="validation1">Invalid Mail</p>
           <p id="validation2">Invalid</p>
           <p id="sellerback1">{mssge}</p>
+         
           <form id="sellerloginform" onSubmit={handlesubmit}>
             <input
               type="text"
@@ -109,6 +118,7 @@ const Login = () => {
               Login
             </button>
           </form>
+
           <p id="sellerfrg">
             <Link to="/forgot">Forgot Password?</Link>
           </p>
@@ -116,7 +126,9 @@ const Login = () => {
             New To Foodora? <Link to="/signup">SIGN UP</Link>
           </p>
         </div>
-      </div>
+      </div>)
+    }
+      {/* // {< ReactBootstrap.Spinner animation="border" role="status" />} */}
     </>
   //     <div>
   //       <Navs />
@@ -163,6 +175,7 @@ const Login = () => {
   //       </form>
   //     </div>
   //     </div>
+
     );
 }
 

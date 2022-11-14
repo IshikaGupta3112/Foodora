@@ -5,11 +5,14 @@ import { useNavigate } from 'react-router-dom';
 import location from '../assets/location.jpg';
 import axios from 'axios';
 import Navs from './navs';
+import Navs3 from './navs2';
+import Loader from '../Loader';
 function Location(){
     const Navigate = useNavigate();
     var id= localStorage.getItem("userid");
     console.log(id);
     const [locations , setlocations] = useState();
+    const [loading , setLoading]=useState(false);
   function handlelocations(e){
     setlocations(e.target.value);
   }
@@ -36,6 +39,7 @@ const getLocation = () => {
         setLat(position.coords.latitude);
         setLng(position.coords.longitude);
         if(lat&&lng){
+          setLoading(true);
           console.log(id);
           axios
           .post("https://foodorabackend-production.up.railway.app/user/location",{
@@ -45,11 +49,13 @@ const getLocation = () => {
           }, config)
           .then((res) => {
               console.log(res);
+              setLoading(false);
               Navigate("/home");
               // setMssg1(res.data.msg);
             })
             .catch((err) => {
               console.log(err);
+              setLoading(false);
               // setMssg1(err.response.data.msg);
             });
           }
@@ -64,7 +70,8 @@ const getLocation = () => {
   console.log("longitude:"+lng);
  
 return(<>
-<Navs />
+<Navs3 />
+{loading?<Loader/>:(
 <div id="fulllog">
 <img src={location} id='loginpageimg'></img>
 <div id='loginpageform'>
@@ -90,6 +97,7 @@ id='locatemebtn'
   {/* {lng && <p id='locstatus'>Longitude: {lng}</p>}  */}
 </div>
 </div>
+)}
 </>);
 }
 export default Location;

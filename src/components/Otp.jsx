@@ -5,9 +5,12 @@ import axios from 'axios';
 import loginpage from '../assets/loginpage.jpg'
 import Navs from "./navs.jsx";
 import { Link , useNavigate} from "react-router-dom";
+import Navs3 from "./navs2";
+import Loader from "../Loader";
 function Otp() {
   const [mssg,setmssg]=useState('');
   const [otp , setOtp] = useState("");
+  const [loading , setLoading] = useState(false);
   function handleOtp(e){
     setOtp(e.target.value);
   }
@@ -15,6 +18,7 @@ function Otp() {
   var email = localStorage.getItem("forgotMail");
   // console.log(email);
   function handleSubmit(e) {
+    setLoading(true);
     console.log(otp);
     console.log(email);
     e.preventDefault();
@@ -26,10 +30,12 @@ function Otp() {
   .then((res) => {
     setmssg(res.data.msg);
     console.log(res);
+    setLoading(false);
     navigate("/password");
   })
   .catch((err) => {
     console.log(err);
+    setLoading(false);
   setmssg(err.response.data.msg);
   });
 
@@ -42,10 +48,12 @@ function Otp() {
   })
   .then((res) => {
     setmssg(res.data.msg);
+    setLoading(false);
     console.log(res);
   })
   .catch((err) => {
     console.log(err);
+    setLoading(false);
   setmssg(err.response.data.msg);
   });
  }
@@ -59,7 +67,8 @@ function Otp() {
 
   return (
     <>
-     <Navs />
+      <Navs3 />
+    {loading?<Loader/>:(
     <div id="fulllog">
     <img src={loginpage} alt="" id="loginpageimg" />
         <div id='loginpageform'>
@@ -82,7 +91,7 @@ function Otp() {
         Resend OTP
       </button> : {counter}</p>
         </div>
-    </div>
+    </div>)}
     </>
     // <>
     //   <Navs />

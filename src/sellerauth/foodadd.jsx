@@ -5,6 +5,7 @@ import FormData from 'form-data';
 import { useState , useEffect } from 'react';
 import axios from 'axios';
 import {useNavigate} from 'react-router-dom';
+import SellerNav2 from './sellernav2';
 function FoodAdd(){
  let sellerid=localStorage.getItem("id1");
  const [foodname, setFoodname] = useState('');  
@@ -79,7 +80,7 @@ function FoodAdd(){
         }
       }
 return(<>
-<SellerNav />
+<SellerNav2 />
       <div id="fulllog">
         <img src={restrauntadd} id="loginpageimg"></img>
         <div id="signuppageform">

@@ -8,6 +8,7 @@ import Navs2 from '../../pages/navss/navs2';
 import SellerNav from '../sellernav';
 import Restrauntcard from './sellerprofilefoodcard';
 import { Link } from 'react-router-dom';
+import SellerNav2 from '../sellernav2';
 function SellerProfile(){
 // var sellerid=localStorage.getItem('sellerid');
 var sellerid=localStorage.getItem('restid');
@@ -53,7 +54,7 @@ function createRest(food) {
   );
 } 
 return(<>
-<SellerNav/>
+<SellerNav2/>
 <div id='sellerrest'>
     <div id='sellerRestname'>{sellerRestarr.restaurantname}</div>
     <img src={url+imgpath[0]} id='sellerrestpic'></img>

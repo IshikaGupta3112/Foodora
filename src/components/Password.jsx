@@ -6,6 +6,8 @@ import { faEye, faEyeSlash } from "@fortawesome/fontawesome-free-solid";
 import axios from 'axios';
 import "./password.css";
 import { Link  , useNavigate} from "react-router-dom";
+import Navs3 from "./navs2";
+import Loader from "../Loader";
 function Password() {
   var email = localStorage.getItem("forgotMail");
   console.log(email);
@@ -14,6 +16,7 @@ function Password() {
    const[correctpass , setcorrectpass] =useState(false);
    const[correctRepass , setcorrectRepass] =useState(false);
    const[mssg , setMssg] =useState("");
+   const[loading , setLoading] =useState(false);
 
     function handlepass(e){
      setPass(e.target.value);
@@ -53,6 +56,7 @@ function Password() {
 const Navigate=useNavigate();
   function handleSubmit(e) {
 console.log(email);
+setLoading(true);
     e.preventDefault();
     if(correctRepass&&correctpass){
       axios
@@ -63,17 +67,20 @@ console.log(email);
       .then((res) => {
         setMssg(res.data.msg);
         console.log(res);
+        setLoading(false);
         Navigate("/login");
       })
       .catch((err) => {
         console.log(err);
+        setLoading(false);
       setMssg(err.response.data.msg);
       });
     }
   }
   return (
     <>
-    <Navs />
+    <Navs3 />
+    {loading?<Loader/>:(
     <div id="fulllog">
         <img src={loginpage} id='loginpageimg'>    
         </img>
@@ -114,7 +121,7 @@ console.log(email);
                 <button type='submit' id='sellerloginbtn'>Reset</button>
             </form>
         </div>
-    </div>
+    </div>)}
     </>
 
 

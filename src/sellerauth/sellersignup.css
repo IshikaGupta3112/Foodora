@@ -1,7 +1,8 @@
 #validation6{
     position:absolute;
     font-size: 0.9rem;
-    color:rgba(255,255,255,0.8);
+    /* color:rgba(255,255,255,0.8) */
+    color:red;
     font-weight: bold;
     top:208px;
     left:710px;
@@ -10,16 +11,18 @@
 #validation7{
     position:absolute;
     font-size: 0.9rem;
-    color:rgba(255,255,255,0.8);
+    /* color:rgba(255,255,255,0.8); */
+    color:red;
     font-weight: bold;
-    top:280px;
+    top:285px;
     left:710px;
     display:none; 
 }
 #validation8{
     position:absolute;
     font-size: 0.9rem;
-    color:rgba(255,255,255,0.8);
+    /* color:rgba(255,255,255,0.8); */
+    color:red;
     font-weight: bold;
     top:352px;
     left:710px;
@@ -28,9 +31,10 @@
 #validation9{
     position:absolute;
     font-size: 0.9rem;
-    color:rgba(255,255,255,0.8);
+    /* color:rgba(255,255,255,0.8); */
+    color:red;
     font-weight: bold;
-    top:424px;
+    top:440px;
     left:710px;
     display:none; 
 }

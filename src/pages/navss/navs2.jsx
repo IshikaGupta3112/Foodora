@@ -36,8 +36,8 @@ return (
 <Link to='/searchpage'><input type='text' id="searchbar" onChange={handleSearch} value={search} placeholder="Search"></input></Link>
 {/* <img src={search} alt="search" id="search" /> */}
 <Link to='/home'><p id='text1'>Home</p></Link>
-{/* <Link to ='/home#resthead'><p id='text2'>Restaurants</p></Link> */}
-{/* <p id='text3'>About Us</p> */}
+<Link to ='/home#resthead'><p id='text2'>Restaurants</p></Link>
+<p id='text3'>About Us</p>
 <Link to ="/cart"><img src={cart} alt="cart" id="cart" /></Link>
 <Link to='/userprofile'><img src={url+imagepath} id='profile'></img></Link>
 </nav>

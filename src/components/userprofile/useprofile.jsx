@@ -68,7 +68,7 @@ return(
     <input type='file' onChange={handlefiles} name='image'></input>
     <button type='submit' id='profilephoto' >Upload</button>
 </form>
-{/* <p id='userprofname2'><Link to='/orderhistory' >View order history</Link></p> */}
+<p id='userprofname2'><Link to='/orderhistory' >View order history</Link></p>
 </div>
     </div>
 </div>

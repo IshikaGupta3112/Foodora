@@ -7,6 +7,8 @@ import SellerNav from './sellernav';
 import {Link , useNavigate} from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/fontawesome-free-solid";
+import SellerNav2 from './sellernav2';
+import Loader from '../Loader';
 function SellerSignup(){
     // var jwt = require("jsonwebtoken")
     // var token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNmEyZWNkYWNhZmU2ZTZkMDhhMzYxNyIsImlhdCI6MTY2NzkwMzE4MiwiZXhwIjoxNjY3OTAzODQyfQ.rkZ22zuxBZ0dx6qXhKtCBepcWzzqLo1hr7Utl8cyM5A";
@@ -17,6 +19,7 @@ function SellerSignup(){
   const [userEmail, setuserEmail] = useState("");
   const [password, setPassword] = useState("");
   const [repassword, setRepassword] = useState("");
+  const [loading , setLoading] = useState(false);
   function handleuserName(e) {
     setuserName(e.target.value);
   }
@@ -43,6 +46,29 @@ function SellerSignup(){
       const [iscorrectpass, setIsCorrectPass] = useState(false);
       const [iscorrectRepass, setIsCorrectRepass] = useState(false);
      function handleSubmits(e){
+      setLoading(true);
+      if (iscorrectmail && iscorrectpass&& iscorrectRepass&& iscorrectname) {
+        axios
+          .post("https://foodorabackend-production.up.railway.app/seller/register", {
+            username:userName,
+            email:userEmail , 
+            password:password
+          })
+          .then((res) => {
+            setMssg3(res.data.msg);
+            console.log(res);
+            setLoading(false);
+            localStorage.setItem('token1' , res.data.token);
+            // localStorage.setItem("id1" , res.data.id);
+            // console.log(res.data.id);
+            navigate("/sellersignupotp");
+          })
+          .catch((err) => {
+            console.log(err);
+            setLoading(false);
+          setMssg3(err.response.data.msg);
+          });
+      }
       e.preventDefault();
       localStorage.setItem("sellersignupmail" , userEmail);
      }
@@ -92,6 +118,7 @@ function SellerSignup(){
     }, [repassword]);
     const navigate = useNavigate();
     function postdata() {
+      setLoading(true);
       if (iscorrectmail && iscorrectpass&& iscorrectRepass&& iscorrectname) {
         axios
           .post("https://foodorabackend-production.up.railway.app/seller/register", {
@@ -102,6 +129,7 @@ function SellerSignup(){
           .then((res) => {
             setMssg3(res.data.msg);
             console.log(res);
+            setLoading(false);
             localStorage.setItem('token1' , res.data.token);
             // localStorage.setItem("id1" , res.data.id);
             // console.log(res.data.id);
@@ -109,13 +137,15 @@ function SellerSignup(){
           })
           .catch((err) => {
             console.log(err);
+            setLoading(false);
           setMssg3(err.response.data.msg);
           });
       }
     }
 return(
     <>
-    <SellerNav />
+    <SellerNav2 />
+    {loading?<Loader/>:(
     <div id="fulllog">
         <img src={sellersignup} id='loginpageimg'>    
         </img>
@@ -163,11 +193,13 @@ return(
                 onClick={showHide2}
               />
             )}
-                <button type='submit' id='sellerloginbtn' onClick={postdata}>Signup</button>
+                <button type='submit' id='sellerloginbtn' 
+                // onClick={postdata}
+                >Signup</button>
             </form>
             <p id='sellersignuplink'>Already a customer? <Link to="/sellerlogin">LOGIN</Link></p>
         </div>
-    </div>
+    </div>)}
     </>
 );
 }

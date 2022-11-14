@@ -5,8 +5,11 @@ import Otps from "./Otps.jsx";
 import signuppage from '../assets/signuppage.jpg';
 import Navs from "./navs.jsx";
 import { BrowserRouter as Router, Routes, Route, Link , useNavigate } from "react-router-dom";
+import Navs3 from "./navs2";
+import Loader from "../Loader";
 function Otp2() {
   const [mssg,setmssg]=useState('');
+  const [loading,setLoading]=useState(false);
   const [userOtp, setuserOtp] = react.useState({
     otp: "",
   });
@@ -15,14 +18,17 @@ function Otp2() {
   const Navigate = useNavigate();
   var otp = userOtp.otp;
   const handleApi5=()=>{
+    setLoading(true);
     axios
     .post("https://foodorabackend-production.up.railway.app/user/verify/send",{email})
     .then(res=>{
       setmssg(res.data.msg);
+      setLoading(false);
       console.log(res);
     })
     .catch(err=>{
       console.log(err);
+      setLoading(false);
       console.log(err.response.data.msg);
       setmssg(err.response.data.msg)
     })
@@ -35,10 +41,12 @@ function Otp2() {
     setuserOtp({ ...userOtp, [name]: value });
   }
   function handleSubmit(event) {
+    setLoading(true);
     axios 
     .post('https://foodorabackend-production.up.railway.app/user/verify' ,{email , otp} )
     .then(result=>{
       console.log(result.data);
+      setLoading(false);
       localStorage.setItem("userid" , result.data.id);
       var id= localStorage.getItem("userid");
       console.log(id);
@@ -50,6 +58,7 @@ function Otp2() {
     })
     .catch(err3=>{
       console.log(err3);
+      setLoading(false);
       console.log(err3.response.data.msg);
       setmssg(err3.response.data.msg);
     })
@@ -66,7 +75,9 @@ function Otp2() {
   },[counter]);
   return (
     <>
-    <Navs />
+    <Navs3 />
+    {loading?<Loader/>:(
+    
     <div id="fulllog">
         <img src={signuppage} id='loginpageimg'>    
         </img>
@@ -89,6 +100,7 @@ function Otp2() {
       </button>: {counter}</p>
         </div>
     </div>
+    )}
     </>
     // <>
     //   <Navs />

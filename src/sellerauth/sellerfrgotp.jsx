@@ -4,9 +4,12 @@ import sellerfrgotp from '../assets/sellerfrgotp.svg';
 import axios from 'axios';
 import SellerNav from './sellernav';
 import {Link,useNavigate} from 'react-router-dom';
+import SellerNav2 from './sellernav2';
+import Loader from '../Loader';
 function SellerFrgOtp(){
     const [mssg5,setmssg5]=useState('');
     const [otp , setOtp] = useState("");
+    const [loading , setLoading] = useState(false);
     function handleOtp(e){
       setOtp(e.target.value);
     }
@@ -17,6 +20,7 @@ function SellerFrgOtp(){
     console.log(otp);
     console.log(email);
     e.preventDefault();
+    setLoading(true);
     axios
   .post("https://foodorabackend-production.up.railway.app/seller/forgot/verify", {
     email:email,
@@ -25,25 +29,30 @@ function SellerFrgOtp(){
   .then((res) => {
     setmssg5(res.data.msg);
     console.log(res);
+    setLoading(false);
     navigate("/sellerresetpwd");
   })
   .catch((err) => {
     console.log(err);
+    setLoading(false);
   setmssg5(err.response.data.msg);
   });
 
   }
   function handleApi5(){
+    setLoading(true);
     axios
     .post("https://foodorabackend-production.up.railway.app/seller/forgot/send", {
       email:email
     })
     .then((res) => {
       setmssg5(res.data.msg);
+      setLoading(false);
       console.log(res);
     })
     .catch((err) => {
       console.log(err);
+      setLoading(false);
     setmssg5(err.response.data.msg);
     });
    }
@@ -57,7 +66,8 @@ function SellerFrgOtp(){
 
     return(
         <>
-        <SellerNav />
+        <SellerNav2 />
+        {loading?<Loader/>:(
         <div id="fulllog">
             <img src={sellerfrgotp} id='loginpageimg'>    
             </img>
@@ -81,7 +91,7 @@ function SellerFrgOtp(){
             Resend OTP
           </button> : {counter}</p>
             </div>
-        </div>
+        </div>)}
         </>
     );
 }

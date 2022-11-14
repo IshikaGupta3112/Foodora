@@ -4,24 +4,29 @@ import axios from 'axios';
 import sellerfrgotp from '../assets/sellerfrgotp.svg';
 import SellerNav from './sellernav';
 import {Link , useNavigate} from 'react-router-dom';
+import SellerNav2 from './sellernav2';
+import Loader from '../Loader';
 function SellerSignupOtp(){
   const Navigate = useNavigate();
     const [mssg4,setmssg4]=useState('');
+    const [loading,setLoading]=useState(false);
   const [userOtp, setuserOtp] = useState({
     otp: "",
   });
   var email =localStorage.getItem("sellersignupmail");
-    // console.log(email);
   var otp = userOtp.otp;
   const handleApi5=()=>{
+    setLoading(true);
     axios
     .post("https://foodorabackend-production.up.railway.app/seller/verify/send",{email})
     .then(res=>{
+      setLoading(false);
       console.log(res.data.msg);
       setmssg4(res.data.msg);
     })
     .catch(err=>{
       console.log(err);
+      setLoading(false);
       console.log(err.response.data.msg);
       setmssg4(err.response.data.msg)
     })
@@ -34,9 +39,11 @@ function SellerSignupOtp(){
     setuserOtp({ ...userOtp, [name]: value });
   }
   function handleSubmit(event) {
+    setLoading(true);
     axios 
     .post('https://foodorabackend-production.up.railway.app/seller/verify' ,{email , otp} )
     .then(result=>{
+      setLoading(false);
       console.log(result.data);
       setmssg4(result.data.msg);
       console.log(result.data.accesstoken)
@@ -47,6 +54,7 @@ function SellerSignupOtp(){
       Navigate("/restrauntadd");
     })
     .catch(err3=>{
+      setLoading(false);
       console.log(err3);
       console.log(err3.response.data.msg);
       setmssg4(err3.response.data.msg);
@@ -63,7 +71,8 @@ function SellerSignupOtp(){
   },[counter]);
     return(
         <>
-        <SellerNav />
+        <SellerNav2 />
+        {loading?<Loader/>:(
         <div id="fulllog">
             <img src={sellerfrgotp} id='loginpageimg'>    
             </img>
@@ -85,7 +94,7 @@ function SellerSignupOtp(){
             Resend OTP
           </button>: {counter}</p>
             </div>
-        </div>
+        </div>)}
         </>
     );
 }

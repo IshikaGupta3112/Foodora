@@ -6,6 +6,8 @@ import SellerNav from './sellernav';
 import {Link , useNavigate} from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/fontawesome-free-solid";
+import SellerNav2 from './sellernav2';
+import Loader from '../Loader';
 function SellerResetPwd(){
     var email = localStorage.getItem("sellerfrgmail");
     // console.log(email);
@@ -15,6 +17,7 @@ function SellerResetPwd(){
    const[correctpass , setcorrectpass] =useState(false);
    const[correctRepass , setcorrectRepass] =useState(false);
    const[mssg6 , setMssg6] =useState("");
+   const[loading , setLoading] = useState(false);
    function handlepass(e){
     setPass(e.target.value);
    }
@@ -52,6 +55,7 @@ function SellerResetPwd(){
       }, [repass]);
       function handleSubmit(e) {
         console.log(email);
+        setLoading(true);
             e.preventDefault();
             if(correctRepass&&correctpass){
               axios
@@ -62,17 +66,20 @@ function SellerResetPwd(){
               .then((res) => {
                 setMssg6(res.data.msg);
                 console.log(res);
+                setLoading(false);
                 Navigate("/sellerlogin");
               })
               .catch((err) => {
                 console.log(err);
+                setLoading(false);
               setMssg6(err.response.data.msg);
               });
             }
           }
 return(
     <>
-    <SellerNav />
+    <SellerNav2 />
+    {loading?<Loader/>:(
     <div id="fulllog">
         <img src={sellerresetpwd} id='loginpageimg'>    
         </img>
@@ -114,6 +121,8 @@ return(
             </form>
         </div>
     </div>
+
+ )} 
     </>
 );
 }

@@ -4,11 +4,13 @@ import loginpage from '../assets/loginpage.jpg';
 import "./Forgot.css";
 import { Link , NavLink, useNavigate} from "react-router-dom";
 import axios from 'axios';
+import Navs3 from "./navs2";
+import Loader from '../Loader';
 function Forgot() {
   const [forgotMail, setForgotMail] = useState("");
   const [mssg,setMssg]=useState('');
   const [route1 , setRoute1] = useState(false);
-  
+  const [loading, setLoading] = useState(false);
   function handleForgotMial(e) {
    setForgotMail(e.target.value);
   }
@@ -31,6 +33,7 @@ function Forgot() {
     e.preventDefault();   
     localStorage.setItem("forgotMail" , forgotMail);
     console.log(forgotMail);
+    setLoading(true);
     if (correctMail) {
       axios
         .post("https://foodorabackend-production.up.railway.app/user/forgot/send", {
@@ -40,20 +43,23 @@ function Forgot() {
           setMssg(res.data.msg);
           console.log(res);  
           setRoute1(true);
+          setLoading(false);
           console.log(route1);  
           navigate("/otp");
           // localStorage.setItem("routecheck1" ,setRoute1);
         })
         .catch((err) => {
           console.log(err);
+          setLoading(false);
         setMssg(err.response.data.msg);
         });
     }
   }
   return (
     <>
-    <Navs />
-    <div id="fulllog">
+    <Navs3 />
+    {loading?<Loader/>:
+    (<div id="fulllog">
         <img src={loginpage} id='loginpageimg'>    
         </img>
         <div id='loginpageform'>
@@ -72,7 +78,7 @@ function Forgot() {
                 <button type='submit' id='sellerloginbtn'>Send Otp</button>
             </form>
         </div>
-    </div>
+    </div>)}
     </>
     // <>
     //   <Navs />

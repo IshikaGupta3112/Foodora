@@ -6,10 +6,13 @@ import SellerNav from "./sellernav";
 import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/fontawesome-free-solid";
+import SellerNav2 from "./sellernav2";
+import Loader from "../Loader";
 function SellerLogin() {
   const [userEmail, setuserEmail] = useState("");
   const [password, setPassword] = useState("");
   const [mssg1, setMssg1] = useState("");
+  const [loading ,  setLoading] = useState(false);
   const [sellerToken, setSellerToken] = useState("");
   function handleuserEmail(e) {
     setuserEmail(e.target.value);
@@ -51,6 +54,7 @@ function SellerLogin() {
   }, [userEmail]);
   const Navigate = useNavigate();
   function handleApi() {
+    setLoading(true)
     if (iscorrectEmail && iscorrectpass) {
       axios
         .post("https://foodorabackend-production.up.railway.app/seller/signin", {
@@ -61,6 +65,7 @@ function SellerLogin() {
           console.log(res.data);
           setMssg1(res.data.msg);
           console.log(res.data.accesstoken);
+          setLoading(false)
           localStorage.setItem("accesstoken2" , res.data.accesstoken);
           console.log(res.data.id);
           localStorage.setItem("sellerid" , res.data.id);
@@ -69,13 +74,15 @@ function SellerLogin() {
         })
         .catch((err) => {
           console.log(err);
+          setLoading(false)
           setMssg1(err.response.data.msg);
         });
     }
   }
   return (
     <>
-      <SellerNav />
+      <SellerNav2 />
+      {loading?<Loader/>:(
       <div id="fulllog">
         <img src={loginimg2} id="loginpageimg"></img>
         <div id="loginpageform">
@@ -118,7 +125,7 @@ function SellerLogin() {
             New To Foodora? <Link to="/sellersignup">SIGN UP</Link>
           </p>
         </div>
-      </div>
+      </div>)}
     </>
   );
 }

@@ -56,8 +56,8 @@ return(
 </img>
 <div id="fourpic">
     <div id="upperline">
- <img src={url+imgpath[1]} id="firstpic"></img>   
- <img src={url+imgpath[2]} id="firstpic"></img>  
+ {/* <img src={url+imgpath[1]} id="firstpic"></img>    */}
+ {/* <img src={url+imgpath[2]} id="firstpic"></img>   */}
  </div>
  <div id="lowerline">
  {/* <img src={url+restarr.imgpath[3]} id="firstpic"></img>    */}
