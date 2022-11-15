@@ -12,8 +12,8 @@
     margin-left:60px;
 }
 #sellerloginform2{
-   margin-left:30px;
-    margin-top:78px;
+   /* margin-left:30px; */
+    margin-top:10px;
 }
 #sellerloginform2 input{
     background-color: rgba(255, 255, 255, 0);
@@ -28,6 +28,7 @@
     cursor: pointer;
     margin-top:1rem;
     margin-left:6rem;
+    margin-bottom: 20px;
     width: 12.492rem;
     height: 2.481rem;
     background: rgba(255, 255, 255, 0.4);
@@ -38,9 +39,8 @@
 }
 #userprofname2 a{
     color:white;
-    font-size:2rem;
-    margin-top:70px;
-margin-left:80px;
+    font-size:1.5rem;
+margin-left:90px;
 cursor:pointer;
 text-decoration: none;
 }

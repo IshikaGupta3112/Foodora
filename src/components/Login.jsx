@@ -97,6 +97,7 @@ const Login = () => {
               onChange={handleuserEmail}
               value={userEmail}
               required
+              maxLength={100}
             ></input>
             <input
               type={show ? "text" : "password"}
@@ -104,6 +105,7 @@ const Login = () => {
               onChange={handlepass}
               value={password}
               required
+              maxLength={20}
             ></input>
             {show ? (
               <FontAwesomeIcon icon={faEye} id="seye1" onClick={showHide} />

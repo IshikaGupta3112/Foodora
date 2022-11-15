@@ -3,15 +3,17 @@ import Navs2 from './navs2';
 import { useState , useEffect } from 'react';
 import axios from 'axios';
 import './searchpage.css'
+import Loader from '../../Loader';
 import RestaurantItems from '../../restarantItem/restaurantItem';
 function SearchPage(){
     const [restarr , setRestarr] =useState([]);
+    const [loading , setLoading] =useState(false);
     function createRest(restarr) {
         return (
           <RestaurantItems
             _id={restarr._id}
             restaurantname={restarr.restaurantname}
-            // imgpath={restarr.imgpath[0]}
+            imgpath={restarr.imgpath[0]}
             // restaurantaddress={restarr.restaurantaddress}
           />
         );
@@ -25,20 +27,25 @@ function SearchPage(){
         }
       function handleSearch(e){
           setsearch(e.target.value);
+          setLoading(true);
           axios
           .post("https://foodorabackend-production.up.railway.app/user/search",{
               text:e.target.value
           } , config)
           .then((res) => {
               console.log(res.data);
+              setLoading(false);
               setRestarr(res.data);
             })
             .catch((err) => {
               console.log(err);
+              setLoading(false);
             });
       }
-    return(<>
-    <div id='searchinp'>
+    return(
+     
+    <>
+     <div id='searchinp'>
     <input type='text' 
     id='searchfeild'
     onChange={handleSearch} 
@@ -46,11 +53,15 @@ function SearchPage(){
     value={search}></input>
     
     </div>
+     {loading?<Loader/>:(
+      <>
+   
     
      <div id='searcharr'>
       {restarr.map((rest)=>createRest(rest))};
       </div>
-  
+      </>
+      )};
       {/* {img.map(createRest)}; */}
       {/* <button onClick={increase} disabled={(j==(n)) ? true : false} id='forwardbtn'>&rarr;</button> */}
     </>);

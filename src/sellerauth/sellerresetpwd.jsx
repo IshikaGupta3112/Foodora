@@ -94,7 +94,8 @@ return(
                 <input  type={show1 ? "text" : "password"} placeholder='Enter your password'  name="password"
               value={pass}
               onChange={handlepass}
-              required></input>
+              required
+              maxLength={20}></input>
                 {show1 ? (
               <FontAwesomeIcon icon={faEye} id="seye2" onClick={showHide1} />
             ) : (
@@ -107,7 +108,8 @@ return(
                 <input   type={show2 ? "text" : "password"} placeholder ='Re-enter password'  name="repassword"
               value={repass}
               onChange={handleRepass}
-              required></input>
+              required
+              maxLength={20}></input>
                 {show2 ? (
               <FontAwesomeIcon icon={faEye} id="seye3" onClick={showHide2} />
             ) : (

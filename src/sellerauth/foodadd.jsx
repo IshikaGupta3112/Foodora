@@ -6,6 +6,7 @@ import { useState , useEffect } from 'react';
 import axios from 'axios';
 import {useNavigate} from 'react-router-dom';
 import SellerNav2 from './sellernav2';
+import Loader from '../Loader';
 function FoodAdd(){
  let sellerid=localStorage.getItem("id1");
  const [foodname, setFoodname] = useState('');  
@@ -13,6 +14,7 @@ function FoodAdd(){
  const [foodDesc, setFoodDesc] = useState('');  
  const [foodimg, setFoodImg] = useState("");  
  const [id, setid] = useState("");
+ const [loading , setLoading] = useState(false);
   useEffect(() => {
     // var sellerid = localStorage.getItem("id1");
     var sellerid = localStorage.getItem("restid");
@@ -65,22 +67,26 @@ function FoodAdd(){
         console.log(id);
         e.preventDefault();
         if (iscorrectprice){
+          setLoading(true);
           axios
             .post("https://foodorabackend-production.up.railway.app/seller/foodlisting", fd , config
             )
             .then((res) => {
               console.log(res.data);
               setMssg8(res.data.msg);
+              setLoading(false);
               Navigate("/sellerprofile");
             })
             .catch((err) => {
               console.log(err);
+              setLoading(false);
               setMssg8(err.response.data.msg);
             });
         }
       }
 return(<>
 <SellerNav2 />
+{loading?<Loader/>:(
       <div id="fulllog">
         <img src={restrauntadd} id="loginpageimg"></img>
         <div id="signuppageform">
@@ -96,6 +102,7 @@ return(<>
               onChange={handlefoodname}
               value={foodname}
               required
+              maxLength={100}
             ></input>
               <input
               type="text"
@@ -103,6 +110,7 @@ return(<>
               onChange={handlefoodprice}
               value={foodprice}
               required
+              maxLength={20}
             ></input>
              <input
               type="text"
@@ -113,7 +121,7 @@ return(<>
               required
             >
             </input>
-                <input type='file' name='image' 
+                <input type='file' name='image' accept='image/*'
             onChange={handleimg}
             ></input>
             <button id='sellerloginbtn' type='submit'>Add</button>
@@ -126,6 +134,7 @@ return(<>
             {/* </form> */}  
             </div>    
             </div>
+            )}
             
         {/* </div> */}
 </>);

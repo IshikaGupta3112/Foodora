@@ -17,7 +17,7 @@ function RestaurantItems(props){
 return(
     <>
    <div className="rest"  id={props._id} onClick={Restroclicked}>
-    {/* <img src={url + props.imgpath} id="myRestpic"/> */}
+    <img src={url + props.imgpath} id="myRestpic"/>
     <p id='restname'>{props.restaurantname}</p>
     {/* <p id="restprice">{props.restaurantaddress}</p> */}
    </div>

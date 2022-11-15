@@ -8,12 +8,14 @@ import Restrauntcard from './restrauntcard';
 import CreateRestraunt from './createrestraunt';
 import axios from 'axios';
 import { useState } from 'react';
+import Loader from '../Loader';
 function RestrauntPage(){
 var restid=JSON.stringify(localStorage.getItem("restid"));
 var newrestid = restid.replaceAll('"' , '');
 const [restarr , setRestarr] = useState([]);
 const [food , setFood] = useState([]);
 const [imgpath, setimgpath] = useState([]);
+const [loading, setLoading] = useState(false);
 var url="https://foodorabackend-production.up.railway.app/";
 var accesstoken = localStorage.getItem("accesstoken");
 const config ={
@@ -22,16 +24,19 @@ const config ={
   }
 }
 useEffect(()=>{  
+  setLoading(true);
 axios
 .get("https://foodorabackend-production.up.railway.app/user/restaurant/"+newrestid , config )
 .then((res) => {
     console.log(res.data.seller);
     setimgpath(res.data.seller.imgpath);
     setFood(res.data.seller.food_list);
+    setLoading(false);
     setRestarr(res.data.seller);
     // console.log(restarr);
   })
   .catch((err) => {
+    setLoading(false);
     console.log(err);
   });
 },[])   

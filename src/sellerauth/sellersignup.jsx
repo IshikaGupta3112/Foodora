@@ -162,15 +162,18 @@ return(
                 <input type='text' placeholder='Enter your name' name="fullname"
                     value={userName}
                     onChange={handleuserName}
-                    required></input>
+                    required
+                    maxLength={100}></input>
                 <input type='email' placeholder='Enter Your Email' name="emails"
                     value={userEmail}
                     onChange={handleuserEmail}
-                    required></input>
+                    required
+                    maxLength={100}></input>
                 <input  type={show1 ? "text" : "password"} placeholder='Enter your password' name="passwords"
                     value={password}
                     onChange={handlepass}
-                    required></input>
+                    required
+                    maxLength={20}></input>
                 {show1 ? (
               <FontAwesomeIcon icon={faEye} id="seye4" onClick={showHide1} />
             ) : (
@@ -183,7 +186,8 @@ return(
                 <input   type={show2 ? "text" : "password"} placeholder ='Re-enter password'  name="repasswords"
                     value={repassword}
                     onChange={handleRepass}
-                    required></input>
+                    required
+                    maxLength={20}></input>
                 {show2 ? (
               <FontAwesomeIcon icon={faEye} id="seye5" onClick={showHide2} />
             ) : (

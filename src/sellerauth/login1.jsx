@@ -97,12 +97,14 @@ function SellerLogin() {
               onChange={handleuserEmail}
               value={userEmail}
               required
+              maxLength={100}
             ></input>
             <input
               type={show ? "text" : "password"}
               placeholder="Enter your password"
               onChange={handlepass}
               value={password}
+              maxLength={20}
               required
             ></input>
             {show ? (

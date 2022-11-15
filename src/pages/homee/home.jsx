@@ -30,7 +30,6 @@ function Home(){
 const [lng, setLng] = useState(null);
 const [status, setStatus] = useState(null);
 useEffect(() => {
-  setloading(true);
 const getLocation = () => {
     if (!navigator.geolocation) {
       setStatus('Geolocation is not supported by your browser');
@@ -56,6 +55,7 @@ const getLocation = () => {
   }
  
     if(lat&&lng){
+      setloading(true);
       axios
       .post("https://foodorabackend-production.up.railway.app/user/location",{
           latitude:lat , 
@@ -63,10 +63,12 @@ const getLocation = () => {
           user_id:userid
       },config)
       .then((res) => {
+        setloading(false);
           console.log(res);
           Navigate("/home");
         })
         .catch((err) => {
+          setloading(false);
           console.log(err);
         });
       console.log(id);
@@ -76,6 +78,7 @@ axios
 .get("https://foodorabackend-production.up.railway.app/user/feed/" ,config)
 .then((res) => {
   console.log(res.data);
+  setloading(false);
   // console.log(res.data.near.restaurantname);
   setRestarr(res.data.near);
   console.log(restarr);
@@ -90,6 +93,7 @@ axios
   // })
 })
 .catch((err) => {
+  setloading(false);
   console.log(err);
 })
   } , [])

@@ -7,11 +7,13 @@ import CreateCart from "./cartcomp";
 import Cartitem from './cart.js'
 import axios from "axios";
 import { useEffect } from "react";
+import Loader from "../Loader";
 var userid = localStorage.getItem("userid");
 function Cart(){
 const [arr , setArr] =useState([]);
 const [success, setSuccess] =useState(false);
 const [success2, setSuccess2] =useState(false);
+const [loading, setLoading] =useState(false);
 var accesstoken = localStorage.getItem("accesstoken");
   const config ={
     headers:{
@@ -28,6 +30,7 @@ var accesstoken = localStorage.getItem("accesstoken");
     //     }
  function handleorder(){
     console.log(accesstoken);
+    setLoading(true);
     axios
     .post("https://foodorabackend-production.up.railway.app/user/checkout" ,{},config
     //  { 
@@ -38,25 +41,30 @@ var accesstoken = localStorage.getItem("accesstoken");
     )
     .then((res) => {
         console.log(res.data);
+        setLoading(false);
         console.log(res.data.success);
         setSuccess(res.data.success);
       })
       .catch((err) => {
         console.log(err);
+        setLoading(false);
       });
  }  
  
  useEffect(()=>{
+  setLoading(true);
 axios
 .post("https://foodorabackend-production.up.railway.app/user/viewcart" , {
   user_id:userid
 },config)
 .then((res) => {
     console.log(res);
+    setLoading(false);
     setArr(res.data.cart);
   })
   .catch((err) => {
     console.log(err);
+    setLoading(false);
   });
  },[]);
     function createcart2(arr) {

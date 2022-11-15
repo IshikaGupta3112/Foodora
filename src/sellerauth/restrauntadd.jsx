@@ -6,8 +6,10 @@ import SellerNav from "./sellernav";
 import { useNavigate } from "react-router-dom";
 import "./restrauntadd.css";
 import SellerNav2 from "./sellernav2";
+import Loader from "../Loader";
 function RestrauntAdd() {
   const [formd, setformd] = useState([]);
+  const [loading , setLoading] = useState(false);
   const Navigate = useNavigate();
   // let token1=localStorage.getItem("token1");
   const [restrauntName, setRestrauntName] = useState("");
@@ -73,6 +75,7 @@ function RestrauntAdd() {
     //     console.log(pair[0]+ ', ' + pair[1]);
     // }
     if (iscorrectno) {
+      setLoading(true);
       axios
         .post(
           "https://foodorabackend-production.up.railway.app/seller/restaurantregister",
@@ -80,10 +83,12 @@ function RestrauntAdd() {
         .then((res) => {
           console.log(res.data);
           setMssg7(res.data.msg);
+          setLoading(false);
           Navigate("/foodadd");
         })
         .catch((err) => {
           console.log(err);
+          setLoading(false);
           setMssg7(err.response.data.msg);
         });
     }
@@ -109,6 +114,7 @@ function RestrauntAdd() {
   return (
     <>
       <SellerNav2 />
+      {loading?<Loader/>:(
       <div id="fulllog">
         <img src={restrauntadd} id="loginpageimg2"></img>
         <div id="signuppageform2">
@@ -128,6 +134,7 @@ function RestrauntAdd() {
               onChange={handlerestrauntName}
               value={restrauntName}
               required
+              maxLength={100}
             ></input>
             <input
               type="text"
@@ -135,6 +142,7 @@ function RestrauntAdd() {
               placeholder="Phone number"
               onChange={handlephoneNumber}
               value={phoneNumber}
+              maxLength={10}
               required
             ></input>
             <input
@@ -155,6 +163,7 @@ function RestrauntAdd() {
               placeholder="Opening Time"
               onChange={handleopeningTime}
               value={openingTime}
+              maxLength={9}
               required
             ></input>
             <label htmlFor="openingTime" id="opening">
@@ -167,14 +176,19 @@ function RestrauntAdd() {
               onChange={handleclosingTime}
               value={closingTime}
               required
+              maxLength={9}
             ></input>
-            <input type="file" name="image" onChange={handlefiles}></input>
+            <label htmlFor="photo" id="photo">
+              Restaurant Photo:
+            </label>
+            <input type="file" name="image" onChange={handlefiles} accept='image/*'></input>
             <input
               type="text"
               name="pincode"
               placeholder="Pincode"
               onChange={handlePincode}
               value={pincode}
+              maxLength={10}
               required
             ></input>
             {/* <input type='text' name='id' value={iddata}></input> */}
@@ -194,7 +208,7 @@ function RestrauntAdd() {
           {/* </form> */}
         </div>
       </div>
-
+)}
       {/* </div> */}
     </>
   );

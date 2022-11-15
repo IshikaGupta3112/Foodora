@@ -21,14 +21,21 @@
 #close{
     position:absolute;
     width:400px;
-    top:366px;
+    top:380px;
     left:546px;
+    font-size:1rem;
+}
+#photo{
+    position:absolute;
+    width:400px;
+    top:460px;
+    left:559px;
     font-size:1rem;
 }
 #opening{
     position:absolute;
     width:400px;
-    top:292px;
+    top:300px;
     left:550px;
     font-size:1rem;
 }

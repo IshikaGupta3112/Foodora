@@ -2,8 +2,10 @@ import Navs2 from "../../pages/navss/navs2";
 import {useEffect , useState} from 'react';
 import axios from "axios";
 import Ordercard from "./ordercard";
+import Loader from "../../Loader";
 function Orderhistory(){
     const [n , setN] = useState("");
+    const [loading , setLoading] = useState(false);
     var i , j;
     var userid=localStorage.getItem("userid");
     var accesstoken = localStorage.getItem("accesstoken");
@@ -19,6 +21,7 @@ const [num,setNum] = useState();
 const[nestedarr , setNestedArray] =useState([]);
 // let nestedarr=[];
     useEffect(()=>{
+    setLoading(true);
     axios
     .post("https://foodorabackend-production.up.railway.app/user/userprofile" , {
         _id:userid
@@ -26,12 +29,14 @@ const[nestedarr , setNestedArray] =useState([]);
     .then((res) => {
         console.log(res.data.orderhistory.length);
         console.log(res.data.orderhistory);
+        setLoading(false);
         console.log(res.data.orderhistory.length);
         setArr(res.data.orderhistory);
         setNum(res.data.orderhistory.length);
           })
     .catch((err) => {
         console.log(err);
+        setLoading(false);
       });
     },[])
     console.log(arr);  
@@ -67,10 +72,11 @@ function createOrder(){
 }
     return(<>
     <Navs2 />
-    {/* {arr.map(arrayNe/st)} */}
+    {loading?<Loader/>:(
     <div id='padder2'>
     {arr.map(createOrder)};
     </div>
+    )}
     </>);
     }
     export default Orderhistory;

@@ -5,15 +5,18 @@ import './userprofile.css';
 import { useEffect , useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import Loader from '../../Loader';
 function UserProfile(){
     var userid=localStorage.getItem("userid");
     var accesstoken = localStorage.getItem("accesstoken");
     console.log(accesstoken);
     const [arr , setArr] = useState([]);
     const [prof , setProf] = useState([]);
+    const [loading , setLoading] = useState(false);
     const fd= new FormData;
     console.log(userid);
     useEffect(()=>{
+      setLoading(true);
     axios
     .post("https://foodorabackend-production.up.railway.app/user/userprofile" , {
         _id:userid
@@ -21,10 +24,12 @@ function UserProfile(){
     .then((res) => {
         console.log(res.data);
         setArr(res.data);
+        setLoading(false);
         console.log(res.data.imagepath);
         localStorage.setItem("imagepath" , res.data.imagepath);
       })
       .catch((err) => {
+        setLoading(false);
         console.log(err);
       });
   
@@ -39,6 +44,7 @@ function UserProfile(){
         }
       }
     function handlesubmit(e){
+      setLoading(true);
         e.preventDefault();
      fd.append('image' , prof);
      console.log(accesstoken);
@@ -49,14 +55,17 @@ function UserProfile(){
         )
         .then((res) => {
             console.log(res);
+            setLoading(false);
           })
           .catch((err) => {
             console.log(err);
+            setLoading(false);
           });
     }
 return(
 <>
 <Navs2/>
+{loading?<Loader/>:(
 <div id='fulllog'>
 <img src={profileimg} id="loginpageimg"></img>
 <div id="loginpageform">
@@ -65,13 +74,15 @@ return(
 <p id='userprofname'>UserName : {arr.username}</p>  
 <p id='userprofname'>Email : {arr.emailid}</p>  
 <form id='sellerloginform2' onSubmit={handlesubmit}>
-    <input type='file' onChange={handlefiles} name='image'></input>
+  <label htmlFor='image'>Upload Profile Image:</label>
+    <input type='file' onChange={handlefiles} accept='image/*' name='image'></input>
     <button type='submit' id='profilephoto' >Upload</button>
 </form>
 <p id='userprofname2'><Link to='/orderhistory' >View order history</Link></p>
 </div>
     </div>
 </div>
+)}
     </>
 );
 }

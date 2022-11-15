@@ -70,6 +70,7 @@ function SellerFrg(){
                     <input type='email' placeholder='Enter Your Email' name="email"
             value={forgotMail}
             onChange={handleForgotMial}
+            maxLength={100}
             required></input>
                     <button type='submit' id='sellerloginbtn'>Send Otp</button>
                 </form>

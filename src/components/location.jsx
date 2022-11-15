@@ -12,7 +12,7 @@ function Location(){
     var id= localStorage.getItem("userid");
     console.log(id);
     const [locations , setlocations] = useState();
-    const [loading , setLoading]=useState(false);
+    const [loading , setloading] = useState(false);
   function handlelocations(e){
     setlocations(e.target.value);
   }
@@ -39,8 +39,8 @@ const getLocation = () => {
         setLat(position.coords.latitude);
         setLng(position.coords.longitude);
         if(lat&&lng){
-          setLoading(true);
           console.log(id);
+          setloading(true);
           axios
           .post("https://foodorabackend-production.up.railway.app/user/location",{
               latitude:lat , 
@@ -49,13 +49,14 @@ const getLocation = () => {
           }, config)
           .then((res) => {
               console.log(res);
-              setLoading(false);
+              setloading(false);
               Navigate("/home");
+              
               // setMssg1(res.data.msg);
             })
             .catch((err) => {
               console.log(err);
-              setLoading(false);
+              setloading(false);
               // setMssg1(err.response.data.msg);
             });
           }
@@ -96,8 +97,7 @@ id='locatemebtn'
   {/* {lat && <p id='locstatus'>Latitude: {lat}</p>}  */}
   {/* {lng && <p id='locstatus'>Longitude: {lng}</p>}  */}
 </div>
-</div>
-)}
+</div>)}
 </>);
 }
 export default Location;
