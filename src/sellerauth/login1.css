@@ -30,10 +30,11 @@
 #sellerback1{
     position:absolute;
     width:500px;
-    color:rgba(255,255,255,0.6);
+    /* color:rgba(255,255,255,0.6); */
+    color:red;
     font-size: 1.71rem;
     text-align:center;
-    top:120px;
+    top:110px;
     left:645px;
 }
 #sellerloginform{
@@ -74,8 +75,8 @@
     margin-top:1rem;
     width: 12.492rem;
     height: 2.481rem;
-    background: rgba(255, 255, 255, 0.4);
     border: 1px solid #ffffff;
+    background-color: #3451FF;
     border-radius: 0.5rem;
     color:white; 
     text-align: center;

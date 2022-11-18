@@ -89,7 +89,7 @@ return(
             </h1>
             <p id='validation4'>Invalid</p>
         <p id='validation5'>Didn't Match</p>
-            <p id='sellerback10'>{mssg6}</p>
+            <p id='sellerback11'>{mssg6}</p>
             <form id='sellerloginform' onSubmit={handleSubmit}>
                 <input  type={show1 ? "text" : "password"} placeholder='Enter your password'  name="password"
               value={pass}

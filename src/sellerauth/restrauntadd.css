@@ -1,6 +1,6 @@
 #restrauntform{
     text-align:center;
-    margin-top:60px;
+    margin-top:30px;
 }
 #restrauntform input{
     background-color: rgba(255, 255, 255, 0);
@@ -14,28 +14,28 @@
 #restrauntaddhead{
     color: #ffffff;
     font-size: 2.52rem;
-    margin-top:5px;
+    margin-top:45px;
     text-align: center;
 }
 
 #close{
     position:absolute;
     width:400px;
-    top:380px;
+    top:389px;
     left:546px;
     font-size:1rem;
 }
 #photo{
     position:absolute;
     width:400px;
-    top:460px;
-    left:559px;
+    top:468px;
+    left:562px;
     font-size:1rem;
 }
 #opening{
     position:absolute;
     width:400px;
-    top:300px;
+    top:313px;
     left:550px;
     font-size:1rem;
 }
@@ -45,9 +45,18 @@
     /* color:rgba(255,255,255,0.8); */
     color:red;
     font-weight: bold;
-    top:240px;
+    top:250px;
     left:710px;
     display:none; 
+}
+#validation20{
+    position:absolute;
+    font-size: 0.9rem;
+    color:red;
+    font-weight: bold;
+    top:650px;
+    left:710px;
+    display:none;   
 }
 #imagefilesform{
 display:none;
@@ -68,13 +77,13 @@ display:none;
 }
 #signuppageform2{
     width: 550px;
-    height: 700px;
+    height: 750px;
     background: linear-gradient(135.87deg, rgba(255, 255, 255, 0.4) -37.26%, rgba(255, 255, 255, 0) 99.84%);
     border: 2px solid rgba(18, 18, 18, 0.53);
     border-radius:0 20px 20px 0px; 
 }
 #loginpageimg2{
-    height:700px;
+    height:750px;
     width:620px;
     border-radius:20px 0 0 20px;
 }

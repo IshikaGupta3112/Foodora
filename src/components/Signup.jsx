@@ -8,7 +8,7 @@ import { faEye, faEyeSlash } from "@fortawesome/fontawesome-free-solid";
 import { Link  , useNavigate} from "react-router-dom";
 import Navs3 from "./navs2";
 import Loader from "../Loader";
-
+import validator from "validator";
 function Signup(){
   const [status , setStatus]=useState(false);
   const[mssg , setMssg] = useState("");
@@ -20,9 +20,12 @@ function Signup(){
   function handleuserName(e) {
     setuserName(e.target.value);
   }
-  function handleuserEmail(e) {
-    setuserEmail(e.target.value);
-  }
+  // function handleuserEmail(e) {
+  //   setuserEmail(e.target.value);
+  // }
+  const validate = (inputText) => {
+    setuserEmail(validator.trim(inputText))
+}
   function handlepass(e) {
     setPassword(e.target.value);
   }  
@@ -160,7 +163,8 @@ function Signup(){
                     </input> 
                   <input type='email' placeholder='Enter Your Email' name="emails"
                       value={userEmail}
-                      onChange={handleuserEmail}
+                      onChange={(e) => validate(e.target.value)}
+                      // onChange={handleuserEmail}
                       required
                       maxLength={100}></input>
                   <input  type={show1 ? "text" : "password"} placeholder='Enter your password' name="passwords"
@@ -191,7 +195,7 @@ function Signup(){
                   onClick={showHide2}
                 />
               )}
-                  <button type='submit' id='sellerloginbtn' 
+                  <button type='submit' id='userloginbtn' 
                   // onClick={postdata}
                   >Signup</button>
               </form>

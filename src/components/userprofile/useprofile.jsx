@@ -9,12 +9,16 @@ import Loader from '../../Loader';
 function UserProfile(){
     var userid=localStorage.getItem("userid");
     var accesstoken = localStorage.getItem("accesstoken");
+    function handlelocal(){
+      localStorage.removeItem("accesstoken");
+      localStorage.removeItem("userid");
+    }
     console.log(accesstoken);
     const [arr , setArr] = useState([]);
     const [prof , setProf] = useState([]);
     const [loading , setLoading] = useState(false);
     const fd= new FormData;
-    console.log(userid);
+    console.log(userid); 
     useEffect(()=>{
       setLoading(true);
     axios
@@ -69,16 +73,18 @@ return(
 <div id='fulllog'>
 <img src={profileimg} id="loginpageimg"></img>
 <div id="loginpageform">
-<h1 id="sellerloginhead">Profile</h1> 
+<h1 id="sellerloginhead2">Profile</h1> 
 <div id='spacing'>
 <p id='userprofname'>UserName : {arr.username}</p>  
 <p id='userprofname'>Email : {arr.emailid}</p>  
+<p id='userprofname3'>Address : {arr.useraddress}</p>
 <form id='sellerloginform2' onSubmit={handlesubmit}>
   <label htmlFor='image'>Upload Profile Image:</label>
     <input type='file' onChange={handlefiles} accept='image/*' name='image'></input>
     <button type='submit' id='profilephoto' >Upload</button>
 </form>
 <p id='userprofname2'><Link to='/orderhistory' >View order history</Link></p>
+<button id='userprofnamebtn' onClick={handlelocal}><Link to='/' >Logout</Link></button>
 </div>
     </div>
 </div>

@@ -345,7 +345,7 @@ top: 157px; */
 #company{
  position:relative;
 margin-top:3rem;
-margin-left:2rem;
+
 width: 160px;
 height: 30px;
 font-style: normal;
@@ -353,6 +353,11 @@ font-weight: 500;
 font-size: 20px;
 line-height: 30px;
 color: #FFFFFF;
+}
+#company a{
+  color: #FFFFFF;
+  text-decoration: none;
+  margin-left:4rem;
 }
 .ul1{
     position:relative;

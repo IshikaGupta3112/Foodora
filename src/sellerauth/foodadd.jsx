@@ -14,6 +14,7 @@ function FoodAdd(){
  const [foodDesc, setFoodDesc] = useState('');  
  const [foodimg, setFoodImg] = useState("");  
  const [id, setid] = useState("");
+ const [category, setcategory] = useState("");
  const [loading , setLoading] = useState(false);
   useEffect(() => {
     // var sellerid = localStorage.getItem("id1");
@@ -34,8 +35,11 @@ function FoodAdd(){
         console.log(e.target.files);
         setFoodImg(e.target.files[0]);
     }
+    function handleOption(e){
+      setcategory(e.target.value);
+    }
     const [iscorrectprice, setIsCorrectprice] = useState(false);
-    const rightprice = /^\d+$/;
+    const rightprice = /(^[1-9][0-9])/;
     useEffect(() => {
         if (rightprice.test(foodprice)) {
           document.getElementById("validation10").style.display = "none";
@@ -61,6 +65,7 @@ function FoodAdd(){
         fd.append("food_price" , foodprice);
         fd.append("food_desc" , foodDesc);
         fd.append("id" , id);
+        fd.append("food_category" , category);
         var object = {};
         fd.forEach((value, key) => (object[key] = value));
         console.log(object);
@@ -110,7 +115,7 @@ return(<>
               onChange={handlefoodprice}
               value={foodprice}
               required
-              maxLength={20}
+              maxLength={4}
             ></input>
              <input
               type="text"
@@ -121,12 +126,23 @@ return(<>
               required
             >
             </input>
+            <label htmlFor='foodimg' id='foodimg'>Food Image:</label>
                 <input type='file' name='image' accept='image/*'
             onChange={handleimg}
+            required
             ></input>
+            <br></br>
+             <select name="foodcategory" id='selectinp' onChange={handleOption}>
+              <option value="pizza">Pizza</option>
+              <option value="burger">Burger</option>
+              <option value="noodles">Noodles</option>
+              <option value="desert">Desert</option>
+              <option value="beverages">Beverages</option>
+              <option value="indian">Indian</option>
+             </select>
+             <br></br>
             <button id='sellerloginbtn' type='submit'>Add</button>
             </form>
-        
             {/* <div id='imagebox'>
               <form id='imagefilesform'>
             <input type='file'id='imagefile' onChange={handlefiles}></input>

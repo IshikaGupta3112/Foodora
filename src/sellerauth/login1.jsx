@@ -8,15 +8,19 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/fontawesome-free-solid";
 import SellerNav2 from "./sellernav2";
 import Loader from "../Loader";
+import validator from "validator";
 function SellerLogin() {
   const [userEmail, setuserEmail] = useState("");
   const [password, setPassword] = useState("");
   const [mssg1, setMssg1] = useState("");
   const [loading ,  setLoading] = useState(false);
   const [sellerToken, setSellerToken] = useState("");
-  function handleuserEmail(e) {
-    setuserEmail(e.target.value);
-  }
+  // function handleuserEmail(e) {
+  //   setuserEmail(e.target.value);
+  // }
+  const validate = (inputText) => {
+    setuserEmail(validator.trim(inputText))
+}
   function handlepass(e) {
     setPassword(e.target.value);
   }
@@ -94,7 +98,8 @@ function SellerLogin() {
             <input
               type="text"
               placeholder="Enter your Email"
-              onChange={handleuserEmail}
+              onChange={(e) => validate(e.target.value)}
+              // onChange={handleuserEmail}
               value={userEmail}
               required
               maxLength={100}

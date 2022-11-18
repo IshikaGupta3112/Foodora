@@ -1,20 +1,30 @@
 #sellerback10{
     position:absolute;
     width:500px;
-    color:rgba(255,255,255,0.6);
+   color:red;
     font-size: 1.71rem;
     text-align:center;
-    top:210px;
+    top:200px;
     left:645px;
 }
 #sellerback5{
         position:absolute;
         width:500px;
-        color:rgba(255,255,255,0.6);
+        color:red;
         font-size: 1.71rem;
         text-align:center;
-        top:120px;
+        top:100px;
         left:645px;
+
+}
+#sellerback11{
+    position:absolute;
+    width:500px;
+    color:red;
+    font-size: 1.71rem;
+    text-align:center;
+    top:170px;
+    left:645px;
 
 }
 #signupotp{

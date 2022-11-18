@@ -28,9 +28,11 @@ useEffect(()=>{
 axios
 .get("https://foodorabackend-production.up.railway.app/user/restaurant/"+newrestid , config )
 .then((res) => {
+  console.log(res);
     console.log(res.data.seller);
     setimgpath(res.data.seller.imgpath);
     setFood(res.data.seller.food_list);
+    console.log(food);
     setLoading(false);
     setRestarr(res.data.seller);
     // console.log(restarr);

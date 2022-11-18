@@ -28,14 +28,14 @@ return(
     </div>
     <div id="locations">
     <img src={location} id="locationimg" alt="" />
-    <p id="location">3rd Floor, CS-IT Bock, Ajay Kumar Garg Engineering College, Ghaziabad, U.P</p>
+    <p id="location">3rd Floor, CS-IT Bock, Ajay Kumar Garg Engineering College,Gzb,U.P</p>
     </div>
     <div id="greycircle"></div>
     <div id="lightcircle"></div>
    </div>
    <div id="links">
     <div id="Company1"> 
-    <Link to ='/company'><p id="company">Company</p></Link>
+    <p id="company"><Link to ='/company'>Company</Link></p>
     <ul class="ul1">
         <li>About Us</li>
         <li>Blog</li>
@@ -45,7 +45,7 @@ return(
     </ul>
     </div>
     <div id="Company2"> 
-    <Link to ='/support'><p id="company">Support</p></Link>
+    <p id="company"><Link to ='/support'>Support</Link></p>
     <ul class="ul1">
         <li>Help center</li>
         <li>Terms of service</li>
@@ -55,9 +55,9 @@ return(
     </ul>
     </div> 
     <div id="socialHandles">
-    <a href="https://twitter.com/ISHIKAG86216704" target="_blank"></a><img src={twitter} id="twitterimg" alt="" />
+    <a href="https://twitter.com/ISHIKAG86216704" target="_blank"><img src={twitter} id="twitterimg" alt="" /></a>
     <a href="https://www.instagram.com/aggarwal_ishika_3112" target="_blank"><img src={instagram} id="instagramimg" alt="" /></a>
-    <a href="https://www.facebook.com/profile.php?id=100034862500809" target="_blank"></a><img src={discord} id="discordimg" alt="" />
+    <a href="https://www.facebook.com/profile.php?id=100034862500809" target="_blank"><img src={discord} id="discordimg" alt="" /></a>
     </div>  
     </div>
    </div>

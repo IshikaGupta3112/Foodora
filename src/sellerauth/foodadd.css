@@ -1,0 +1,16 @@
+#foodimg{
+    position:absolute;
+    width:400px;
+    top:315px;
+    left:546px;
+    font-size:1rem;
+}
+#selectinp{
+    background-color: rgba(255, 255, 255, 0);
+    border:1px solid white;
+    padding:0.7rem;
+    width: 23.94rem;
+    color:white;
+    border-radius:0.5rem;
+    margin-bottom:30px;
+}

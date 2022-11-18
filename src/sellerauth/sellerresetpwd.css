@@ -23,7 +23,6 @@
 #validation4{
     position:absolute;
     font-size: 0.9rem;
-    /* color:rgba(255,255,255,0.8); */
     color:red;
     font-weight: bold;
     top:292px;
@@ -33,10 +32,9 @@
 #validation5{
     position:absolute;
     font-size: 0.9rem;
-    /* color:rgba(255,255,255,0.8); */
     color:red;
     font-weight: bold;
-    top:364px;
+    top:370px;
     left:710px;
     display:none; 
 }

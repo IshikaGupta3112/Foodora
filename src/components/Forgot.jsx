@@ -6,15 +6,18 @@ import { Link , NavLink, useNavigate} from "react-router-dom";
 import axios from 'axios';
 import Navs3 from "./navs2";
 import Loader from '../Loader';
+import validator from "validator";
 function Forgot() {
   const [forgotMail, setForgotMail] = useState("");
   const [mssg,setMssg]=useState('');
   const [route1 , setRoute1] = useState(false);
   const [loading, setLoading] = useState(false);
-  function handleForgotMial(e) {
-   setForgotMail(e.target.value);
-  }
-
+  // function handleForgotMial(e) {
+  //  setForgotMail(e.target.value);
+  // }
+  const validate = (inputText) => {
+    setForgotMail(validator.trim(inputText));
+}
   const [correctMail , setCorrectMail] = useState(false);
   const rightmail= /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
   const navigate = useNavigate();
@@ -73,10 +76,11 @@ function Forgot() {
             >
                 <input type='email' placeholder='Enter Your Email' name="email"
         value={forgotMail}
-        onChange={handleForgotMial}
+        onChange={(e) => validate(e.target.value)}
+        // onChange={handleForgotMial}
         required
         maxLength={100}></input>
-                <button type='submit' id='sellerloginbtn'>Send Otp</button>
+                <button type='submit' id='userloginbtn'>Send Otp</button>
             </form>
         </div>
     </div>)}

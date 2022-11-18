@@ -1,32 +1,50 @@
-import react, { useState, useEffect } from "react";
-import restrauntadd from "../assets/restrauntadd.jpg";
-import axios from "axios";
-import FormData from 'form-data';
-import SellerNav from "./sellernav";
-import { useNavigate } from "react-router-dom";
-import "./restrauntadd.css";
+import { useState, useEffect} from "react";
 import SellerNav2 from "./sellernav2";
 import Loader from "../Loader";
-function RestrauntAdd() {
-  const [formd, setformd] = useState([]);
+import axios from 'axios';
+import restrauntimg from '../assets/restrauntimg.jpg'
+import { useNavigate } from "react-router-dom";
+function RestEdit(){
   const [loading , setLoading] = useState(false);
+  var sellerid = localStorage.getItem("restid");
+  var restname=localStorage.getItem("restname");
+  var restimage=localStorage.getItem("restimage");
+  var restpin=localStorage.getItem("restpin");
+  var restadd=localStorage.getItem("restadd");
+  var restclose=localStorage.getItem("restclose");
+  var restopen=localStorage.getItem("restopen");
+  var restphone=localStorage.getItem("restphone");
+//   const [arr , setArr] = useState([]);
   const Navigate = useNavigate();
-  // let token1=localStorage.getItem("token1");
-  const [restrauntName, setRestrauntName] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [address, setAddress] = useState("");
-  const [openingTime, setOpeningTime] = useState("");
-  const [closingTime, setClosingTime] = useState("");
-  const [pincode, setPincode] = useState("");
+//   useEffect(()=>{
+//     setLoading(true);
+//   axios
+//   .post("https://foodorabackend-production.up.railway.app/seller/sellerprofile" , {
+//   _id:sellerid,
+//   },config)
+//   .then((res) => {
+//       console.log(res.data.sellerDetails);
+//       setArr(res.data.sellerDetails);
+//       setLoading(false);
+//     })
+//     .catch((err) => {
+//       console.log(err);
+//       setLoading(false);
+//     });
+//   },[])
+  const [restrauntName, setRestrauntName] = useState(restname);
+  const [phoneNumber, setPhoneNumber] = useState(restphone);
+  const [address, setAddress] = useState(restadd);
+  const [openingTime, setOpeningTime] = useState(restopen);
+  const [closingTime, setClosingTime] = useState(restclose);
+  const [pincode, setPincode] = useState(restpin);
   const [restimg, setRestimg] = useState([]);
   const [id, setid] = useState("");
   const [mssg7, setMssg7] = useState("");
   useEffect(() => {
-    // var sellerid = localStorage.getItem("id1");
     var sellerid = localStorage.getItem("restid");
     setid(sellerid);
   }, []);
-
   function handlerestrauntName(e) {
     setRestrauntName(e.target.value);
   }
@@ -56,7 +74,6 @@ function RestrauntAdd() {
       }
     }
   function handlesubmit(e) {
-    e.preventDefault();
     localStorage.setItem("restname" , restrauntName);
     console.log(restrauntName);
     localStorage.setItem("restphone" , phoneNumber);
@@ -71,7 +88,7 @@ function RestrauntAdd() {
     console.log(restimg);
     localStorage.setItem("restpin" , pincode);
     console.log(pincode);
-    // console.log(restrauntName,phoneNumber,restrauntadd,openingTime,closingTime,id,restimg);
+    e.preventDefault();
     const fd = new FormData();
     fd.append("image", restimg);
     fd.append("restaurant_closingtime", closingTime);
@@ -81,14 +98,7 @@ function RestrauntAdd() {
     fd.append("restaurantname", restrauntName);
     fd.append("pincode", pincode);
     fd.append("id", id);
-    // var object = {};
-    // fd.forEach((value, key) => (object[key] = value));
-    // console.log(object);
-    // console.log(id);
-    //   for (var pair of fd.entries()) {
-    //     console.log(pair[0]+ ', ' + pair[1]);
-    // }
-    if (iscorrectno && iscorrectpin) {
+    // if (iscorrectno && iscorrectpin) {
       setLoading(true);
       axios
         .post(
@@ -98,14 +108,14 @@ function RestrauntAdd() {
           console.log(res.data);
           setMssg7(res.data.msg);
           setLoading(false);
-          Navigate("/foodadd");
+          Navigate("/sellerprofile");
         })
         .catch((err) => {
           console.log(err);
           setLoading(false);
           setMssg7(err.response.data.msg);
         });
-    }
+    // }
   }
   const [iscorrectno, setIsCorrectNo] = useState(false);
   const [iscorrectpin, setIsCorrectPin] = useState(false);
@@ -132,20 +142,14 @@ function RestrauntAdd() {
       setIsCorrectPin(false);
     }
   }, [pincode]);
-  function handleImage() {
-    document.getElementById("restrauntform").style.display = "none";
-    document.getElementById("validation10").style.display = "none";
-    document.getElementById("imagefilesform").style.display = "block";
-  }
-
-  return (
-    <>
-      <SellerNav2 />
+return(
+<>
+ <SellerNav2 />
       {loading?<Loader/>:(
       <div id="fulllog">
-        <img src={restrauntadd} id="loginpageimg2"></img>
+        <img src={restrauntimg} id="loginpageimg2"></img>
         <div id="signuppageform2">
-          <h1 id="restrauntaddhead">Restaurant Information</h1>
+          <h1 id="restrauntaddhead">Edit Info</h1>
           <p id="validation10">Invalid Phone no.</p>
           <p id="validation20">Invalid Pincode</p>
           <p id="sellerback6">{mssg7}</p>
@@ -154,33 +158,32 @@ function RestrauntAdd() {
             onSubmit={handlesubmit}
             enctype="multipart/form-data"
           >
-            {/* <input type='text' name='id' value ={id} hidden></input> */}
             <input
               type="text"
               name="restaurantname"
-              placeholder="Restraunt Name"
+            //   defaultValue={arr.restaurantname}
+              placeholder="Restaurant Name"
               onChange={handlerestrauntName}
               value={restrauntName}
-              required
               maxLength={100}
             ></input>
             <input
               type="text"
               name="mobilenumber"
-              placeholder="Phone number"
+            //   defaultValue={arr.mobilenumber}
+              placeholder="Phone Number"
               onChange={handlephoneNumber}
               value={phoneNumber}
               maxLength={10}
-              required
             ></input>
             <input
               type="text"
               name="restaurantaddress"
-              placeholder="Full address"
+            //   defaultValue={arr.restaurantaddress}
+              placeholder="Restaurant Address"
               maxLength={150}
               onChange={handleaddress}
               value={address}
-              required
             ></input>
             <label htmlFor="closingtime" id="close">
               Closing Time:
@@ -188,42 +191,42 @@ function RestrauntAdd() {
             <input
               type="time"
               name="restaurant_openingtime"
+            //   defaultValue={arr.restaurant_openingtime}
               placeholder="Opening Time"
               onChange={handleopeningTime}
               value={openingTime}
               maxLength={9}
-              required
             ></input>
             <label htmlFor="openingTime" id="opening">
               Opening Time:
             </label>
             <input
               type="time"
-              placeholder="Closing Time"
+            //   defaultValue={arr.restaurant_closingtime}
+              placeholder="closing time"
               name="restaurant_closingtime"
               onChange={handleclosingTime}
               value={closingTime}
-              required
               maxLength={9}
             ></input>
             <label htmlFor="photo" id="photo">
               Restaurant Photo:
             </label>
-            <input type="file" name="image" onChange={handlefiles} accept='image/*'></input>
+            <input type="file" name="image" 
+            onChange={handlefiles} 
+            accept='image/*'></input>
             <input
               type="text"
               name="pincode"
-              placeholder="Pincode"
+              placeholder="pincode"
+            // defaultValue={arr.pincode}
               onChange={handlePincode}
               value={pincode}
-              maxLength={6}
-              required
+              maxLength={10}
             ></input>
-            {/* <input type='text' name='id' value={iddata}></input> */}
             <button
               id="sellerloginbtn"
               type="submit"
-              // onClick={handleImage}
             >
               Next
             </button>
@@ -236,9 +239,9 @@ function RestrauntAdd() {
           {/* </form> */}
         </div>
       </div>
+
 )}
-      {/* </div> */}
-    </>
-  );
+</>
+);
 }
-export default RestrauntAdd;
+export default RestEdit;

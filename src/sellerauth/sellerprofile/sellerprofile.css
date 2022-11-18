@@ -41,3 +41,17 @@
     margin-left:70rem;
     cursor:pointer; 
 }
+#sellerRestbtn2{
+    background: #97ED01;
+    border-radius: 11px;
+    border:none;
+    width:240px;
+    height:40px;
+    color:white;
+    font-weight: 700;
+    margin:3rem;
+    margin-left:37rem;
+    text-align: center;
+    align-items: center;
+    cursor:pointer; 
+}

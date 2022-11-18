@@ -44,7 +44,6 @@ const getLocation = () => {
         setStatus('Unable to retrieve your location');
       });
     }
-   
   }
   var userid = localStorage.getItem("userid");
   var accesstoken = localStorage.getItem("accesstoken");
@@ -77,6 +76,7 @@ const getLocation = () => {
 axios
 .get("https://foodorabackend-production.up.railway.app/user/feed/" ,config)
 .then((res) => {
+  console.log(res);
   console.log(res.data);
   setloading(false);
   // console.log(res.data.near.restaurantname);
@@ -133,7 +133,7 @@ return(
    <div id="circle1"></div>
    <div id="rect"></div>
    <div id="circle2"></div>
-   <img src={burger} alt="burger" id="burger"/>
+   <img src={burger} alt="burger" id="burgerr"/>
    <p id="get">GET DELICIOUS FOOD<br />AT YOUR DOORSTEPS</p>
    <p id="text">Your hunger companion.When you crave for midnight delicacy, just dial our number.Speedy and quicker delivery with us. We promise to deliver on time.We deliver food and only good food.</p>
    <span id="orderbtn">Order Now</span>

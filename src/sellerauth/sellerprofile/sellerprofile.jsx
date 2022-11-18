@@ -35,6 +35,7 @@ _id:sellerid,
 .then((res) => {
     console.log(res);
     console.log(res.data.sellerDetails);
+    localStorage.setItem("restadd" , res.data.sellerDetails.restaurantaddress);
     setSellerRestarr(res.data.sellerDetails);
     setLoading(false);
     console.log(res.data.sellerDetails.food_list);
@@ -68,6 +69,7 @@ return(<>
     <p id='sellerRestname'>{sellerRestarr.restaurantaddress}</p>
     <p id='sellerRestname'>{sellerRestarr.restaurant_openingtime} to {sellerRestarr.restaurant_closingtime}</p>
 </div>
+<Link to='/restedit'><button id='sellerRestbtn2'>Edit Restaurant Details</button></Link>
 {food.map((rest)=>createRest(rest))};
 <Link to='/foodadd'><button id='sellerRestbtn'>Add foodItems</button></Link>
 <Contactus />

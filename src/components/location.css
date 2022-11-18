@@ -1,0 +1,20 @@
+#locatemebtn{
+    cursor: pointer;
+    margin-top:0rem;
+    width: 12.492rem;
+    height: 2.481rem;
+    background-color:  #DB0007;
+    border: 1px solid #ffffff;
+    border-radius: 0.5rem;
+    color:white; 
+    text-align: center;
+    margin-left:170px;
+}
+#donebtn{
+    width: 12.492rem;
+    height: 2.481rem;
+    border-radius: 0.5rem;
+    background-color:#DB0007;
+    border:1px solid white;
+    color:white;
+}

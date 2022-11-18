@@ -35,6 +35,7 @@ import Company from "./pages/contactus/company.jsx";
 import Support from "./pages/contactus/support.jsx";
 import SearchPage from "./pages/navss/searchpage.jsx";
 import Orderhistory from "./components/userprofile/orderhistory.jsx";
+import RestEdit from "./sellerauth/restedit.jsx";
 // var y = localStorage.getItem("check");
 // var y = localStorage.getItem("routecheck1");
 // localStorage.removeItem("routecheck1");
@@ -90,6 +91,7 @@ function App() {
           <Route path="/support" exact element={<Support/>}></Route>
           <Route path="/searchpage" exact element={<SearchPage/>}></Route>
           <Route path="/orderhistory" exact element={<Orderhistory/>}></Route>
+          <Route path="/restedit" exact element={<RestEdit/>}></Route>
         </Routes>
       </Router>
     </div>

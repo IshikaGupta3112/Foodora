@@ -31,7 +31,7 @@
         top:47.64rem; 
         color:white;
     }    
-    #hamburger{
+    .burger2{
         position: absolute;
         left: 23.83rem;
         top: 44.6625rem;
@@ -53,7 +53,7 @@
         top:47.64rem; 
         color:white;
     }    
-    #samosa{
+    #indian{
         position: absolute;
         left: 43.83rem;
         top: 44.6625rem;
@@ -64,7 +64,7 @@
         top:47.64rem; 
         color:white;
     }    
-    #fish{
+    #dessert{
         position: absolute;
         left: 52.83rem;
         top: 44.6625rem;
@@ -75,7 +75,7 @@
         top:47.64rem; 
         color:white;
     }    
-    #fastfood{
+    #beverages{
         position: absolute;
         left: 61.83rem;
         top: 44.6625rem;

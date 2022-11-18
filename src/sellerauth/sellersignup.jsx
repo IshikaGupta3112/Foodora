@@ -9,6 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/fontawesome-free-solid";
 import SellerNav2 from './sellernav2';
 import Loader from '../Loader';
+import validator from 'validator';
 function SellerSignup(){
     // var jwt = require("jsonwebtoken")
     // var token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNmEyZWNkYWNhZmU2ZTZkMDhhMzYxNyIsImlhdCI6MTY2NzkwMzE4MiwiZXhwIjoxNjY3OTAzODQyfQ.rkZ22zuxBZ0dx6qXhKtCBepcWzzqLo1hr7Utl8cyM5A";
@@ -23,9 +24,12 @@ function SellerSignup(){
   function handleuserName(e) {
     setuserName(e.target.value);
   }
-  function handleuserEmail(e) {
-    setuserEmail(e.target.value);
-  }
+  // function handleuserEmail(e) {
+  //   setuserEmail(e.target.value);
+  // }
+  const validate = (inputText) => {
+    setuserEmail(validator.trim(inputText))
+}
   function handlepass(e) {
     setPassword(e.target.value);
   }  
@@ -166,7 +170,8 @@ return(
                     maxLength={100}></input>
                 <input type='email' placeholder='Enter Your Email' name="emails"
                     value={userEmail}
-                    onChange={handleuserEmail}
+                    onChange={(e) => validate(e.target.value)}
+                    // onChange={handleuserEmail}
                     required
                     maxLength={100}></input>
                 <input  type={show1 ? "text" : "password"} placeholder='Enter your password' name="passwords"

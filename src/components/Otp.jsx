@@ -83,7 +83,7 @@ function Otp() {
         onChange={handleOtp}
         required
         maxLength={6}></input>
-                <button type='submit' id='sellerloginbtn'>Verify</button>
+                <button type='submit' id='userloginbtn'>Verify</button>
             </form>
             <p id='signupotp'>Didn't get? <button disabled={(counter!==0) ? true : false} 
       onClick={handleApi5} 

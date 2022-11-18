@@ -90,7 +90,7 @@ setLoading(true);
             </h1>
             <p id='validation4'>Invalid</p>
         <p id='validation5'>Didn't Match</p>
-            <p id='sellerback10'>{mssg}</p>
+            <p id='sellerback11'>{mssg}</p>
             <form id='sellerloginform' onSubmit={handleSubmit}>
                 <input  type={show1 ? "text" : "password"} placeholder='Enter your password'  name="password"
               value={pass}
@@ -120,7 +120,7 @@ setLoading(true);
                 onClick={showHide2}
               />
             )}
-                <button type='submit' id='sellerloginbtn'>Reset</button>
+                <button type='submit' id='userloginbtn'>Reset</button>
             </form>
         </div>
     </div>)}

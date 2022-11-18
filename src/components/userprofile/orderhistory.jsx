@@ -41,14 +41,26 @@ const[nestedarr , setNestedArray] =useState([]);
     },[])
     console.log(arr);  
     console.log(num); 
+    let array = [];
     for(i=0;i<num;i++){
       for(j=0;j<arr[i].length;j++){
-        console.log(arr[i][j]);
-        // setNestedArray(arr[i][j]);
-        // nestedarr=arr[i][j].map(obj=>obj.foodname);
+        // console.log(arr[i][j]);
+      //  setNestedArray(arr[i][j]);
+        array.push(arr[i][j]);
       }
     }
-    console.log(nestedarr);
+    useEffect(()=>{
+      if(array.length){
+        console.log(array);
+      }
+    },[array])
+    // console.log(nestedarr);
+    // if(array.length){
+    //   setNestedArray(array);
+    // }
+    // if(nestedarr.length){
+    //   console.log(nestedarr);
+    // }
     // titles=res.data.near.map(obj=>obj.imgpath[0]);
     // console.log(titles);
     // console.log(nestedarr) ;
@@ -61,12 +73,12 @@ const[nestedarr , setNestedArray] =useState([]);
 //       }
     
 // arrayNest(arr)
-function createOrder(){
+function createOrder(array){
   return(
     <Ordercard
-          foodname={arr.foodname}
-          food_price={arr.food_price}
-          quantity={arr.quantity}
+          foodname={array.foodname}
+          food_price={array.food_price}
+          quantity={array.quantity}
         />
   )
 }
@@ -74,7 +86,7 @@ function createOrder(){
     <Navs2 />
     {loading?<Loader/>:(
     <div id='padder2'>
-    {arr.map(createOrder)};
+    {array.map(createOrder)};
     </div>
     )}
     </>);

@@ -43,7 +43,7 @@ transform: rotate(30deg);
 border-radius: 50%;
 overflow-x:hidden;
 }
-#burger{
+#burgerr{
     position: absolute;
 width: 35.3125rem;
 height: 34.1875rem;
@@ -98,24 +98,4 @@ border-radius: 2.09rem;
   font-size: 1.17rem;
   color:white;
   margin-bottom:20px;
-}
-#locatemebtn{
-    cursor: pointer;
-    margin-top:10rem;
-    width: 12.492rem;
-    height: 2.481rem;
-    background: rgba(255, 255, 255, 0.4);
-    border: 1px solid #ffffff;
-    border-radius: 0.5rem;
-    color:white; 
-    text-align: center;
-    margin-left:170px;
-}
-#donebtn{
-    padding:0.7rem;
-    border-radius: 0 5px 5px 0 ;
-    position:absolute;
-    left:1030px;
-    top:186px;
-    border:none;
 }

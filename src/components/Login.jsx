@@ -2,20 +2,27 @@ import React ,{useState , useEffect}from 'react' ;
 import loginpage from '../assets/loginpage.jpg';
 import Navs from "./navs.jsx";
 import "./Login.css";
+import validator from 'validator'
 import { Link , useNavigate} from "react-router-dom";
 import axios from 'axios';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/fontawesome-free-solid";
 import Navs3 from './navs2';
 import Loader from '../Loader';
-import * as ReactBootstrap from 'react-bootstrap';
 const Login = () => {
+  // if(localStorage.getItem("accesstoken").length!=0){
+  //   localStorage.removeItem("accesstoken");
+  // }
   const [userEmail, setuserEmail] = useState("");
   const [password, setPassword] = useState("");
   const [mssge, setMessge] = useState("");
-  function handleuserEmail(e) {
-    setuserEmail(e.target.value);
-  }
+  // function handleuserEmail(e) {
+  //   setuserEmail(e.target.value);
+  // }
+  const validate = (inputText) => {
+    setuserEmail(validator.trim(inputText));
+}
+
   function handlepass(e) {
     setPassword(e.target.value);
   }
@@ -94,7 +101,8 @@ const Login = () => {
             <input
               type="text"
               placeholder="Enter your Email"
-              onChange={handleuserEmail}
+              onChange={(e) => validate(e.target.value)}
+              // onChange={handleuserEmail}
               value={userEmail}
               required
               maxLength={100}
@@ -116,7 +124,7 @@ const Login = () => {
                 onClick={showHide}
               />
             )}
-            <button type="submit" id="sellerloginbtn" onClick={handleApi}>
+            <button type="submit" id="userloginbtn" onClick={handleApi}>
               Login
             </button>
           </form>

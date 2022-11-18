@@ -6,13 +6,17 @@ import SellerNav from './sellernav';
 import {Link  , useNavigate} from 'react-router-dom';
 import SellerNav2 from './sellernav2';
 import Loader from '../Loader';
+import validator from 'validator';
 function SellerFrg(){
     const [forgotMail, setForgotMail] = useState("");
   const [mssg2,setMssg2]=useState('');
   const [loading,setLoading]=useState(false);
-  function handleForgotMial(e) {
-    setForgotMail(e.target.value);
-   }
+  // function handleForgotMial(e) {
+  //   setForgotMail(e.target.value);
+  //  }
+  const validate = (inputText) => {
+    setForgotMail(validator.trim(inputText))
+}
    const [correctMail , setCorrectMail] = useState(false);
   const rightmail= /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
   const navigate = useNavigate();
@@ -69,7 +73,8 @@ function SellerFrg(){
                 >
                     <input type='email' placeholder='Enter Your Email' name="email"
             value={forgotMail}
-            onChange={handleForgotMial}
+            onChange={(e) => validate(e.target.value)}
+            // onChange={handleForgotMial}
             maxLength={100}
             required></input>
                     <button type='submit' id='sellerloginbtn'>Send Otp</button>

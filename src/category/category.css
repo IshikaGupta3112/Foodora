@@ -1,5 +1,5 @@
 
-#categorybox{
+.categorybox{
 width: 400px;
 height: 359px;
 background: linear-gradient(135.77deg, rgba(255, 255, 255, 0.4) -94.16%, rgba(255, 255, 255, 0) 100%);
@@ -43,10 +43,10 @@ border-radius: 16px;
 }
 #categorycompany{
     position: relative;
-    width: 96px;
+    width: 1000px;
     height: 25px;
     left: 20px;
-    top: 5px;
+    top: 15px;
     font-family: 'Open Sans';
     font-style: normal;
     font-size: 18px;
@@ -67,7 +67,7 @@ line-height: 25px;
 color: #11D800;
 }
 #pricess{
-    display:flex;
+    /* display:flex; */
 }
 #categoryactprice{
     position:relative;

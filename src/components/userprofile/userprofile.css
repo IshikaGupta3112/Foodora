@@ -3,17 +3,25 @@
 }
 #userprofname{
     color:white;
-    font-size:2rem;
-    margin-top:10px;
+    font-size:1.5rem;
+    margin-top:0px;
+    text-align: left;
+}
+#userprofname3{
+    color:white;
+    font-size:1rem;
+    margin-top:0px;
     text-align: left;
 }
 #spacing{
-    margin-top:50px;
-    margin-left:60px;
+    margin-top:30px;
+    margin-left:50px;
 }
-#sellerloginform2{
-   /* margin-left:30px; */
-    margin-top:10px;
+#sellerloginhead2{
+    color: #ffffff;
+  font-size: 2.52rem;
+  margin-top:10px;
+  text-align: center;
 }
 #sellerloginform2 input{
     background-color: rgba(255, 255, 255, 0);
@@ -27,11 +35,11 @@
 #profilephoto{
     cursor: pointer;
     margin-top:1rem;
-    margin-left:6rem;
+    margin-left:8rem;
     margin-bottom: 20px;
     width: 12.492rem;
     height: 2.481rem;
-    background: rgba(255, 255, 255, 0.4);
+    background-color:  #DB0007;
     border: 1px solid #ffffff;
     border-radius: 0.5rem;
     color:white; 
@@ -40,7 +48,7 @@
 #userprofname2 a{
     color:white;
     font-size:1.5rem;
-margin-left:90px;
+margin-left:130px;
 cursor:pointer;
 text-decoration: none;
 }
@@ -55,3 +63,13 @@ text-decoration: none;
 #padder2{
     margin-top:100px;
 } 
+#userprofnamebtn{
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    margin-left:190px;
+}
+#userprofnamebtn a{
+    color:red;
+    text-decoration: none;
+    font-size:1.5rem;
+}
