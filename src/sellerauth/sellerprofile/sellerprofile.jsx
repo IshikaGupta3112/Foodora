@@ -10,6 +10,7 @@ import Restrauntcard from './sellerprofilefoodcard';
 import { Link } from 'react-router-dom';
 import SellerNav2 from '../sellernav2';
 import Loader from '../../Loader';
+import SellerNav3 from '../Sellernav3';
 function SellerProfile(){
 // var sellerid=localStorage.getItem('sellerid');
 var sellerid=localStorage.getItem('restid');
@@ -60,7 +61,7 @@ function createRest(food) {
   );
 } 
 return(<>
-<SellerNav2/>
+<SellerNav3/>
 {loading?<Loader/>:(
 <>
 <div id='sellerrest'>

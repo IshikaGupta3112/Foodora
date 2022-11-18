@@ -136,9 +136,10 @@ return(<>
               <option value="pizza">Pizza</option>
               <option value="burger">Burger</option>
               <option value="noodles">Noodles</option>
-              <option value="desert">Desert</option>
+              <option value="dessert">Dessert</option>
               <option value="beverages">Beverages</option>
               <option value="indian">Indian</option>
+              <option value="others">Others</option>
              </select>
              <br></br>
             <button id='sellerloginbtn' type='submit'>Add</button>

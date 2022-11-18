@@ -8,12 +8,16 @@ function Categorycard(props){
     function handlecategory(e){
     console.log(e.target.id);
     console.log(e.target.className);
-    localStorage.setItem("foodid2" , e.target.id);
+    localStorage.setItem("foodid" , e.target.id);
+    localStorage.setItem("restid" , e.target.className);
     Navigate("/foodpage");
     }
 return(<>
-{/* <div id='categoryshow'> */}
-<div className='categorybox' id={props._id}  onClick={handlecategory}> 
+<div id='categoryshow'>
+<div 
+// className='categorybox' 
+className={props.sellerid}
+id={props._id}  onClick={handlecategory}> 
 <img src={url+props.imgpath} id='categoryimg'>
 </img>
 <div id='firstline1'>
@@ -35,7 +39,7 @@ return(<>
     <p id='timed'>{props.time}</p>
 </div> */}
 </div>
-{/* </div> */}
+</div>
 </>
 );
 }

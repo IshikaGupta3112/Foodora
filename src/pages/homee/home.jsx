@@ -26,25 +26,27 @@ function Home(){
     e.preventDefault();
   }
   let titles=[];
-    const [lat, setLat] = useState(null);
-const [lng, setLng] = useState(null);
+    // const [lat, setLat] = useState(null);
+// const [lng, setLng] = useState(null);
 const [status, setStatus] = useState(null);
+var lat=28.6753258;
+var lng=77.5028385;
 useEffect(() => {
-const getLocation = () => {
-    if (!navigator.geolocation) {
-      setStatus('Geolocation is not supported by your browser');
-    } else {
-      setStatus('Locating...');
-      navigator.geolocation.getCurrentPosition((position) => {
-        setStatus(null);
-        setLat(position.coords.latitude);
-        setLng(position.coords.longitude);
+// const getLocation = () => {
+//     if (!navigator.geolocation) {
+//       setStatus('Geolocation is not supported by your browser');
+//     } else {
+//       setStatus('Locating...');
+//       navigator.geolocation.getCurrentPosition((position) => {
+//         setStatus(null);
+//         setLat(position.coords.latitude);
+//         setLng(position.coords.longitude);
       
-      }, () => {
-        setStatus('Unable to retrieve your location');
-      });
-    }
-  }
+//       }, () => {
+//         setStatus('Unable to retrieve your location');
+//       });
+//     }
+//   }
   var userid = localStorage.getItem("userid");
   var accesstoken = localStorage.getItem("accesstoken");
   const config ={
@@ -53,26 +55,44 @@ const getLocation = () => {
     }
   }
  
-    if(lat&&lng){
-      setloading(true);
-      axios
-      .post("https://foodorabackend-production.up.railway.app/user/location",{
-          latitude:lat , 
-          longitude:lng , 
-          user_id:userid
-      },config)
-      .then((res) => {
-        setloading(false);
-          console.log(res);
-          Navigate("/home");
-        })
-        .catch((err) => {
-          setloading(false);
-          console.log(err);
-        });
-      console.log(id);
-      }
-   
+//     if(lat&&lng){
+//       setloading(true);
+//       axios
+//       .post("https://foodorabackend-production.up.railway.app/user/location",{
+//           latitude:lat , 
+//           longitude:lng , 
+//           user_id:userid
+//       },config)
+//       .then((res) => {
+//         setloading(false);
+//           console.log(res);
+//           Navigate("/home");
+//         })
+//         .catch((err) => {
+//           setloading(false);
+//           console.log(err);
+//         });
+//       console.log(id);
+//       }
+console.log("lat:"+lat);
+  console.log("lng:"+lng);
+  setloading(true);
+  axios
+            .post("https://foodorabackend-production.up.railway.app/user/location",{
+                latitude:lat , 
+                longitude:lng , 
+                user_id:id
+            }, config)
+            .then((res) => {
+                console.log(res);
+                console.log(res.data.address);
+                localStorage.setItem("useraddress" , res.data.address);
+                setloading(false);
+              })
+              .catch((err) => {
+                console.log(err);
+                setloading(false);
+              });   
 axios
 .get("https://foodorabackend-production.up.railway.app/user/feed/" ,config)
 .then((res) => {

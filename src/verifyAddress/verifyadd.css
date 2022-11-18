@@ -39,6 +39,7 @@
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 #firstline {
+  color:white;
   font-family: "Montserrat";
   display: flex;
   flex-direction: row;

@@ -36,6 +36,9 @@ import Support from "./pages/contactus/support.jsx";
 import SearchPage from "./pages/navss/searchpage.jsx";
 import Orderhistory from "./components/userprofile/orderhistory.jsx";
 import RestEdit from "./sellerauth/restedit.jsx";
+import SellerOrders from "./sellerauth/sellerorders.jsx";
+import SellerOrderShow from "./sellerauth/sellerordercard/sellerordershow/sellerordershow.jsx";
+import Ordershow from "./components/userprofile/ordershow.jsx";
 // var y = localStorage.getItem("check");
 // var y = localStorage.getItem("routecheck1");
 // localStorage.removeItem("routecheck1");
@@ -92,6 +95,9 @@ function App() {
           <Route path="/searchpage" exact element={<SearchPage/>}></Route>
           <Route path="/orderhistory" exact element={<Orderhistory/>}></Route>
           <Route path="/restedit" exact element={<RestEdit/>}></Route>
+          <Route path="/sellerorders" exact element={<SellerOrders/>}></Route>
+          <Route path="/sellerordershow" exact element={<SellerOrderShow/>}></Route>
+          <Route path="/ordershow" exact element={<Ordershow/>}></Route>
         </Routes>
       </Router>
     </div>

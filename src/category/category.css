@@ -1,4 +1,3 @@
-
 .categorybox{
 width: 400px;
 height: 359px;
@@ -52,6 +51,16 @@ border-radius: 16px;
     font-size: 18px;
     line-height: 25px;
     color: rgba(255,255,255,0.7);     
+}
+#categoryshow{
+    width: 400px;
+height: 359px;
+background: linear-gradient(135.77deg, rgba(255, 255, 255, 0.4) -94.16%, rgba(255, 255, 255, 0) 100%);
+backdrop-filter: blur(21px);
+border-radius: 16px;
+margin-left:1rem;
+margin-top:2rem;
+border:0.4px solid rgba(255, 255, 255, 0.4);
 }
 #categoryprice{
 position: relative;
