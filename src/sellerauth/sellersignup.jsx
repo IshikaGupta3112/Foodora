@@ -11,10 +11,6 @@ import SellerNav2 from './sellernav2';
 import Loader from '../Loader';
 import validator from 'validator';
 function SellerSignup(){
-    // var jwt = require("jsonwebtoken")
-    // var token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNmEyZWNkYWNhZmU2ZTZkMDhhMzYxNyIsImlhdCI6MTY2NzkwMzE4MiwiZXhwIjoxNjY3OTAzODQyfQ.rkZ22zuxBZ0dx6qXhKtCBepcWzzqLo1hr7Utl8cyM5A";
-    // var decode= jwt.decode(token);
-    // console.log(decode);
     const[mssg3 , setMssg3] = useState("");
   const [userName, setuserName] = useState("");
   const [userEmail, setuserEmail] = useState("");
