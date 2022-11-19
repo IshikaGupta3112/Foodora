@@ -85,29 +85,6 @@ function Forgot() {
         </div>
     </div>)}
     </>
-    // <>
-    //   <Navs />
-    //   <img src={loginpage} id='loginpage' alt='' />
-    //   <div id="backgrey"></div>
-    //   <p id='backend2'>{mssg}</p>
-    //   <h1 id="log2">Email Verification</h1>
-    //   <div id="auth3">
-    //     <form id="form1" onSubmit={handleSubmit}>
-    //       <input
-    //         type="email"
-    //         placeholder="Enter your email"
-    //         className="email"
-    //         id="emailname"
-    //         name="email"
-    //         value={forgotMail}
-    //         onChange={handleForgotMial}
-    //         required
-    //       ></input>
-    //       <p id="err1">Invalid mail</p>
-    //         <button type="submit" id='otpsend'>SEND OTP</button>
-    //     </form>
-    //   </div>
-    // </>
   );
 }
 export default Forgot;

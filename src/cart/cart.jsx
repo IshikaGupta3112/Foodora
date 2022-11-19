@@ -79,6 +79,7 @@ axios
     return(
         <>
         <Navs2 />
+        {loading?<Loader/>:(
         <div id='cartbox'>
         {(success==false)?arr.map(createcart2):((document.getElementById('nxtbtn2').style.display='none')&&<p id='cartpar'>Order Placed</p>)}
             {/* <div id='firstItem'>
@@ -111,6 +112,7 @@ axios
             </div>*/}
             <button onClick={handleorder} id='nxtbtn2'disabled={(success) ? true : false}>NEXT</button> 
         </div>
+        )}
         <Contactus/>
         </>
     )
