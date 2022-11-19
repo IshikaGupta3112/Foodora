@@ -55,7 +55,7 @@
   }
   #foodrestdesc {
     position: relative;
-    width: 20rem;
+    width: 26rem;
     height: 1rem;
     left: 2rem;
     top: 8rem;
@@ -63,7 +63,7 @@
     font-style: normal;
     font-weight: 600;
     font-size: 1.5rem;
-    line-height: 1rem;
+    line-height: 2rem;
     color: #ffffff;
     opacity: 0.6;
   }

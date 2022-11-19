@@ -142,7 +142,7 @@ return (
 <img src={url+data.foodimg}id='foodrestpic'></img>
 {console.log(data)}
 <p id='foodrestname'>{data.foodname}</p>
-<p id='foodrestprice'>{data.foodprice}</p>
+<p id='foodrestprice'>{"Rs." + data.foodprice}</p>
 <p id='foodrestdesc'>{data.fooddesc}</p>
 </div>
 {(count==0)?<button id='addtocart' onClick={increase}>Add to cart</button>:<div id='quantity2'><button id='minus2'onClick={decrease}>-</button>{count} <button id='plus2'onClick={increase}>+</button></div>}
