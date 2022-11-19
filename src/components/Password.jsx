@@ -27,12 +27,12 @@ function Password() {
     const [show1, setShow1] = useState(false);
     const [show2, setShow2] = useState(false);
     useEffect(() => {
-      if (pass.length>0) {
-        document.getElementById("validation4").style.display = "none";
+      if (pass.length<8&&pass.length>0) {
+        document.getElementById("validation4").style.display = "block";
         console.log("true");
         setcorrectpass(true);
       } else if (pass) {
-        document.getElementById("validation4").style.display = "block";
+        document.getElementById("validation4").style.display = "none";
         setcorrectpass(false);
       }
     }, [pass]);
@@ -88,7 +88,7 @@ setLoading(true);
             <h1 id='sellerresethead'>
                Reset Password
             </h1>
-            <p id='validation4'>Invalid</p>
+            <p id='validation4'>passwords must be greater than 8 char</p>
         <p id='validation5'>Didn't Match</p>
             <p id='sellerback11'>{mssg}</p>
             <form id='sellerloginform' onSubmit={handleSubmit}>

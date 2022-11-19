@@ -27,7 +27,7 @@ function Restrauntcard(props){
         {/* <img src={star} id='starsimg1'></img> */}
         </div>
       <div id='cardprices'>
-        <p id='greenprice'>{props.food_price}</p>
+        <p id='greenprice'>{"Rs." + props.food_price}</p>
         {/* <p id='whiteprice'>{props.actPrice}</p> */}
         </div>  
         <p id='carddes'>{props.food_desc}</p>

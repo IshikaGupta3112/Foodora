@@ -87,12 +87,12 @@ function SellerSignup(){
       }
     }, [userName]);
     useEffect(() => {
-      if (password.length>0) {
-        document.getElementById("validation8").style.display = "none";
+      if (password.length>0&&password.length<8) {
+        document.getElementById("validation8").style.display = "block";
         console.log("true");
         setIsCorrectPass(true);
       } else if (password) {
-        document.getElementById("validation8").style.display = "block";
+        document.getElementById("validation8").style.display = "none";
         setIsCorrectPass(false);
       }
     }, [password]);
@@ -155,7 +155,7 @@ return(
             </h1>
             <p id='validation6'>Invalid </p>
             <p id='validation7'>Invalid Mail</p>
-            <p id='validation8'>Invalid </p>
+            <p id='validation8'>Password must be greater than 8 characters</p>
             <p id='validation9'>Didn't match</p>
             <p id='sellerback5'>{mssg3}</p>
             <form id='sellerloginform' onSubmit={handleSubmits}>

@@ -34,12 +34,12 @@ function SellerResetPwd(){
         setShow2(!show2);
       }
       useEffect(() => {
-        if (pass.length>0) {
-          document.getElementById("validation4").style.display = "none";
+        if (pass.length>0&&pass.length<8) {
+          document.getElementById("validation4").style.display = "block";
           console.log("true");
           setcorrectpass(true);
         } else if (pass) {
-          document.getElementById("validation4").style.display = "block";
+          document.getElementById("validation4").style.display = "none";
           setcorrectpass(false);
         }
       }, [pass]);
@@ -87,7 +87,7 @@ return(
             <h1 id='sellerresethead'>
                Reset Password
             </h1>
-            <p id='validation4'>Invalid</p>
+            <p id='validation4'>Password must be greater than 8 char</p>
         <p id='validation5'>Didn't Match</p>
             <p id='sellerback11'>{mssg6}</p>
             <form id='sellerloginform' onSubmit={handleSubmit}>

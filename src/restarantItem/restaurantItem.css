@@ -3,7 +3,7 @@
   width: 339px;
   height: 44px;
   left: 90px;
-  top:1830px;
+  top:1200px;
   font-family: "Open Sans";
   font-style: normal;
   font-weight: 600;
@@ -109,7 +109,7 @@
 #restlist {
   display: flex;
   position: absolute;
-  margin-top: 120rem;
+  margin-top: 80rem;
   margin-left: 1.75rem;
   margin-right: 5.625rem;
   /* flex-wrap:wrap; */

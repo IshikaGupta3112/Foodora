@@ -160,7 +160,7 @@ return(
    </div>
    <Item />
    <Restaurant />
-   <CreateList />
+   {/* <CreateList /> */}
    <p id="resthead">Restaurants Near You</p>
    <div id="restlist">
       <button onClick={decrease} disabled={(i==0) ? true : false} id='prevbtn'>&larr;</button>

@@ -42,7 +42,7 @@ border-radius: 16px;
 }
 #categorycompany{
     position: relative;
-    width: 1000px;
+    width: 350px;
     height: 25px;
     left: 20px;
     top: 15px;
@@ -67,7 +67,7 @@ position: relative;
 width: 82px;
 height: 25px;
 left: 16px;
-top: 8px;
+top: 20px;
 font-family: 'Open Sans';
 font-style: normal;
 font-weight: 600;
