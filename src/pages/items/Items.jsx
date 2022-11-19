@@ -25,7 +25,7 @@ function Items(){
 return(
     <>
 <div>
-   <img src ={lid} alt ="" id="lid"/>
+   <img src ={lid} alt ="" id="all" className="lid" onClick={makeCategory1}/>
    <p id="items1">All</p>
    </div>
    {/* <div>
