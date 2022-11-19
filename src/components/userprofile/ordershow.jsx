@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Ordercard from './ordercard';
 import Navs3 from '../navs2';
 import Loader from '../../Loader';
+import Navs4 from '../navs4';
 function SellerOrderShow(){
 var accesstoken = localStorage.getItem("accesstoken");
 const config ={
@@ -40,7 +41,7 @@ function createOrder(arr){
     )
   }
 return(<>
-<Navs3 />
+<Navs4 />
 {loading?<Loader/>:(
 <div id='ordershowdiv'>
 {arr.map((rest)=>createOrder(rest))}

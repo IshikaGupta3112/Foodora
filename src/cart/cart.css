@@ -11,7 +11,8 @@ flex-direction: column;
 }
 #firstItem{
     display:flex;
-    margin-top:10px;
+    margin-top:30px;
+    margin-left: 50px;
     /* flex-wrap: wrap; */
 }
 #itemname{
@@ -86,10 +87,17 @@ margin-top:10px;
 }
 #cartpar{
     color:white;
-    font-size:2.5rem;
+    font-size:2rem;
     margin:auto;
     margin-top:40px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
+}
+#cartpar2{
+    color:white;
+    margin:auto;
+    margin-top:40px;
+    font-size:1.5rem;
+    margin-bottom: 40px;
 }
 @media (max-width:800px){
     #pricecart{

@@ -4,6 +4,8 @@ import { useEffect } from "react";
 import Navs3 from "../navs2";
 import UserOrdercard from "./orderhidecard";
 import Loader from "../../Loader";
+import Navs2 from "../../pages/navss/navs2";
+import Navs4 from "../navs4";
 function Orderhistory(){
   var accesstoken = localStorage.getItem("accesstoken");
   const config ={
@@ -36,7 +38,7 @@ function createOrder(arr){
   )
 }
 return(<>
-<Navs3/>
+<Navs4/>
  {loading?<Loader/>:(
 <div id='ordershowdiv'>
 

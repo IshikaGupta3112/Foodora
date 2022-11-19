@@ -12,7 +12,7 @@ var userid = localStorage.getItem("userid");
 function Cart(){
 const [arr , setArr] =useState([]);
 const [success, setSuccess] =useState(false);
-const [success2, setSuccess2] =useState(false);
+const [success2, setSuccess2] =useState();
 const [loading, setLoading] =useState(false);
 var accesstoken = localStorage.getItem("accesstoken");
   const config ={
@@ -33,11 +33,6 @@ var accesstoken = localStorage.getItem("accesstoken");
     setLoading(true);
     axios
     .post("https://foodorabackend-production.up.railway.app/user/checkout" ,{},config
-    //  { 
-    //   headers:{
-    //   Authorization:`Bearer ${accesstoken}`
-    // } , 
-    // }
     )
     .then((res) => {
         console.log(res.data);
@@ -61,6 +56,8 @@ axios
     console.log(res);
     setLoading(false);
     setArr(res.data.cart);
+    setSuccess2(res.data.cart.length);
+    console.log(res.data.cart.length)
   })
   .catch((err) => {
     console.log(err);
@@ -81,7 +78,9 @@ axios
         <Navs2 />
         {loading?<Loader/>:(
         <div id='cartbox'>
-        {(success==false)?arr.map(createcart2):((document.getElementById('nxtbtn2').style.display='none')&&<p id='cartpar'>Order Placed</p>)}
+         {(success2==0)?((document.getElementById('nxtbtn2').style.display='none')&&<p id='cartpar2'>Cart is empty</p>):null} 
+          
+        {(success==false)?arr.map(createcart2):((document.getElementById('nxtbtn2').style.display='none')&&<p id='cartpar'>Order Placed!</p>)}
             {/* <div id='firstItem'>
                 <p id='itemname'>Chicken Burger Fries </p>
                 <button id='plus'onClick={increase}>+</button>

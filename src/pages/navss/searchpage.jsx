@@ -8,6 +8,7 @@ import RestaurantItems from '../../restarantItem/restaurantItem';
 function SearchPage(){
     const [restarr , setRestarr] =useState([]);
     const [loading , setLoading] =useState(false);
+    const [num , setNum] =useState();
     function createRest(restarr) {
         return (
           <RestaurantItems
@@ -36,6 +37,8 @@ function SearchPage(){
               console.log(res.data);
               setLoading(false);
               setRestarr(res.data);
+              console.log(res.data.length);
+              setNum(res.data.length);
             })
             .catch((err) => {
               console.log(err);
@@ -58,7 +61,8 @@ function SearchPage(){
    
     
      <div id='searcharr'>
-      {restarr.map((rest)=>createRest(rest))};
+      {(num==0)?<p id='cartpar2'>No matches</p>:restarr.map((rest)=>createRest(rest))}
+      {/* {restarr.map((rest)=>createRest(rest))}; */}
       </div>
       </>
       )};
