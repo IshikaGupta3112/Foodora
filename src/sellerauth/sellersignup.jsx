@@ -87,12 +87,12 @@ function SellerSignup(){
       }
     }, [userName]);
     useEffect(() => {
-      if (password.length>0&&password.length<8) {
-        document.getElementById("validation8").style.display = "block";
+      if (password.length>0) {
+        document.getElementById("validation8").style.display = "none";
         console.log("true");
         setIsCorrectPass(true);
       } else if (password) {
-        document.getElementById("validation8").style.display = "none";
+        document.getElementById("validation8").style.display = "block";
         setIsCorrectPass(false);
       }
     }, [password]);
